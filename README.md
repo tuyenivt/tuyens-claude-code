@@ -70,16 +70,16 @@ Props: orders, onSelect
 
 ## Agents
 
-| Agent                  | Focus                  |
-| ---------------------- | ---------------------- |
-| `backend-architect`    | Spring Boot, JPA, APIs |
-| `frontend-architect`   | React, accessibility   |
-| `security-engineer`    | OWASP, auth            |
-| `performance-engineer` | Optimization           |
-| `test-engineer`        | Testing strategy       |
-| `refactoring-expert`   | Code cleanup           |
-| `technical-writer`     | Documentation          |
-| `tech-lead`            | Code review            |
+| Agent                  | Focus                     |
+| ---------------------- | ------------------------- |
+| `spring-architect`     | Spring Boot, JPA, APIs    |
+| `react-architect`      | React, accessibility      |
+| `security-engineer`    | OWASP, auth               |
+| `performance-engineer` | Optimization (multi-lang) |
+| `test-engineer`        | Testing strategy          |
+| `refactoring-expert`   | Code cleanup              |
+| `technical-writer`     | Documentation             |
+| `tech-lead`            | Code review (multi-lang)  |
 
 ## License
 

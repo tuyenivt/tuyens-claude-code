@@ -71,13 +71,13 @@
   ],
   "agents": [
     {
-      "name": "backend-architect",
-      "path": "agents/backend-architect.md",
+      "name": "spring-architect",
+      "path": "agents/spring-architect.md",
       "description": "Design Spring Boot backend systems"
     },
     {
-      "name": "frontend-architect",
-      "path": "agents/frontend-architect.md",
+      "name": "react-architect",
+      "path": "agents/react-architect.md",
       "description": "Design React applications"
     },
     {

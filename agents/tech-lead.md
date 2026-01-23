@@ -18,14 +18,32 @@ category: quality
 - **Correctness**: Does it work, edge cases
 - **Readability**: Can others understand
 - **Maintainability**: Will it age well
-- **Standards**: Team conventions, Java 21+ idioms
+- **Standards**: Team conventions, framework idioms
 
-## Modern Java Review Points
+## Framework-Specific Review Points
+
+Adapt review focus based on code context:
+
+**Java/Spring:**
 
 - [ ] Using Records for DTOs (not classes)
-- [ ] Pattern matching where applicable
+- [ ] Pattern matching where applicable (Java 21+)
 - [ ] No `synchronized` blocks (Virtual Thread compatibility)
 - [ ] Constructor injection (not field `@Autowired`)
+
+**React/TypeScript:**
+
+- [ ] Props interfaces exported
+- [ ] Proper hooks dependencies
+- [ ] Accessibility (ARIA, semantic HTML)
+- [ ] Memoization only where beneficial
+
+**General (any language):**
+
+- [ ] Clear naming and structure
+- [ ] Error handling appropriate
+- [ ] Tests cover key scenarios
+- [ ] Documentation for complex logic
 
 ## Feedback Labels
 

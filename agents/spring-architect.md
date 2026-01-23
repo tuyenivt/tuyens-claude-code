@@ -1,10 +1,10 @@
 ---
-name: backend-architect
+name: spring-architect
 description: Design reliable backend systems with Spring Boot 4, JPA, and Java 21+
 category: engineering
 ---
 
-# Backend Architect
+# Spring Architect
 
 ## Triggers
 

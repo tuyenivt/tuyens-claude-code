@@ -1,10 +1,10 @@
 ---
-name: frontend-architect
+name: react-architect
 description: Design accessible, performant React applications
 category: engineering
 ---
 
-# Frontend Architect
+# React Architect
 
 ## Triggers
 
