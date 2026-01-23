@@ -1,31 +1,12 @@
 # Tuyen's Claude Code
 
-A Claude Code plugin for enterprise Java backend teams. Provides opinionated, review-focused slash commands for Spring Boot, JPA/Hibernate, and Java 21+ development.
-
-## What This Plugin Does
-
-This plugin standardizes how Java teams interact with Claude Code. It provides slash commands that:
-
-- Review architecture, not generate it
-- Identify problems, not fix them automatically
-- Require human decisions at critical points
-- Enforce governance and security policies
-
-## What This Plugin Does NOT Do
-
-This plugin will refuse to:
-
-- Generate entire applications or modules
-- Scaffold full classes automatically
-- Make architectural or transactional decisions for you
-- Guess when context is missing
-- Store, infer, or expose secrets
+Claude Code plugin for Java Spring and React development. 12 commands, 8 agents.
 
 ## Installation
 
 ```bash
 # Add from marketplace
-/plugin marketplace add https://github.com/tuyenivt/tuyens-claude-code
+/plugin add https://github.com/tuyenivt/tuyens-claude-code
 
 # Install locally
 /plugin install tuyens-claude-code
@@ -33,104 +14,66 @@ This plugin will refuse to:
 
 ## Requirements
 
-- Claude Code >= 1.0.0
-- Target codebase: Java 21+, Spring Boot, JPA/Hibernate, Gradle
+- Claude Code >= 2.0.0
+- Backend: Java 21+, Spring Boot, JPA, Gradle
+- Frontend: React, TypeScript
 
-## Slash Commands
+## Commands
 
-| Command                | Purpose                                             |
-| ---------------------- | --------------------------------------------------- |
-| `/architecture-review` | Review layering, coupling, and component boundaries |
-| `/domain-model-review` | Analyze DDD alignment and aggregate design          |
-| `/api-design-review`   | Audit REST API design and HTTP semantics            |
-| `/jpa-review`          | Find N+1 queries, fetch issues, cascade problems    |
-| `/transaction-review`  | Analyze transaction boundaries and isolation        |
-| `/performance-review`  | Identify memory, concurrency, and JVM issues        |
-| `/security-review`     | Find injection, auth, and data exposure risks       |
-| `/test-strategy`       | Evaluate testing pyramid and coverage gaps          |
+### API (Backend)
 
-## Usage Examples
+| Command       | Purpose             |
+| ------------- | ------------------- |
+| `/api-new`    | Create API endpoint |
+| `/api-review` | Review API code     |
+| `/api-secure` | Security review     |
+| `/api-test`   | Test strategy       |
 
-### Architecture Review
+### UI (Frontend)
 
-```
-/architecture-review
+| Command         | Purpose                |
+| --------------- | ---------------------- |
+| `/ui-component` | Create React component |
+| `/ui-page`      | Create React page      |
+| `/ui-review`    | Review React code      |
+| `/ui-test`      | Test strategy          |
 
-Context: We have a Spring Boot monolith with 50+ services.
-I want to review the payment processing module.
+### General
 
-Files to review:
-- src/main/java/com/example/payment/
-```
+| Command          | Purpose            |
+| ---------------- | ------------------ |
+| `/code-review`   | PR review          |
+| `/code-cleanup`  | Refactoring plan   |
+| `/docs-generate` | Generate docs      |
+| `/perf-review`   | Performance review |
 
-### JPA Review
-
-```
-/jpa-review
-
-Entity: Order.java with OrderItem collection
-Problem: API response times degraded after adding order history feature
-```
-
-### Security Review
+## Usage
 
 ```
-/security-review
-
-Scope: User authentication and session management
-Recent changes: Added OAuth2 integration
-Compliance: SOC2, GDPR
+/api-new
+Resource: Order
+Package: com.example.order
+Operations: CRUD with pagination
 ```
 
-## Command Output Structure
+```
+/ui-component
+Name: OrderList
+Props: orders, onSelect
+```
 
-All commands produce structured output:
+## Agents
 
-1. **Summary** - One-paragraph assessment
-2. **Findings** - Categorized issues with severity
-3. **Risk Checklist** - Binary yes/no risk indicators
-4. **Trade-offs** - Options with pros/cons (no recommendations)
-5. **Human Decisions Required** - Explicit list of choices only humans can make
-6. **Next Steps** - Suggested follow-up actions (not implementations)
-
-## Team Rules
-
-### Always Required
-
-- Provide file paths or paste code directly
-- State the specific concern or goal
-- Mention compliance requirements if applicable
-- Review AI output before acting on it
-
-### Never Allowed
-
-- Sharing production credentials or secrets
-- Asking Claude to implement fixes directly
-- Bypassing human review markers
-- Using output without team review for critical systems
-
-## Governance Policies
-
-This plugin enforces three policies:
-
-1. **Usage Policy** - What Claude will and will not do
-2. **Security Policy** - How sensitive data is handled
-3. **Cost Policy** - Scope limits per request
-
-Read the full policies in the `/policies` directory.
-
-## Agents (Personas)
-
-Commands use specialized agent personas:
-
-| Agent                       | Expertise                                     |
-| --------------------------- | --------------------------------------------- |
-| `spring-architect`          | Spring Boot architecture, DI, modularity      |
-| `jpa-specialist`            | Hibernate, entity mapping, query optimization |
-| `java-performance-engineer` | JVM tuning, memory, concurrency               |
-| `security-engineer`         | OWASP, authentication, authorization          |
-| `test-engineer`             | Testing strategy, coverage, test design       |
-| `tech-lead-reviewer`        | Holistic review, team standards               |
+| Agent                  | Focus                  |
+| ---------------------- | ---------------------- |
+| `backend-architect`    | Spring Boot, JPA, APIs |
+| `frontend-architect`   | React, accessibility   |
+| `security-engineer`    | OWASP, auth            |
+| `performance-engineer` | Optimization           |
+| `test-engineer`        | Testing strategy       |
+| `refactoring-expert`   | Code cleanup           |
+| `technical-writer`     | Documentation          |
+| `tech-lead`            | Code review            |
 
 ## License
 

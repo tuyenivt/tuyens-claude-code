@@ -1,103 +1,124 @@
 {
   "name": "tuyens-claude-code",
-  "version": "1.0.0",
-  "description": "Opinionated Claude Code plugin for enterprise Java teams. Provides safe, review-focused slash commands for Spring Boot, JPA, and Java 21+ development. Enforces human oversight and prevents common architectural mistakes.",
-  "author": "tuyens-claude-code",
-  "repository": "https://github.com/tuyenivt/tuyens-claude-code",
+  "version": "2.1.0",
+  "description": "Claude Code plugin for Java Spring and React development with 12 commands and 8 agents",
+  "author": "Tuyen",
   "license": "MIT",
   "engines": {
-    "claude-code": ">=1.0.0"
+    "claude-code": ">=2.0.0"
   },
-  "keywords": [
-    "java",
-    "spring-boot",
-    "jpa",
-    "hibernate",
-    "enterprise",
-    "architecture",
-    "code-review"
-  ],
   "commands": [
     {
-      "name": "architecture-review",
-      "description": "Review Java/Spring architecture decisions. Identifies layering violations, coupling issues, and suggests improvements without generating code.",
-      "prompt_file": "commands/architecture-review.md"
+      "name": "api-new",
+      "path": "commands/api-new.md",
+      "description": "Create new Spring Boot API endpoint"
     },
     {
-      "name": "domain-model-review",
-      "description": "Analyze domain model design for DDD alignment, aggregate boundaries, and entity relationships. Flags modeling anti-patterns.",
-      "prompt_file": "commands/domain-model-review.md"
+      "name": "api-review",
+      "path": "commands/api-review.md",
+      "description": "Review Spring Boot API code"
     },
     {
-      "name": "api-design-review",
-      "description": "Review REST API design for consistency, versioning, error handling, and HTTP semantics. Does not generate endpoints.",
-      "prompt_file": "commands/api-design-review.md"
+      "name": "api-secure",
+      "path": "commands/api-secure.md",
+      "description": "Security review for Spring Boot APIs"
     },
     {
-      "name": "jpa-review",
-      "description": "Audit JPA/Hibernate mappings for N+1 queries, fetch strategies, cascade pitfalls, and schema alignment issues.",
-      "prompt_file": "commands/jpa-review.md"
+      "name": "api-test",
+      "path": "commands/api-test.md",
+      "description": "Test strategy for Spring Boot APIs"
     },
     {
-      "name": "transaction-review",
-      "description": "Analyze transaction boundaries, propagation settings, isolation levels, and potential deadlock scenarios.",
-      "prompt_file": "commands/transaction-review.md"
+      "name": "ui-component",
+      "path": "commands/ui-component.md",
+      "description": "Create new React component"
     },
     {
-      "name": "performance-review",
-      "description": "Identify Java performance concerns including memory allocation, collection usage, concurrency issues, and JVM tuning opportunities.",
-      "prompt_file": "commands/performance-review.md"
+      "name": "ui-page",
+      "path": "commands/ui-page.md",
+      "description": "Create new React page"
     },
     {
-      "name": "security-review",
-      "description": "Security-focused review for injection risks, authentication gaps, authorization flaws, and data exposure vulnerabilities.",
-      "prompt_file": "commands/security-review.md"
+      "name": "ui-review",
+      "path": "commands/ui-review.md",
+      "description": "Review React code"
     },
     {
-      "name": "test-strategy",
-      "description": "Evaluate test coverage strategy, testing pyramid balance, and identify gaps in unit/integration/contract testing.",
-      "prompt_file": "commands/test-strategy.md"
+      "name": "ui-test",
+      "path": "commands/ui-test.md",
+      "description": "Test strategy for React"
+    },
+    {
+      "name": "code-review",
+      "path": "commands/code-review.md",
+      "description": "General code review"
+    },
+    {
+      "name": "code-cleanup",
+      "path": "commands/code-cleanup.md",
+      "description": "Refactoring plan"
+    },
+    {
+      "name": "docs-generate",
+      "path": "commands/docs-generate.md",
+      "description": "Generate documentation"
+    },
+    {
+      "name": "perf-review",
+      "path": "commands/perf-review.md",
+      "description": "Performance review"
     }
   ],
   "agents": [
     {
-      "name": "spring-architect",
-      "description": "Senior Spring Boot architect persona for architectural decisions",
-      "file": "agents/spring-architect.md"
+      "name": "backend-architect",
+      "path": "agents/backend-architect.md",
+      "description": "Design Spring Boot backend systems"
     },
     {
-      "name": "jpa-specialist",
-      "description": "JPA/Hibernate specialist for ORM-related analysis",
-      "file": "agents/jpa-specialist.md"
-    },
-    {
-      "name": "java-performance-engineer",
-      "description": "Java performance engineer for optimization analysis",
-      "file": "agents/java-performance-engineer.md"
+      "name": "frontend-architect",
+      "path": "agents/frontend-architect.md",
+      "description": "Design React applications"
     },
     {
       "name": "security-engineer",
-      "description": "Application security engineer for vulnerability analysis",
-      "file": "agents/security-engineer.md"
+      "path": "agents/security-engineer.md",
+      "description": "Identify security vulnerabilities"
+    },
+    {
+      "name": "performance-engineer",
+      "path": "agents/performance-engineer.md",
+      "description": "Optimize system performance"
     },
     {
       "name": "test-engineer",
-      "description": "Test engineering specialist for quality strategy",
-      "file": "agents/test-engineer.md"
+      "path": "agents/test-engineer.md",
+      "description": "Design testing strategies"
     },
     {
-      "name": "tech-lead-reviewer",
-      "description": "Tech lead persona for holistic code review",
-      "file": "agents/tech-lead-reviewer.md"
+      "name": "refactoring-expert",
+      "path": "agents/refactoring-expert.md",
+      "description": "Systematic code improvement"
+    },
+    {
+      "name": "technical-writer",
+      "path": "agents/technical-writer.md",
+      "description": "Technical documentation"
+    },
+    {
+      "name": "tech-lead",
+      "path": "agents/tech-lead.md",
+      "description": "Code review and mentoring"
     }
   ],
-  "policies": [
-    "policies/usage-policy.md",
-    "policies/security-policy.md",
-    "policies/cost-policy.md"
-  ],
-  "templates": [
-    "templates/prompt-header.md",
-    "templates/review-output-contract.md"
+  "tags": [
+    "java",
+    "spring-boot",
+    "react",
+    "typescript",
+    "api",
+    "development",
+    "review",
+    "productivity"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "tuyens-claude-code",
-  "description": "Claude Code plugin for development, review and productivity",
+  "description": "Claude Code plugin for Java Spring and React development",
   "owner": {
     "name": "Tuyen",
     "contact": "github.com/tuyenivt"
@@ -9,13 +9,13 @@
     {
       "name": "tuyens-claude-code",
       "source": "./",
-      "description": "Opinionated Claude Code plugin for enterprise Java teams. Provides safe, review-focused slash commands for Spring Boot, JPA, and Java 21+ development. Enforces human oversight and prevents common architectural mistakes.",
-      "version": "1.0.0",
+      "description": "12 commands and 8 agents for Java Spring and React development",
+      "version": "2.1.0",
       "author": {
         "name": "Tuyen",
-        "email": "[email protected]"
+        "url": "https://github.com/tuyenivt"
       },
-      "tags": ["java", "development", "review", "productivity"]
+      "tags": ["java", "spring-boot", "react", "typescript", "api", "development", "review"]
     }
   ]
 }
