@@ -26,23 +26,23 @@ Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 12 comman
 
 ## Commands
 
-### API (Backend)
+### Spring Boot (Backend)
 
-| Command       | Purpose             |
-| ------------- | ------------------- |
-| `/api-new`    | Create API endpoint |
-| `/api-review` | Review API code     |
-| `/api-secure` | Security review     |
-| `/api-test`   | Test strategy       |
+| Command          | Purpose             |
+| ---------------- | ------------------- |
+| `/spring-new`    | Create API endpoint |
+| `/spring-review` | Review API code     |
+| `/spring-secure` | Security review     |
+| `/spring-test`   | Test strategy       |
 
-### UI (Frontend)
+### React (Frontend)
 
-| Command         | Purpose                |
-| --------------- | ---------------------- |
-| `/ui-component` | Create React component |
-| `/ui-page`      | Create React page      |
-| `/ui-review`    | Review React code      |
-| `/ui-test`      | Test strategy          |
+| Command            | Purpose                |
+| ------------------ | ---------------------- |
+| `/react-component` | Create React component |
+| `/react-page`      | Create React page      |
+| `/react-review`    | Review React code      |
+| `/react-test`      | Test strategy          |
 
 ### General
 
@@ -56,14 +56,14 @@ Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 12 comman
 ## Usage
 
 ```
-/api-new
+/spring-new
 Resource: Order
 Package: com.example.order
 Operations: CRUD with pagination
 ```
 
 ```
-/ui-component
+/react-component
 Name: OrderList
 Props: orders, onSelect
 ```

@@ -9,43 +9,43 @@
   },
   "commands": [
     {
-      "name": "api-new",
-      "path": "commands/api-new.md",
+      "name": "spring-new",
+      "path": "commands/spring-new.md",
       "description": "Create new Spring Boot API endpoint"
     },
     {
-      "name": "api-review",
-      "path": "commands/api-review.md",
+      "name": "spring-review",
+      "path": "commands/spring-review.md",
       "description": "Review Spring Boot API code"
     },
     {
-      "name": "api-secure",
-      "path": "commands/api-secure.md",
+      "name": "spring-secure",
+      "path": "commands/spring-secure.md",
       "description": "Security review for Spring Boot APIs"
     },
     {
-      "name": "api-test",
-      "path": "commands/api-test.md",
+      "name": "spring-test",
+      "path": "commands/spring-test.md",
       "description": "Test strategy for Spring Boot APIs"
     },
     {
-      "name": "ui-component",
-      "path": "commands/ui-component.md",
+      "name": "react-component",
+      "path": "commands/react-component.md",
       "description": "Create new React component"
     },
     {
-      "name": "ui-page",
-      "path": "commands/ui-page.md",
+      "name": "react-page",
+      "path": "commands/react-page.md",
       "description": "Create new React page"
     },
     {
-      "name": "ui-review",
-      "path": "commands/ui-review.md",
+      "name": "react-review",
+      "path": "commands/react-review.md",
       "description": "Review React code"
     },
     {
-      "name": "ui-test",
-      "path": "commands/ui-test.md",
+      "name": "react-test",
+      "path": "commands/react-test.md",
       "description": "Test strategy for React"
     },
     {
