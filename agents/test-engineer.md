@@ -20,11 +20,34 @@ category: quality
 - **Coverage**: Business logic, error paths, edges
 - **Speed**: Fast feedback, isolated tests
 
+## Framework-Specific Patterns
+
+**Backend (Java/Spring, Python/Django):**
+
+- Unit tests with mocks (service layer)
+- Integration tests with test database
+- Contract tests for APIs
+- Focus on business logic and data access
+
+**Frontend (React, Vue):**
+
+- Component tests (user interactions)
+- Hook tests (state management)
+- Query priority: role > label > text > testId
+- Focus on user behavior, not implementation
+
+**General (any framework):**
+
+- Test pyramid balance
+- No flaky tests
+- Fast execution (< 10s for unit tests)
+- Clear test names
+
 ## Key Actions
 
 1. Assess test coverage gaps
 2. Review test quality and patterns
-3. Recommend testing approach
+3. Recommend testing approach (framework-aware)
 4. Identify flaky or slow tests
 
 ## Principles
@@ -32,6 +55,7 @@ category: quality
 - Test behavior, not implementation
 - Fast feedback is essential
 - Tests are specifications
+- Pyramid over ice cream cone
 
 ## Boundaries
 

@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 12 commands, 8 agents.
+Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents.
 
 ## Installation
 
@@ -26,34 +26,28 @@ Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 12 comman
 
 ## Commands
 
-### Spring Boot (Backend)
+### Framework-Specific Commands
 
-| Command          | Purpose             |
-| ---------------- | ------------------- |
-| `/spring-new`    | Create API endpoint |
-| `/spring-review` | Review API code     |
-| `/spring-secure` | Security review     |
-| `/spring-test`   | Test strategy       |
+| Command            | Purpose                     | Agent              |
+| ------------------ | --------------------------- | ------------------ |
+| `/spring-new`      | Create Spring Boot endpoint | `spring-architect` |
+| `/react-component` | Create React component      | `react-architect`  |
+| `/react-page`      | Create React page           | `react-architect`  |
 
-### React (Frontend)
+### Framework-Aware Commands (Auto-detect)
 
-| Command            | Purpose                |
-| ------------------ | ---------------------- |
-| `/react-component` | Create React component |
-| `/react-page`      | Create React page      |
-| `/react-review`    | Review React code      |
-| `/react-test`      | Test strategy          |
+| Command          | Purpose                     | Agent                  |
+| ---------------- | --------------------------- | ---------------------- |
+| `/code-review`   | Code review (any framework) | `tech-lead`            |
+| `/code-secure`   | Security review             | `security-engineer`    |
+| `/code-test`     | Test strategy               | `test-engineer`        |
+| `/code-refactor` | Refactoring plan            | `refactoring-expert`   |
+| `/perf-review`   | Performance review          | `performance-engineer` |
+| `/docs-generate` | Generate documentation      | `technical-writer`     |
 
-### General
+## Usage Examples
 
-| Command          | Purpose            |
-| ---------------- | ------------------ |
-| `/code-review`   | PR review          |
-| `/code-cleanup`  | Refactoring plan   |
-| `/docs-generate` | Generate docs      |
-| `/perf-review`   | Performance review |
-
-## Usage
+**Create Spring Boot endpoint:**
 
 ```
 /spring-new
@@ -62,10 +56,26 @@ Package: com.example.order
 Operations: CRUD with pagination
 ```
 
+**Create React component:**
+
 ```
 /react-component
 Name: OrderList
 Props: orders, onSelect
+```
+
+**Review code (auto-detects framework):**
+
+```
+/code-review
+[paste code or file path]
+```
+
+**Security review (works with any framework):**
+
+```
+/code-secure
+[paste code or file path]
 ```
 
 ## Agents

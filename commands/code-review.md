@@ -1,9 +1,9 @@
 ---
-description: General code review for pull requests
+description: Code review for pull requests (framework-aware)
 model: claude-sonnet-4-5
 ---
 
-Code review for pull requests and code changes.
+Code review for pull requests and code changes. Adapts to framework context.
 
 ## Code to Review
 
@@ -33,6 +33,29 @@ $ARGUMENTS
 
 - [ ] Appropriate coverage
 - [ ] Edge cases tested
+
+## Framework-Specific Checks
+
+**Java/Spring:**
+
+- [ ] Using Records for DTOs (not classes)
+- [ ] Pattern matching where applicable (Java 21+)
+- [ ] No `synchronized` blocks (Virtual Thread compatibility)
+- [ ] Constructor injection (not field `@Autowired`)
+
+**React/TypeScript:**
+
+- [ ] Props interfaces exported
+- [ ] Proper hooks dependencies
+- [ ] Accessibility (ARIA, semantic HTML)
+- [ ] Memoization only where beneficial
+
+**General (any language):**
+
+- [ ] Clear naming and structure
+- [ ] Error handling appropriate
+- [ ] Tests cover key scenarios
+- [ ] Documentation for complex logic
 
 ## Feedback Labels
 

@@ -14,21 +14,6 @@
       "description": "Create new Spring Boot API endpoint"
     },
     {
-      "name": "spring-review",
-      "path": "commands/spring-review.md",
-      "description": "Review Spring Boot API code"
-    },
-    {
-      "name": "spring-secure",
-      "path": "commands/spring-secure.md",
-      "description": "Security review for Spring Boot APIs"
-    },
-    {
-      "name": "spring-test",
-      "path": "commands/spring-test.md",
-      "description": "Test strategy for Spring Boot APIs"
-    },
-    {
       "name": "react-component",
       "path": "commands/react-component.md",
       "description": "Create new React component"
@@ -39,34 +24,34 @@
       "description": "Create new React page"
     },
     {
-      "name": "react-review",
-      "path": "commands/react-review.md",
-      "description": "Review React code"
-    },
-    {
-      "name": "react-test",
-      "path": "commands/react-test.md",
-      "description": "Test strategy for React"
-    },
-    {
       "name": "code-review",
       "path": "commands/code-review.md",
-      "description": "General code review"
+      "description": "Code review (framework-aware)"
     },
     {
-      "name": "code-cleanup",
-      "path": "commands/code-cleanup.md",
+      "name": "code-secure",
+      "path": "commands/code-secure.md",
+      "description": "Security review (framework-aware)"
+    },
+    {
+      "name": "code-test",
+      "path": "commands/code-test.md",
+      "description": "Test strategy (framework-aware)"
+    },
+    {
+      "name": "code-refactor",
+      "path": "commands/code-refactor.md",
       "description": "Refactoring plan"
+    },
+    {
+      "name": "perf-review",
+      "path": "commands/perf-review.md",
+      "description": "Performance review (framework-aware)"
     },
     {
       "name": "docs-generate",
       "path": "commands/docs-generate.md",
       "description": "Generate documentation"
-    },
-    {
-      "name": "perf-review",
-      "path": "commands/perf-review.md",
-      "description": "Performance review"
     }
   ],
   "agents": [
