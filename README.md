@@ -91,6 +91,15 @@ Props: orders, onSelect
 | `technical-writer`     | Documentation             |
 | `tech-lead`            | Code review (multi-lang)  |
 
+## Skills (Reusable Patterns)
+
+| Skill                 | Purpose                               | Used By                                |
+| --------------------- | ------------------------------------- | -------------------------------------- |
+| `virtual-thread-lock` | Virtual Thread-safe locking (Java 21) | spring-architect, performance-engineer |
+| `react-memoization`   | React performance optimization        | react-architect, performance-engineer  |
+
+Skills are reusable code patterns that agents reference to avoid duplication and ensure consistency.
+
 ## License
 
 MIT

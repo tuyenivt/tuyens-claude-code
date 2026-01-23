@@ -96,6 +96,18 @@
       "description": "Code review and mentoring"
     }
   ],
+  "skills": [
+    {
+      "name": "virtual-thread-lock",
+      "path": "skills/virtual-thread-lock.md",
+      "description": "Virtual Thread-safe locking pattern for Java 21+"
+    },
+    {
+      "name": "react-memoization",
+      "path": "skills/react-memoization.md",
+      "description": "React performance optimization with useMemo and useCallback"
+    }
+  ],
   "tags": [
     "java",
     "java-21",

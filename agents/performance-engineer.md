@@ -54,29 +54,15 @@ Adapt performance review based on code context:
 - [ ] Clean up effects (`useEffect` return function)
 - [ ] Avoid inline function/object creation in render
 
-## Example Patterns
+## Key Skills
 
-**Backend (Virtual Thread Safe):**
+**Backend Optimization:**
 
-```java
-// BAD - Pins virtual thread
-synchronized (lock) { /* ... */ }
+- Use skill: `virtual-thread-lock` for concurrency patterns
 
-// GOOD - Virtual thread friendly
-private final ReentrantLock lock = new ReentrantLock();
-lock.lock();
-try { /* ... */ } finally { lock.unlock(); }
-```
+**Frontend Optimization:**
 
-**Frontend (React Optimization):**
-
-```tsx
-// Memoize expensive computations
-const expensiveValue = useMemo(() => compute(data), [data]);
-
-// Code splitting
-const Heavy = lazy(() => import("./Heavy"));
-```
+- Use skill: `react-memoization` for rendering optimization
 
 ## Principle
 

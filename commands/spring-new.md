@@ -42,8 +42,7 @@ public class ResourceController {
 public class ResourceService {
     private final ResourceRepository repository;
 
-    // Use ReentrantLock instead of synchronized for Virtual Threads
-    private final ReentrantLock lock = new ReentrantLock();
+    // For thread-safety, use skill: virtual-thread-lock
 }
 
 // Java 21+ Records for DTOs
@@ -61,16 +60,12 @@ public record ResourceResponse(
 
 ## Virtual Threads Considerations
 
-```yaml
-# application.yml - Enable virtual threads
-spring:
-  threads:
-    virtual:
-      enabled: true
-```
+For Virtual Thread-safe locking patterns, use skill: `virtual-thread-lock`
 
-- Avoid `synchronized` blocks (use `ReentrantLock` instead)
-- Configure connection pool size appropriately (10-40 connections)
+Key points:
+
+- Enable in `application.yml`: `spring.threads.virtual.enabled: true`
+- Connection pool: 10-40 connections (not 100+)
 - Virtual threads excel at I/O-bound operations
 
 ## Checklist

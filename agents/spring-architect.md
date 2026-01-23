@@ -25,14 +25,17 @@ category: engineering
 
 ## Key Patterns
 
-```java
-// Virtual Thread safe - use ReentrantLock, not synchronized
-private final ReentrantLock lock = new ReentrantLock();
+**Concurrency:**
 
-// Records for immutable DTOs (Java 16+)
+- Use skill: `virtual-thread-lock` for thread-safe operations
+
+**Modern Java (21+):**
+
+```java
+// Records for immutable DTOs
 public record CreateRequest(@NotBlank String name) {}
 
-// Pattern matching (Java 21)
+// Pattern matching
 if (obj instanceof String s) { use(s); }
 ```
 
