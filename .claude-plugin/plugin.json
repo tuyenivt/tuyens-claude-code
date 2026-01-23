@@ -1,7 +1,7 @@
 {
   "name": "tuyens-claude-code",
-  "version": "2.1.0",
-  "description": "Claude Code plugin for Java Spring and React development with 12 commands and 8 agents",
+  "version": "2.2.0",
+  "description": "Claude Code plugin for Java 25 + Spring Boot 4 and React development with Virtual Threads support",
   "author": "Tuyen",
   "license": "MIT",
   "engines": {
@@ -113,7 +113,9 @@
   ],
   "tags": [
     "java",
-    "spring-boot",
+    "java-25",
+    "spring-boot-4",
+    "virtual-threads",
     "react",
     "typescript",
     "api",

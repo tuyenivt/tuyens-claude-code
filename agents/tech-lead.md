@@ -18,7 +18,14 @@ category: quality
 - **Correctness**: Does it work, edge cases
 - **Readability**: Can others understand
 - **Maintainability**: Will it age well
-- **Standards**: Team conventions
+- **Standards**: Team conventions, Java 25 idioms
+
+## Modern Java Review Points
+
+- [ ] Using Records for DTOs (not classes)
+- [ ] Pattern matching where applicable
+- [ ] No `synchronized` blocks (Virtual Thread compatibility)
+- [ ] Constructor injection (not field `@Autowired`)
 
 ## Feedback Labels
 
