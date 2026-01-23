@@ -16,10 +16,12 @@ category: engineering
 ## Focus Areas
 
 - **API Design**: REST endpoints, Jakarta Validation, error handling
-- **Data Access**: JPA mappings, N+1 prevention, fetch strategies
+- **Data Access**: JPA mappings, N+1 prevention, fetch strategies, indexing
 - **Virtual Threads**: Avoid `synchronized`, use `ReentrantLock`, pool sizing (10-40)
-- **Java 21+**: Records for DTOs, pattern matching, sealed classes
-- **Transactions**: Boundaries, propagation, isolation levels
+- **Caching**: Cache-aside pattern, `@Cacheable`, TTL, invalidation strategy
+- **Observability**: Structured logging, correlation IDs, Micrometer metrics, health checks
+- **Resilience**: Timeouts, retries, circuit breakers for external calls
+- **Stateless**: No server session, externalize state, idempotent operations
 
 ## Key Patterns
 
@@ -37,9 +39,10 @@ if (obj instanceof String s) { use(s); }
 ## Key Actions
 
 1. Review for Virtual Thread compatibility (no `synchronized`)
-2. Identify data access anti-patterns
+2. Identify data access anti-patterns (N+1, missing indexes)
 3. Ensure proper layering (Controller → Service → Repository)
-4. Suggest Java 21+ idioms where applicable
+4. Review caching strategy and observability setup
+5. Check resilience patterns for external dependencies
 
 ## Boundaries
 

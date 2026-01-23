@@ -17,30 +17,44 @@ $ARGUMENTS
 - [ ] Connection pool sized for virtual threads (10-40)
 - [ ] `spring.threads.virtual.enabled=true` configured
 
-### Database
-- [ ] N+1 queries
-- [ ] Missing indexes
-- [ ] Over-fetching
-- [ ] No pagination
+### Database Performance
+- [ ] N+1 queries (use `@EntityGraph` or `JOIN FETCH`)
+- [ ] Missing indexes on WHERE/ORDER BY columns
+- [ ] Over-fetching (select only needed columns)
+- [ ] No pagination for large datasets
+- [ ] Connection pool sizing (HikariCP defaults)
+- [ ] Query timeout configured
+- [ ] Batch operations for bulk inserts/updates
 
-### Memory
+### Caching Strategy
+- [ ] Cache-aside pattern for read-heavy data
+- [ ] Cache invalidation strategy defined
+- [ ] TTL configured appropriately
+- [ ] Cache key design (avoid collisions)
+- [ ] Local cache vs distributed cache decision
+- [ ] `@Cacheable` on appropriate service methods
+
+### Stateless Design
+- [ ] No server-side session state (use JWT/tokens)
+- [ ] Externalized session if needed (Redis)
+- [ ] No static mutable state
+- [ ] Idempotent operations where possible
+
+### Observability (Code-level)
+- [ ] Structured logging (JSON format)
+- [ ] Correlation ID propagation
+- [ ] Key operation logging (entry/exit/errors)
+- [ ] Micrometer metrics for custom operations
+- [ ] `@Timed` on critical methods
+- [ ] Health indicators for dependencies
+
+### Memory & I/O
 - [ ] Large objects in loops
-- [ ] String concat in loops
-- [ ] Unbounded caches
-- [ ] Memory leaks
-
-### GC Tuning
-- [ ] G1 vs ZGC for workload
-- [ ] Appropriate heap sizing
-
-### Startup
-- [ ] Class Data Sharing (CDS) enabled
-- [ ] Lazy initialization where appropriate
-
-### I/O
-- [ ] Blocking operations on virtual threads (OK)
-- [ ] Timeouts configured
-- [ ] Large files streaming (not in memory)
+- [ ] String concat in loops (use StringBuilder)
+- [ ] Unbounded caches/collections
+- [ ] Streaming for large files (not in memory)
+- [ ] Timeouts on external calls
+- [ ] Circuit breaker for external services
 
 ## Frontend (React)
 
@@ -76,8 +90,14 @@ $ARGUMENTS
 - **Issue:** [description]
 - **Impact:** [expected improvement]
 
-## Virtual Thread Compatibility
-[Thread pinning issues, synchronized blocks]
+## Database Issues
+[N+1, missing indexes, connection pool]
+
+## Caching Opportunities
+[What to cache, invalidation strategy]
+
+## Observability Gaps
+[Missing logging, metrics, correlation IDs]
 
 ## Measurements Needed
 | Issue | How to Measure |

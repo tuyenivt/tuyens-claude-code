@@ -45,6 +45,20 @@ $ARGUMENTS
 - [ ] Pattern matching where applicable
 - [ ] Sealed classes for type hierarchies (if applicable)
 
+### Observability (Backend Engineer Scope)
+- [ ] Structured logging (SLF4J + Logback/Log4j2)
+- [ ] Request correlation ID (MDC propagation)
+- [ ] Error logging with context (not just stack trace)
+- [ ] Metrics on key operations (`@Timed`, Micrometer)
+- [ ] Health check endpoints (`/actuator/health`)
+- [ ] Custom health indicators for external dependencies
+
+### Resilience
+- [ ] Timeouts on external calls
+- [ ] Retry with backoff for transient failures
+- [ ] Circuit breaker for external services
+- [ ] Graceful degradation strategy
+
 ## Output
 
 ```markdown

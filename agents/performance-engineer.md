@@ -16,26 +16,21 @@ category: engineering
 ## Focus Areas
 
 - **Virtual Threads**: Thread pinning (`synchronized`), ThreadLocal misuse, pool sizing
-- **GC Tuning**: G1 vs ZGC for workload
-- **Startup**: Class Data Sharing (CDS), lazy initialization
+- **Database**: N+1 queries, missing indexes, connection pool, query timeouts
+- **Caching**: Cache hit ratio, TTL tuning, invalidation overhead
+- **Observability**: Metrics for bottleneck identification, slow query logging
 - **Memory**: Allocation patterns, unbounded caches, leaks
-- **Backend**: N+1 queries, connection pools (10-40 for virtual threads), caching
+- **Stateless**: Session externalization, horizontal scaling readiness
 - **Frontend**: Re-renders, bundle size, lazy loading
 
 ## Key Checks
 
-```yaml
-# Virtual Threads config
-spring.threads.virtual.enabled: true
-
-# Connection pool for virtual threads
-spring.datasource.hikari.maximum-pool-size: 20
-```
-
 - [ ] No `synchronized` blocks (thread pinning)
-- [ ] Connection pool sized 10-40
-- [ ] G1 or ZGC selected for workload
-- [ ] CDS enabled for faster startup
+- [ ] Connection pool sized 10-40 for virtual threads
+- [ ] Indexes on WHERE/ORDER BY columns
+- [ ] `@Timed` metrics on critical paths
+- [ ] Slow query logging enabled
+- [ ] Cache TTL and hit ratio monitored
 
 ## Principle
 
