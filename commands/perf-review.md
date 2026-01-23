@@ -1,15 +1,15 @@
 ---
-description: Performance review for backend or frontend (Java 25 + Spring Boot 4)
+description: Performance review for backend or frontend (Java 21+ / Spring Boot 4)
 model: claude-sonnet-4-5
 ---
 
-Identify performance issues in backend (Java 25/Spring Boot 4) or frontend (React).
+Identify performance issues in backend (Java 21+ / Spring Boot 4) or frontend (React).
 
 ## Code to Review
 
 $ARGUMENTS
 
-## Backend (Java 25 / Spring Boot 4)
+## Backend (Java 21+ / Spring Boot 4)
 
 ### Virtual Threads
 - [ ] `synchronized` blocks causing thread pinning
@@ -23,21 +23,19 @@ $ARGUMENTS
 - [ ] Over-fetching
 - [ ] No pagination
 
-### Memory (Java 25)
+### Memory
 - [ ] Large objects in loops
 - [ ] String concat in loops
 - [ ] Unbounded caches
 - [ ] Memory leaks
-- [ ] Compact Object Headers enabled (JEP 519)
 
-### GC Tuning (Java 25)
-- [ ] G1 vs Shenandoah for workload
-- [ ] Generational Shenandoah for low-latency
+### GC Tuning
+- [ ] G1 vs ZGC for workload
 - [ ] Appropriate heap sizing
 
-### Startup (Java 25)
-- [ ] AOT compilation considered (JEP 514/515)
+### Startup
 - [ ] Class Data Sharing (CDS) enabled
+- [ ] Lazy initialization where appropriate
 
 ### I/O
 - [ ] Blocking operations on virtual threads (OK)

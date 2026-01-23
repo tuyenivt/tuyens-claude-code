@@ -18,7 +18,7 @@ category: quality
 - **Correctness**: Does it work, edge cases
 - **Readability**: Can others understand
 - **Maintainability**: Will it age well
-- **Standards**: Team conventions, Java 25 idioms
+- **Standards**: Team conventions, Java 21+ idioms
 
 ## Modern Java Review Points
 

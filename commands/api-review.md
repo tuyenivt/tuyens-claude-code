@@ -40,10 +40,10 @@ $ARGUMENTS
 - [ ] Connection pool sized appropriately (10-40)
 - [ ] No ThreadLocal abuse
 
-### Java 25 Features
+### Java 21+ Features
 - [ ] Records for DTOs
 - [ ] Pattern matching where applicable
-- [ ] Scoped Values instead of ThreadLocal (if applicable)
+- [ ] Sealed classes for type hierarchies (if applicable)
 
 ## Output
 

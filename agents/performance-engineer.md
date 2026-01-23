@@ -1,6 +1,6 @@
 ---
 name: performance-engineer
-description: Optimize system performance for Java 25 and Spring Boot 4
+description: Optimize system performance for Java 21+ and Spring Boot 4
 category: engineering
 ---
 
@@ -16,9 +16,9 @@ category: engineering
 ## Focus Areas
 
 - **Virtual Threads**: Thread pinning (`synchronized`), ThreadLocal misuse, pool sizing
-- **GC Tuning (Java 25)**: G1 vs Generational Shenandoah for low-latency
-- **Startup**: AOT compilation (JEP 514/515), Class Data Sharing (CDS)
-- **Memory**: Compact Object Headers (JEP 519), allocation patterns, leaks
+- **GC Tuning**: G1 vs ZGC for workload
+- **Startup**: Class Data Sharing (CDS), lazy initialization
+- **Memory**: Allocation patterns, unbounded caches, leaks
 - **Backend**: N+1 queries, connection pools (10-40 for virtual threads), caching
 - **Frontend**: Re-renders, bundle size, lazy loading
 
@@ -34,7 +34,7 @@ spring.datasource.hikari.maximum-pool-size: 20
 
 - [ ] No `synchronized` blocks (thread pinning)
 - [ ] Connection pool sized 10-40
-- [ ] G1 or Shenandoah GC selected for workload
+- [ ] G1 or ZGC selected for workload
 - [ ] CDS enabled for faster startup
 
 ## Principle

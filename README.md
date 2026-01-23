@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 25 + Spring Boot 4 and React development. 12 commands, 8 agents.
+Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 12 commands, 8 agents.
 
 ## Installation
 
@@ -15,13 +15,13 @@ Claude Code plugin for Java 25 + Spring Boot 4 and React development. 12 command
 ## Requirements
 
 - Claude Code >= 2.0.0
-- Backend: Java 21+ (optimized for Java 25), Spring Boot 4, JPA, Gradle
+- Backend: Java 21+, Spring Boot 4, JPA, Gradle
 - Frontend: React, TypeScript
 
 ## Key Features
 
 - **Virtual Threads**: All commands enforce Virtual Thread compatibility (no `synchronized`)
-- **Java 25 Patterns**: Records for DTOs, pattern matching, Scoped Values
+- **Java 21+ Patterns**: Records for DTOs, pattern matching, sealed classes
 - **Spring Boot 4**: Jakarta EE 11, optimized connection pools (10-40)
 
 ## Commands

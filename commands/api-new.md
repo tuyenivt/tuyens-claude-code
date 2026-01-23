@@ -11,7 +11,7 @@ $ARGUMENTS
 
 ## Implementation
 
-Generate complete, production-ready code for Spring Boot 4 / Java 25:
+Generate complete, production-ready code for Spring Boot 4 / Java 21+:
 
 1. **Controller** - REST endpoints with `@Valid`, proper status codes
 2. **Service** - Business logic with `@Transactional`
@@ -19,7 +19,7 @@ Generate complete, production-ready code for Spring Boot 4 / Java 25:
 4. **DTOs** - Request/Response records with validation
 5. **Entity** - JPA entity if needed
 
-## Modern Patterns (Java 25 + Spring Boot 4)
+## Modern Patterns (Java 21+ / Spring Boot 4)
 
 ```java
 @RestController

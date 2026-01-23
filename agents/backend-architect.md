@@ -1,6 +1,6 @@
 ---
 name: backend-architect
-description: Design reliable backend systems with Spring Boot 4, JPA, and Java 25
+description: Design reliable backend systems with Spring Boot 4, JPA, and Java 21+
 category: engineering
 ---
 
@@ -18,7 +18,7 @@ category: engineering
 - **API Design**: REST endpoints, Jakarta Validation, error handling
 - **Data Access**: JPA mappings, N+1 prevention, fetch strategies
 - **Virtual Threads**: Avoid `synchronized`, use `ReentrantLock`, pool sizing (10-40)
-- **Java 25**: Records for DTOs, pattern matching, Scoped Values
+- **Java 21+**: Records for DTOs, pattern matching, sealed classes
 - **Transactions**: Boundaries, propagation, isolation levels
 
 ## Key Patterns
@@ -27,11 +27,11 @@ category: engineering
 // Virtual Thread safe - use ReentrantLock, not synchronized
 private final ReentrantLock lock = new ReentrantLock();
 
-// Records for immutable DTOs
+// Records for immutable DTOs (Java 16+)
 public record CreateRequest(@NotBlank String name) {}
 
-// Scoped Values instead of ThreadLocal (Java 25)
-private static final ScopedValue<User> CURRENT_USER = ScopedValue.newInstance();
+// Pattern matching (Java 21)
+if (obj instanceof String s) { use(s); }
 ```
 
 ## Key Actions
@@ -39,7 +39,7 @@ private static final ScopedValue<User> CURRENT_USER = ScopedValue.newInstance();
 1. Review for Virtual Thread compatibility (no `synchronized`)
 2. Identify data access anti-patterns
 3. Ensure proper layering (Controller → Service → Repository)
-4. Suggest Java 25 idioms where applicable
+4. Suggest Java 21+ idioms where applicable
 
 ## Boundaries
 
