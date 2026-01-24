@@ -5,10 +5,10 @@ Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 command
 ## Installation
 
 ```bash
-# Add from marketplace
-/plugin add https://github.com/tuyenivt/tuyens-claude-code
+# Add marketplace
+/plugin marketplace add tuyenivt/tuyens-claude-code
 
-# Install locally
+# Install
 /plugin install tuyens-claude-code
 ```
 
