@@ -23,11 +23,26 @@ category: engineering
 - **Resilience**: Timeouts, retries, circuit breakers for external calls
 - **Stateless**: No server session, externalize state, idempotent operations
 
-## Key Patterns
+## Key Skills
 
-**Concurrency:**
+**API & Data Access:**
+
+- Use skill: `spring-api` for REST endpoint design and HTTP best practices
+- Use skill: `jpa-performance` for query optimization and N+1 prevention
+- Use skill: `exception-handling` for centralized error handling
+- Use skill: `transaction` for transaction management patterns
+
+**Performance & Resilience:**
 
 - Use skill: `virtual-thread-lock` for thread-safe operations
+- Use skill: `caching` for cache strategy and TTL configuration
+- Use skill: `observability` for structured logging and metrics
+- Use skill: `resiliency` for timeouts, retries, and circuit breakers
+
+**Integration:**
+
+- Use skill: `idempotency` for stateless operation design
+- Use skill: `rest-integration` for external API communication
 
 **Modern Java (21+):**
 

@@ -50,6 +50,14 @@ export default async function Page({ params }: { params: { id: string } }) {
 }
 ```
 
+## Key Skills Reference
+
+For detailed patterns, reference these skills:
+
+- Use skill: `react-component-design` for page structure and composition
+- Use skill: `react-state-management` for data fetching and state organization
+- Use skill: `payload-optimization` for code splitting and lazy loading
+
 ## Checklist
 
 - Loading states with skeletons

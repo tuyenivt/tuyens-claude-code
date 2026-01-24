@@ -57,6 +57,22 @@ $ARGUMENTS
 - [ ] Tests cover key scenarios
 - [ ] Documentation for complex logic
 
+## Key Skills Reference
+
+When providing detailed feedback, reference these skills:
+
+**Backend:**
+
+- `spring-api`, `virtual-thread-lock`, `jpa-performance`, `exception-handling`, `transaction`
+
+**Frontend:**
+
+- `react-component-design`, `react-state-management`, `react-memoization`
+
+**Cross-cutting:**
+
+- `coding-standards`, `api-guidelines`, `observability`, `resiliency`
+
 ## Feedback Labels
 
 | Label        | Meaning       | Required |

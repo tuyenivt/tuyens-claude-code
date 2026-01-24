@@ -58,11 +58,17 @@ public record ResourceResponse(
 ) {}
 ```
 
-## Virtual Threads Considerations
+## Key Skills Reference
 
-For Virtual Thread-safe locking patterns, use skill: `virtual-thread-lock`
+For detailed patterns, reference these skills:
 
-Key points:
+- Use skill: `spring-api` for REST API design principles
+- Use skill: `virtual-thread-lock` for Virtual Thread-safe locking patterns
+- Use skill: `jpa-performance` for optimal data access patterns
+- Use skill: `exception-handling` for centralized error handling
+- Use skill: `transaction` for transaction management
+
+**Virtual Threads Configuration:**
 
 - Enable in `application.yml`: `spring.threads.virtual.enabled: true`
 - Connection pool: 10-40 connections (not 100+)

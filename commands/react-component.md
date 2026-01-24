@@ -40,6 +40,14 @@ export const Component: FC<ComponentProps> = ({ title, onClick, children }) => {
 };
 ```
 
+## Key Skills Reference
+
+For detailed patterns, reference these skills:
+
+- Use skill: `react-component-design` for composition patterns and props design
+- Use skill: `react-state-management` for managing component state
+- Use skill: `react-memoization` for optimization (only when beneficial)
+
 ## Checklist
 
 - TypeScript strict mode compatible

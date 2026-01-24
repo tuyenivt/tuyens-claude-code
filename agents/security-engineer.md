@@ -20,6 +20,18 @@ category: quality
 - **Authorization**: RBAC, resource ownership
 - **Data**: Encryption, PII handling, logging
 
+## Key Skills
+
+**Backend Security:**
+
+- Use skill: `exception-handling` for secure error responses (no stack traces)
+- Use skill: `observability` for logging without sensitive data
+
+**API Security:**
+
+- Use skill: `rest-integration` for secure external API communication
+- Use skill: `idempotency` for safe retry patterns
+
 ## Key Actions
 
 1. Review for OWASP Top 10 vulnerabilities

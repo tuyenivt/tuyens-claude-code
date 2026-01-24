@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents.
+Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents, 18 skills.
 
 ## Installation
 
@@ -93,12 +93,62 @@ Props: orders, onSelect
 
 ## Skills (Reusable Patterns)
 
-| Skill                 | Purpose                               | Used By                                |
-| --------------------- | ------------------------------------- | -------------------------------------- |
-| `virtual-thread-lock` | Virtual Thread-safe locking (Java 21) | spring-architect, performance-engineer |
-| `react-memoization`   | React performance optimization        | react-architect, performance-engineer  |
+18 skills organized by category provide focused, reusable patterns that agents and commands reference.
 
-Skills are reusable code patterns that agents reference to avoid duplication and ensure consistency.
+### Backend (6)
+
+| Skill                 | Purpose                             |
+| --------------------- | ----------------------------------- |
+| `async-processing`    | Async processing with Spring @Async |
+| `exception-handling`  | Centralized exception handling      |
+| `jpa-performance`     | JPA optimization and N+1 prevention |
+| `spring-api`          | REST API best practices             |
+| `transaction`         | Transaction management              |
+| `virtual-thread-lock` | Virtual Thread-safe locking         |
+
+### Frontend (3)
+
+| Skill                    | Purpose                          |
+| ------------------------ | -------------------------------- |
+| `react-component-design` | Component composition and SRP    |
+| `react-memoization`      | useMemo and useCallback patterns |
+| `react-state-management` | State scope and ownership        |
+
+### Performance (3)
+
+| Skill                  | Purpose                         |
+| ---------------------- | ------------------------------- |
+| `caching`              | Cache strategy and invalidation |
+| `db-indexing`          | Database indexing strategy      |
+| `payload-optimization` | API response optimization       |
+
+### Ops (2)
+
+| Skill           | Purpose                         |
+| --------------- | ------------------------------- |
+| `observability` | Logging, metrics, tracing       |
+| `resiliency`    | Timeout, retry, circuit breaker |
+
+### Integration (2)
+
+| Skill              | Purpose              |
+| ------------------ | -------------------- |
+| `idempotency`      | Idempotency patterns |
+| `rest-integration` | REST client patterns |
+
+### Governance (2)
+
+| Skill              | Purpose                   |
+| ------------------ | ------------------------- |
+| `api-guidelines`   | API consistency standards |
+| `coding-standards` | Code style and structure  |
+
+**Benefits:**
+
+- Single source of truth for patterns
+- 86% reduction in duplicated content (~3,700 tokens saved)
+- Easy maintenance (update once, affects all)
+- Clear separation: agents/commands provide guidance, skills provide implementation patterns
 
 ## License
 

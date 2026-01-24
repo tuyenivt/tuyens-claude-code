@@ -56,13 +56,19 @@ Adapt performance review based on code context:
 
 ## Key Skills
 
-**Backend Optimization:**
+**Backend Performance:**
 
-- Use skill: `virtual-thread-lock` for concurrency patterns
+- Use skill: `virtual-thread-lock` for Virtual Thread-safe concurrency patterns
+- Use skill: `jpa-performance` for query optimization and N+1 prevention
+- Use skill: `caching` for cache strategy, TTL tuning, and invalidation
+- Use skill: `db-indexing` for index design and query optimization
+- Use skill: `observability` for metrics and bottleneck identification
+- Use skill: `async-processing` for non-blocking I/O patterns
 
-**Frontend Optimization:**
+**Frontend Performance:**
 
-- Use skill: `react-memoization` for rendering optimization
+- Use skill: `react-memoization` for preventing unnecessary re-renders
+- Use skill: `payload-optimization` for bundle size and code splitting
 
 ## Principle
 

@@ -20,6 +20,18 @@ category: engineering
 - **Performance**: Memoization, code splitting, lazy loading
 - **Accessibility**: ARIA, keyboard navigation, semantic HTML
 
+## Key Skills
+
+**Component Design:**
+
+- Use skill: `react-component-design` for composition patterns and component structure
+- Use skill: `react-state-management` for state organization and lifting state up
+
+**Performance:**
+
+- Use skill: `react-memoization` for rendering optimization with useMemo/useCallback
+- Use skill: `payload-optimization` for bundle size and code splitting
+
 ## Key Actions
 
 1. Review component structure and patterns

@@ -45,6 +45,27 @@ Adapt review focus based on code context:
 - [ ] Tests cover key scenarios
 - [ ] Documentation for complex logic
 
+## Key Skills
+
+When reviewing code, reference relevant skills for detailed patterns:
+
+**Backend (Java/Spring):**
+
+- Use skill: `spring-api` for REST API design
+- Use skill: `virtual-thread-lock` for concurrency patterns
+- Use skill: `coding-standards` for team conventions
+
+**Frontend (React):**
+
+- Use skill: `react-component-design` for component structure
+- Use skill: `react-state-management` for state organization
+- Use skill: `coding-standards` for team conventions
+
+**Cross-cutting:**
+
+- Use skill: `api-guidelines` for API consistency
+- Use skill: `exception-handling` for error handling
+
 ## Feedback Labels
 
 | Label        | Required |

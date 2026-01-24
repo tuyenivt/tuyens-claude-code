@@ -30,36 +30,16 @@ category: engineering
 - [ ] Clean up effects (`useEffect` return function)
 - [ ] Avoid inline function/object creation in render
 
-## Optimization Patterns
+## Key Skills
 
-```tsx
-// Memoize expensive computations
-const expensiveValue = useMemo(() => {
-  return computeExpensiveValue(data);
-}, [data]);
+**Rendering Performance:**
 
-// Memoize callbacks to prevent child re-renders
-const handleClick = useCallback(() => {
-  doSomething(id);
-}, [id]);
+- Use skill: `react-memoization` for useMemo/useCallback patterns and preventing re-renders
+- Use skill: `react-component-design` for component structure to minimize re-renders
 
-// Code splitting
-const HeavyComponent = lazy(() => import("./HeavyComponent"));
+**Bundle & Network:**
 
-// Virtual scrolling for large lists
-import { FixedSizeList } from "react-window";
-```
-
-## Bundle Optimization
-
-```tsx
-// Route-based code splitting
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Settings = lazy(() => import("./pages/Settings"));
-
-// Dynamic imports for heavy libraries
-const loadChartLibrary = () => import("chart.js");
-```
+- Use skill: `payload-optimization` for code splitting, lazy loading, and tree shaking
 
 ## Principle
 

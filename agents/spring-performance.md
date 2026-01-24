@@ -31,34 +31,22 @@ category: engineering
 - [ ] Slow query logging enabled
 - [ ] Cache TTL and hit ratio monitored
 
-## Virtual Thread Optimization
+## Key Skills
 
-```java
-// BAD - Pins virtual thread
-synchronized (lock) {
-    // critical section
-}
+**Concurrency & Threading:**
 
-// GOOD - Virtual thread friendly
-private final ReentrantLock lock = new ReentrantLock();
-lock.lock();
-try {
-    // critical section
-} finally {
-    lock.unlock();
-}
-```
+- Use skill: `virtual-thread-lock` for Virtual Thread-safe locking patterns
+- Use skill: `async-processing` for non-blocking I/O operations
 
-## Database Performance
+**Data Access:**
 
-```java
-// N+1 problem - fetch eagerly
-@Query("SELECT u FROM User u LEFT JOIN FETCH u.orders WHERE u.id = :id")
-Optional<User> findByIdWithOrders(@Param("id") Long id);
+- Use skill: `jpa-performance` for N+1 prevention and query optimization
+- Use skill: `db-indexing` for index design on WHERE/ORDER BY columns
 
-// Add index for frequently queried columns
-@Table(indexes = @Index(columnList = "email"))
-```
+**Resilience & Observability:**
+
+- Use skill: `caching` for cache TTL tuning and hit ratio monitoring
+- Use skill: `observability` for metrics on critical paths and slow query logging
 
 ## Principle
 

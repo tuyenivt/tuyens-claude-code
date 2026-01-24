@@ -98,14 +98,94 @@
   ],
   "skills": [
     {
+      "name": "async-processing",
+      "path": "skills/backend/async-processing.md",
+      "description": "Async processing with Spring @Async"
+    },
+    {
+      "name": "exception-handling",
+      "path": "skills/backend/exception-handling.md",
+      "description": "Centralized exception handling with @RestControllerAdvice"
+    },
+    {
+      "name": "jpa-performance",
+      "path": "skills/backend/jpa-performance.md",
+      "description": "JPA query optimization and N+1 prevention"
+    },
+    {
+      "name": "spring-api",
+      "path": "skills/backend/spring-api.md",
+      "description": "Spring REST API best practices"
+    },
+    {
+      "name": "transaction",
+      "path": "skills/backend/transaction.md",
+      "description": "Transaction management with Spring @Transactional"
+    },
+    {
       "name": "virtual-thread-lock",
-      "path": "skills/virtual-thread-lock.md",
-      "description": "Virtual Thread-safe locking pattern for Java 21+"
+      "path": "skills/backend/virtual-thread-lock.md",
+      "description": "Virtual Thread-safe locking for Java 21+"
+    },
+    {
+      "name": "react-component-design",
+      "path": "skills/frontend/react-component-design.md",
+      "description": "React component composition and single responsibility"
     },
     {
       "name": "react-memoization",
-      "path": "skills/react-memoization.md",
-      "description": "React performance optimization with useMemo and useCallback"
+      "path": "skills/frontend/react-memoization.md",
+      "description": "React performance with useMemo and useCallback"
+    },
+    {
+      "name": "react-state-management",
+      "path": "skills/frontend/react-state-management.md",
+      "description": "React state scope and ownership"
+    },
+    {
+      "name": "caching",
+      "path": "skills/performance/caching.md",
+      "description": "Caching strategy and invalidation"
+    },
+    {
+      "name": "db-indexing",
+      "path": "skills/performance/db-indexing.md",
+      "description": "Database indexing strategy"
+    },
+    {
+      "name": "payload-optimization",
+      "path": "skills/performance/payload-optimization.md",
+      "description": "API payload and response optimization"
+    },
+    {
+      "name": "observability",
+      "path": "skills/ops/observability.md",
+      "description": "Logging, metrics, and tracing"
+    },
+    {
+      "name": "resiliency",
+      "path": "skills/ops/resiliency.md",
+      "description": "Timeout, retry, and circuit breaker patterns"
+    },
+    {
+      "name": "idempotency",
+      "path": "skills/integration/idempotency.md",
+      "description": "Idempotency patterns for APIs"
+    },
+    {
+      "name": "rest-integration",
+      "path": "skills/integration/rest-integration.md",
+      "description": "REST client integration patterns"
+    },
+    {
+      "name": "api-guidelines",
+      "path": "skills/governance/api-guidelines.md",
+      "description": "API design consistency and standards"
+    },
+    {
+      "name": "coding-standards",
+      "path": "skills/governance/coding-standards.md",
+      "description": "Code style and structure standards"
     }
   ],
   "tags": [
