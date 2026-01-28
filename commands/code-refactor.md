@@ -1,6 +1,6 @@
 ---
 description: Refactoring plan with risk assessment
-model: claude-sonnet-4-5
+model: claude-opus-4-5
 ---
 
 Create a safe, incremental refactoring plan.

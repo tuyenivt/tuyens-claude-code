@@ -1,6 +1,6 @@
 ---
 description: Create new Spring Boot 4 API endpoint with controller, service, repository
-model: claude-sonnet-4-5
+model: claude-opus-4-5
 ---
 
 Create a new Spring Boot 4 REST API endpoint following modern best practices.

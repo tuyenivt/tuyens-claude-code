@@ -1,6 +1,6 @@
 ---
 description: Create new React page with routing and data fetching
-model: claude-sonnet-4-5
+model: claude-opus-4-5
 ---
 
 Create a new React page with routing, data fetching, and layout.
