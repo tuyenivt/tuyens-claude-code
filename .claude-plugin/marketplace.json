@@ -10,12 +10,20 @@
       "name": "tuyens-claude-code",
       "source": "./",
       "description": "12 commands and 8 agents for Java Spring and React development",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "author": {
         "name": "Tuyen",
         "url": "https://github.com/tuyenivt"
       },
-      "tags": ["java", "spring-boot", "react", "typescript", "api", "development", "review"]
+      "tags": [
+        "java",
+        "spring-boot",
+        "react",
+        "typescript",
+        "api",
+        "development",
+        "review"
+      ]
     }
   ]
 }
