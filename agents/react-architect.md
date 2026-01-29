@@ -32,6 +32,10 @@ category: engineering
 - Use skill: `react-memoization` for rendering optimization with useMemo/useCallback
 - Use skill: `payload-optimization` for bundle size and code splitting
 
+**Real-time:**
+
+- Use skill: `websocket-react` for WebSocket hooks and STOMP client integration
+
 ## Key Actions
 
 1. Review component structure and patterns

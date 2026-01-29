@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents, 18 skills.
+Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents, 20 skills.
 
 ## Installation
 
@@ -93,9 +93,9 @@ Props: orders, onSelect
 
 ## Skills (Reusable Patterns)
 
-18 skills organized by category provide focused, reusable patterns that agents and commands reference.
+20 skills organized by category provide focused, reusable patterns that agents and commands reference.
 
-### Backend (6)
+### Backend (7)
 
 | Skill                 | Purpose                             |
 | --------------------- | ----------------------------------- |
@@ -105,14 +105,16 @@ Props: orders, onSelect
 | `spring-api`          | REST API best practices             |
 | `transaction`         | Transaction management              |
 | `virtual-thread-lock` | Virtual Thread-safe locking         |
+| `websocket-spring`    | WebSocket and STOMP messaging       |
 
-### Frontend (3)
+### Frontend (4)
 
 | Skill                    | Purpose                          |
 | ------------------------ | -------------------------------- |
 | `react-component-design` | Component composition and SRP    |
 | `react-memoization`      | useMemo and useCallback patterns |
 | `react-state-management` | State scope and ownership        |
+| `websocket-react`        | WebSocket hooks and STOMP client |
 
 ### Performance (3)
 

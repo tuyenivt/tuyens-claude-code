@@ -39,10 +39,11 @@ category: engineering
 - Use skill: `observability` for structured logging and metrics
 - Use skill: `resiliency` for timeouts, retries, and circuit breakers
 
-**Integration:**
+**Integration & Real-time:**
 
 - Use skill: `idempotency` for stateless operation design
 - Use skill: `rest-integration` for external API communication
+- Use skill: `websocket-spring` for WebSocket and STOMP messaging
 
 **Modern Java (21+):**
 
