@@ -18,8 +18,9 @@ tags: [concurrency, virtual-threads, java-21, performance]
 - Use `ReentrantLock` instead of `synchronized` for virtual threads
 - Virtual threads are pinned (blocked) by `synchronized`, defeating their purpose
 - Connection pool sizing: 10-40 connections (not 100+ like platform threads)
-- Use `ScopedValue` instead of `ThreadLocal` for request context propagation
-- `ThreadLocal` causes memory issues with millions of virtual threads and doesn't inherit across virtual thread boundaries
+- **Java 21-24**: Use `ThreadLocal` carefully (always call `remove()` in finally block)
+- **Java 25+**: Use `ScopedValue` instead of `ThreadLocal` for context propagation
+- `ThreadLocal` causes memory issues with millions of virtual threads; `ScopedValue` (stable in Java 25) solves this
 - Use blocking I/O calls freely in virtual threads (they excel here)
 - Keep `synchronized` for CPU-bound or very short critical sections (< 1μs)
 
@@ -51,26 +52,25 @@ public void criticalSection() {
 }
 ```
 
-## ScopedValue Pattern
+## Context Propagation Pattern
 
-❌ Bad - ThreadLocal doesn't work well with virtual threads:
+### Java 21-24: ThreadLocal (with caution)
 
 ```java
-// Memory leak with millions of virtual threads
-// Values don't inherit across virtual thread boundaries
-private static final ThreadLocal<String> correlationId = new ThreadLocal<>();
+// Always remove in finally to prevent memory leaks
+private static final ThreadLocal<String> CORRELATION_ID = new ThreadLocal<>();
 
 public void handleRequest(String id) {
-    correlationId.set(id);
+    CORRELATION_ID.set(id);
     try {
-        processAsync(); // ThreadLocal won't propagate!
+        process();
     } finally {
-        correlationId.remove();
+        CORRELATION_ID.remove(); // CRITICAL: always remove!
     }
 }
 ```
 
-✅ Good - ScopedValue for virtual threads (Java 21+):
+### Java 25+: ScopedValue (recommended)
 
 ```java
 // Immutable, automatically inherited by child virtual threads
@@ -89,8 +89,16 @@ public void processAsync() {
 }
 ```
 
+| Aspect | ThreadLocal (Java 21-24) | ScopedValue (Java 25+) |
+|--------|--------------------------|------------------------|
+| Inheritance | Manual | Automatic to child VTs |
+| Memory | Risk of leaks | Bounded by scope |
+| Mutability | Mutable | Immutable |
+| Cleanup | Manual `remove()` | Automatic |
+
 ## Avoid
 
 - Using `synchronized` with virtual threads
-- `ThreadLocal` for context propagation (use `ScopedValue` instead)
+- `ThreadLocal` without `remove()` in finally block (Java 21-24)
+- `ThreadLocal` when `ScopedValue` is available (Java 25+)
 - CPU-bound work on virtual threads (use platform threads)

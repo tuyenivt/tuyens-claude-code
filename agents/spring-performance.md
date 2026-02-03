@@ -15,7 +15,7 @@ category: engineering
 
 ## Focus Areas
 
-- **Virtual Threads**: Thread pinning (`synchronized`), `ThreadLocal` → `ScopedValue`, pool sizing
+- **Virtual Threads**: Thread pinning (`synchronized`), `ThreadLocal` cleanup (Java 25+: `ScopedValue`), pool sizing
 - **Database**: N+1 queries, missing indexes, connection pool, query timeouts
 - **Caching**: Cache hit ratio, TTL tuning, invalidation overhead
 - **Observability**: Metrics for bottleneck identification, slow query logging
