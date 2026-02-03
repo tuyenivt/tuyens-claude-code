@@ -14,7 +14,7 @@ $ARGUMENTS
 ### Virtual Threads
 
 - [ ] `synchronized` blocks causing thread pinning
-- [ ] ThreadLocal misuse with virtual threads
+- [ ] `ThreadLocal` replaced with `ScopedValue` for context propagation
 - [ ] Connection pool sized for virtual threads (10-40)
 - [ ] `spring.threads.virtual.enabled=true` configured
 
