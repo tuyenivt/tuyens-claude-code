@@ -24,23 +24,46 @@ Generate complete, production-ready code for Spring Boot 4 / Java 21+:
 ```java
 @RestController
 @RequestMapping("/api/v1/{resources}")
-@RequiredArgsConstructor
+@RequiredArgsConstructor  // Lombok for DI
+@Slf4j                    // Lombok for logging
 public class ResourceController {
     private final ResourceService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResourceResponse> getById(@PathVariable Long id) {
+    public ResourceResponse getById(@PathVariable Long id) {
+        // No ResponseEntity needed - @RestController handles serialization
+        return service.getById(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)  // Use @ResponseStatus instead of ResponseEntity
+    public ResourceResponse create(@Valid @RequestBody CreateRequest request) {
+        var response = service.create(request);  // Use var when type is obvious
+        log.info("Created resource: {}", response.id());
+        return response;
+    }
+
+    // ResponseEntity OK when returning different status codes in same method
+    @GetMapping("/{id}/optional")
+    public ResponseEntity<ResourceResponse> findById(@PathVariable Long id) {
         return service.findById(id)
             .map(ResponseEntity::ok)
-            .orElseThrow(() -> new ResourceNotFoundException(id));
+            .orElse(ResponseEntity.notFound().build());
     }
 }
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
+@Slf4j
 public class ResourceService {
     private final ResourceRepository repository;
+
+    public ResourceResponse getById(Long id) {
+        var entity = repository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException(id));
+        return toResponse(entity);
+    }
 
     // For thread-safety, use skill: virtual-thread-lock
 }
@@ -76,10 +99,12 @@ For detailed patterns, reference these skills:
 
 ## Checklist
 
-- [ ] Constructor injection (no @Autowired fields)
+- [ ] Constructor injection (no @Autowired fields) - use `@RequiredArgsConstructor` if Lombok available
 - [ ] Validation on request DTOs (Jakarta Validation)
-- [ ] Proper HTTP status codes (200, 201, 204, 400, 404)
+- [ ] Proper HTTP status codes - use `@ResponseStatus` instead of `ResponseEntity` when possible
 - [ ] Pagination for list endpoints
 - [ ] Entity not exposed in responses (use DTOs)
 - [ ] No `synchronized` blocks (Virtual Thread compatible)
 - [ ] Records for immutable DTOs
+- [ ] Use `var` for local variables when type is obvious
+- [ ] Use `@Slf4j` for logging if Lombok available

@@ -23,6 +23,7 @@ tags: [rest, api-design, http, spring]
 - Validate all inputs
 - Pagination mandatory for collection endpoints (support page, size, sort)
 - Prefer backward-compatible evolution, version only if breaking
+- Avoid `ResponseEntity` unless returning different status codes, response types, or headers within same method - `@RestController` + `@ResponseStatus` is cleaner
 
 ## Pattern
 
@@ -35,12 +36,29 @@ public User getUser(@PathVariable Long id) {
 }
 ```
 
-✅ Good - Resource-based, DTO response:
+✅ Good - Resource-based, DTO response, no ResponseEntity needed:
+
+```java
+@GetMapping("/users/{id}")
+public UserDTO getUser(@PathVariable Long id) {
+    return userService.getUser(id);
+}
+
+@PostMapping("/users")
+@ResponseStatus(HttpStatus.CREATED)
+public UserDTO create(@Valid @RequestBody CreateUserRequest request) {
+    return userService.create(request);
+}
+```
+
+✅ ResponseEntity OK - Different outcomes require different responses:
 
 ```java
 @GetMapping("/users/{id}")
 public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
-    return ResponseEntity.ok(userService.getUser(id));
+    return userService.findById(id)
+        .map(ResponseEntity::ok)
+        .orElse(ResponseEntity.notFound().build());
 }
 ```
 
@@ -50,3 +68,4 @@ public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
 - Returning 200 for errors
 - Exposing entity objects directly
 - Missing pagination on collections
+- Unnecessary `ResponseEntity` when `@ResponseStatus` suffices

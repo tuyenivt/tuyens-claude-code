@@ -55,6 +55,51 @@ class ControllerTest {
 }
 ```
 
+**Integration Test with Testcontainers:**
+
+```java
+// 1. Create reusable TestcontainersConfiguration (src/test/java)
+@TestConfiguration(proxyBeanMethods = false)
+public class TestcontainersConfiguration {
+
+    @Bean
+    @ServiceConnection
+    PostgreSQLContainer<?> postgresContainer() {
+        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:16-alpine"));
+    }
+
+    @Bean
+    @ServiceConnection
+    GenericContainer<?> redisContainer() {
+        return new GenericContainer<>(DockerImageName.parse("redis:7-alpine"))
+            .withExposedPorts(6379);
+    }
+}
+
+// 2. Use in tests via @Import
+@SpringBootTest
+@Import(TestcontainersConfiguration.class)
+@Transactional
+class OrderRepositoryTest {
+    @Autowired OrderRepository repository;
+
+    @Test
+    void should_save_order() {
+        var order = new Order("item", 100);
+        var saved = repository.save(order);
+        assertThat(saved.getId()).isNotNull();
+    }
+}
+
+// 3. For custom containers not in TestcontainersConfiguration, use @Container directly
+@SpringBootTest
+@Testcontainers
+class CustomContainerTest {
+    @Container
+    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.5.0"));
+}
+```
+
 ### Frontend (React)
 
 **Component Test:**
@@ -108,6 +153,7 @@ it("increments counter", () => {
 - [ ] Integration tests use transactions
 - [ ] No flaky tests (proper cleanup)
 - [ ] Database tests isolated
+- [ ] Testcontainers: Use shared `TestcontainersConfiguration` class with `@Import` (avoid `@Container` per test class unless custom container needed)
 
 ## Frontend-Specific Checklist
 

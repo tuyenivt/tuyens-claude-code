@@ -26,6 +26,12 @@ tags: [code-quality, standards, structure, readability]
 - No magic numbers, use named constants
 - Use enums for fixed value sets
 
+### Java Style
+
+- Use `var` for local variables when type is obvious from right-hand side (constructors, literals, factory methods)
+- Avoid `var` when type is unclear: null assignments, generic type inference (e.g., `TypeReference<>`), ambiguous method returns
+- If project uses Lombok: prefer `@Slf4j` for logging, `@RequiredArgsConstructor` for dependency injection
+
 ## Pattern
 
 ❌ Bad - Mixed concerns, field injection, magic numbers:
@@ -49,18 +55,31 @@ public class OrderController {
 
 ```java
 @RestController
+@RequiredArgsConstructor  // Lombok - if project supports
+@Slf4j                    // Lombok - if project supports
 public class OrderController {
     private final OrderService orderService;
 
-    public OrderController(OrderService orderService) {
-        this.orderService = orderService;
-    }
-
     @PostMapping
-    public ResponseEntity<OrderDTO> create(OrderRequest req) {
-        return ResponseEntity.ok(orderService.create(req));
+    @ResponseStatus(HttpStatus.CREATED)
+    public OrderDTO create(@Valid @RequestBody OrderRequest req) {
+        var order = orderService.create(req);  // var OK - type obvious
+        log.info("Order created: {}", order.id());
+        return order;
     }
 }
+```
+
+✅ Good - `var` usage:
+
+```java
+var user = new User("name");           // OK - constructor
+var list = List.of(1, 2, 3);           // OK - factory method
+var count = 10;                        // OK - literal
+
+// Avoid var in these cases:
+String value = null;                   // null - type unclear
+Map<String, List<Order>> map = mapper.readValue(json, new TypeReference<>() {});  // TypeReference - type inference
 ```
 
 ## Avoid
@@ -70,3 +89,5 @@ public class OrderController {
 - Mutable DTOs
 - Magic numbers and constants
 - God classes or methods
+- `var` with null, generic type inference, or unclear return types
+- Manual logger declaration when Lombok `@Slf4j` is available

@@ -28,6 +28,7 @@ category: quality
 - Integration tests with test database
 - Contract tests for APIs
 - Focus on business logic and data access
+- Testcontainers: Create shared `TestcontainersConfiguration` class, use `@Import` in tests (avoid `@Container` per test unless custom container needed)
 
 **Frontend (React, Vue):**
 

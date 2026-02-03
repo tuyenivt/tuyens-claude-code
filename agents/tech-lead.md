@@ -29,7 +29,10 @@ Adapt review focus based on code context:
 - [ ] Using Records for DTOs (not classes)
 - [ ] Pattern matching where applicable (Java 21+)
 - [ ] No `synchronized` blocks (Virtual Thread compatibility)
-- [ ] Constructor injection (not field `@Autowired`)
+- [ ] Constructor injection - use `@RequiredArgsConstructor` if Lombok available
+- [ ] `@Slf4j` for logging if Lombok available
+- [ ] Avoid `ResponseEntity` unless multiple status codes/response types in same method
+- [ ] Use `var` when type is obvious (constructors, literals, factory methods)
 
 **React/TypeScript:**
 
