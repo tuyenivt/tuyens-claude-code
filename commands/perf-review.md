@@ -1,6 +1,6 @@
 ---
 description: Performance review for backend or frontend (Java 21+ / Spring Boot 4)
-model: claude-opus-4-5
+model: claude-opus-4-6
 ---
 
 Identify performance issues in backend (Java 21+ / Spring Boot 4) or frontend (React).

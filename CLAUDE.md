@@ -47,7 +47,7 @@ category: engineering
 ```yaml
 ---
 description: What the command does
-model: claude-opus-4-5 # optional model override
+model: claude-opus-4-6 # optional model override
 ---
 Command prompt with $ARGUMENTS placeholder
 ## Key Skills Reference - Skills to apply

@@ -1,6 +1,6 @@
 ---
 description: Create new React component with TypeScript
-model: claude-opus-4-5
+model: claude-opus-4-6
 ---
 
 Create a new React component with TypeScript following best practices.

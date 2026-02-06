@@ -1,6 +1,6 @@
 ---
 description: Security review - OWASP Top 10, auth, vulnerabilities
-model: claude-opus-4-5
+model: claude-opus-4-6
 ---
 
 Security review covering OWASP Top 10 and common vulnerabilities for any framework.
