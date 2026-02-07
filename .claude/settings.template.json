@@ -266,5 +266,6 @@
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": false,
-  "autoUpdatesChannel": "latest"
+  "autoUpdatesChannel": "latest",
+  "effortLevel": "medium"
 }
