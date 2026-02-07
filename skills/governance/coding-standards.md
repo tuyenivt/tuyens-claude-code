@@ -35,7 +35,7 @@ tags: [code-quality, standards, structure, readability]
 
 ## Pattern
 
-❌ Bad - Mixed concerns, field injection, magic numbers:
+Bad - Mixed concerns, field injection, magic numbers:
 
 ```java
 @RestController
@@ -52,7 +52,7 @@ public class OrderController {
 }
 ```
 
-✅ Good - Layered, constructor injection, clear intent:
+Good - Layered, constructor injection, clear intent:
 
 ```java
 @RestController
@@ -71,7 +71,7 @@ public class OrderController {
 }
 ```
 
-✅ Good - `var` usage:
+Good - `var` usage:
 
 ```java
 var user = new User("name");           // OK - constructor

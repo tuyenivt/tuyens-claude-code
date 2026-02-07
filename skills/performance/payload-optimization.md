@@ -25,7 +25,7 @@ tags: [payload, api, serialization, compression]
 
 ## Pattern
 
-❌ Bad - Over-fetching with nested data:
+Bad - Over-fetching with nested data:
 
 ```java
 @GetMapping("/orders/{id}")
@@ -36,7 +36,7 @@ public Order getOrder(@PathVariable Long id) {
 }
 ```
 
-✅ Good - Projection with only needed fields:
+Good - Projection with only needed fields:
 
 ```java
 @GetMapping("/orders/{id}")

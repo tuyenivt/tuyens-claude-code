@@ -24,7 +24,7 @@ tags: [caching, redis, ttl, invalidation]
 
 ## Pattern
 
-❌ Bad - No TTL, caching entity:
+Bad - No TTL, caching entity:
 
 ```java
 @Cacheable(value = "users")
@@ -33,7 +33,7 @@ public User getUser(Long id) {
 }
 ```
 
-✅ Good - TTL with DTO:
+Good - TTL with DTO:
 
 ```java
 @Cacheable(value = "users", cacheManager = "cacheManagerWithTTL")

@@ -26,7 +26,7 @@ tags: [api, governance, standards, documentation]
 
 ## Pattern
 
-❌ Bad - Inconsistent naming, missing docs:
+Bad - Inconsistent naming, missing docs:
 
 ```java
 @GetMapping("/get_user/{userId}")
@@ -36,7 +36,7 @@ public User getuser(@PathVariable Long userId) {
 // No OpenAPI docs, unclear ownership
 ```
 
-✅ Good - Consistent, documented, owned:
+Good - Consistent, documented, owned:
 
 ```java
 @GetMapping("/users/{id}")

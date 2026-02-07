@@ -27,7 +27,7 @@ tags: [rest, api-design, http, spring]
 
 ## Pattern
 
-❌ Bad - Action-based URIs, exposing entity:
+Bad - Action-based URIs, exposing entity:
 
 ```java
 @PostMapping("/getUser/{id}")
@@ -36,7 +36,7 @@ public User getUser(@PathVariable Long id) {
 }
 ```
 
-✅ Good - Resource-based, DTO response, no ResponseEntity needed:
+Good - Resource-based, DTO response, no ResponseEntity needed:
 
 ```java
 @GetMapping("/users/{id}")
@@ -51,7 +51,7 @@ public UserDTO create(@Valid @RequestBody CreateUserRequest request) {
 }
 ```
 
-✅ ResponseEntity OK - Different outcomes require different responses:
+ResponseEntity OK - Different outcomes require different responses:
 
 ```java
 @GetMapping("/users/{id}")

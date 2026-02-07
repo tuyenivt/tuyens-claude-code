@@ -24,7 +24,7 @@ tags: [idempotency, retries, integration, safety]
 
 ## Pattern
 
-❌ Bad - Retries cause duplicate operations:
+Bad - Retries cause duplicate operations:
 
 ```java
 @PostMapping("/orders")
@@ -34,7 +34,7 @@ public Order createOrder(OrderRequest req) {
 }
 ```
 
-✅ Good - Idempotency key ensures safety:
+Good - Idempotency key ensures safety:
 
 ```java
 @PostMapping("/orders")

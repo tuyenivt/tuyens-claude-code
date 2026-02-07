@@ -61,7 +61,7 @@ tags: [file-operations, git, cross-platform, bash, safety, shell]
 
 ## Pattern
 
-❌ Bad - Windows-specific commands:
+Bad - Windows-specific commands:
 
 ```bash
 # Windows cmd/PowerShell - won't work in Git Bash or Linux/macOS
@@ -78,7 +78,7 @@ copy file1.txt file2.txt
 set JAVA_HOME=C:\jdk
 ```
 
-✅ Good - Unix/bash commands (work everywhere including Git Bash):
+Good - Unix/bash commands (work everywhere including Git Bash):
 
 ```bash
 # Build tools - always use Unix wrappers
@@ -115,7 +115,7 @@ git clean -f
 mkdir -p src/main/java/com/example/service
 ```
 
-✅ Good - Safe deletion workflow:
+Good - Safe deletion workflow:
 
 ```bash
 # 1. Check status first

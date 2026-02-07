@@ -25,7 +25,7 @@ tags: [react, performance, hooks, optimization]
 
 ## Pattern
 
-❌ Bad - Recomputes on every render:
+Bad - Recomputes on every render:
 
 ```jsx
 function Parent({ data }) {
@@ -34,7 +34,7 @@ function Parent({ data }) {
 }
 ```
 
-✅ Good - Memoized computation:
+Good - Memoized computation:
 
 ```jsx
 function Parent({ data }) {

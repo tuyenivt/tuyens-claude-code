@@ -26,7 +26,7 @@ tags: [concurrency, virtual-threads, java-21, performance]
 
 ## Pattern
 
-❌ Bad - Pins virtual thread to platform thread:
+Bad - Pins virtual thread to platform thread:
 
 ```java
 private final Object lock = new Object();
@@ -37,7 +37,7 @@ public void criticalSection() {
 }
 ```
 
-✅ Good - Virtual thread friendly:
+Good - Virtual thread friendly:
 
 ```java
 import java.util.concurrent.locks.ReentrantLock;
@@ -89,12 +89,12 @@ public void processAsync() {
 }
 ```
 
-| Aspect | ThreadLocal (Java 21-24) | ScopedValue (Java 25+) |
-|--------|--------------------------|------------------------|
-| Inheritance | Manual | Automatic to child VTs |
-| Memory | Risk of leaks | Bounded by scope |
-| Mutability | Mutable | Immutable |
-| Cleanup | Manual `remove()` | Automatic |
+| Aspect      | ThreadLocal (Java 21-24) | ScopedValue (Java 25+) |
+| ----------- | ------------------------ | ---------------------- |
+| Inheritance | Manual                   | Automatic to child VTs |
+| Memory      | Risk of leaks            | Bounded by scope       |
+| Mutability  | Mutable                  | Immutable              |
+| Cleanup     | Manual `remove()`        | Automatic              |
 
 ## Avoid
 

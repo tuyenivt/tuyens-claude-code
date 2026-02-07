@@ -23,7 +23,7 @@ tags: [async, threading, events, idempotency]
 
 ## Pattern
 
-❌ Bad - Blocking task within transaction:
+Bad - Blocking task within transaction:
 
 ```java
 @Transactional
@@ -33,7 +33,7 @@ public void processOrder(Order order) {
 }
 ```
 
-✅ Good - Async execution outside transaction:
+Good - Async execution outside transaction:
 
 ```java
 @Service

@@ -27,7 +27,7 @@ tags: [transactions, database, spring, consistency]
 
 ## Pattern
 
-❌ Bad - Transactions in controller, nested:
+Bad - Transactions in controller, nested:
 
 ```java
 @RestController
@@ -41,7 +41,7 @@ public class OrderController {
 }
 ```
 
-✅ Good - Transaction in service layer:
+Good - Transaction in service layer:
 
 ```java
 @Service

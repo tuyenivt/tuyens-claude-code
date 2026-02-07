@@ -27,7 +27,7 @@ tags: [rest, integration, resilience, clients]
 
 ## Pattern
 
-❌ Bad - No timeout, raw error propagation:
+Bad - No timeout, raw error propagation:
 
 ```java
 RestTemplate template = new RestTemplate();
@@ -37,7 +37,7 @@ User user = template.getForObject(
 ); // No timeout, throws raw exception
 ```
 
-✅ Good - Typed client, timeout, error mapping:
+Good - Typed client, timeout, error mapping:
 
 ```java
 @Service

@@ -26,7 +26,7 @@ tags: [react, components, design, composition]
 
 ## Pattern
 
-❌ Bad - Multiple responsibilities, prop drilling:
+Bad - Multiple responsibilities, prop drilling:
 
 ```jsx
 function UserCard({ user, onUpdate, onDelete, theme, notifications }) {
@@ -41,7 +41,7 @@ function UserCard({ user, onUpdate, onDelete, theme, notifications }) {
 }
 ```
 
-✅ Good - Separated concerns:
+Good - Separated concerns:
 
 ```jsx
 function UserCard({ user, onEdit, onDelete }) {

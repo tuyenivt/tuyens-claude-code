@@ -26,7 +26,7 @@ tags: [database, indexing, queries, optimization]
 
 ## Pattern
 
-❌ Bad - Missing indexes:
+Bad - Missing indexes:
 
 ```sql
 -- Slow query without indexes
@@ -34,7 +34,7 @@ SELECT u.* FROM users u
 WHERE u.status = 'active' AND u.created_at > NOW() - INTERVAL '30 days'
 ```
 
-✅ Good - Indexed columns:
+Good - Indexed columns:
 
 ```sql
 CREATE INDEX idx_users_status ON users(status);

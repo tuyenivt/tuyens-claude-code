@@ -25,14 +25,14 @@ tags: [resilience, timeouts, retries, circuit-breaker]
 
 ## Pattern
 
-❌ Bad - No timeout, unlimited retries:
+Bad - No timeout, unlimited retries:
 
 ```java
 RestTemplate template = new RestTemplate();
 String response = template.getForObject("http://external-api/data", String.class);
 ```
 
-✅ Good - Timeout, retry, circuit breaker:
+Good - Timeout, retry, circuit breaker:
 
 ```java
 @CircuitBreaker(name = "externalApi", fallbackMethod = "fallback")

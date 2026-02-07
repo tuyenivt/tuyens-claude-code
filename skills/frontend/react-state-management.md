@@ -25,7 +25,7 @@ tags: [react, state, context, hooks]
 
 ## Pattern
 
-❌ Bad - Global state for everything, duplicated server state:
+Bad - Global state for everything, duplicated server state:
 
 ```jsx
 const globalStore = {
@@ -35,7 +35,7 @@ const globalStore = {
 };
 ```
 
-✅ Good - Appropriate scope for each:
+Good - Appropriate scope for each:
 
 ```jsx
 // Server state: React Query/SWR handles caching

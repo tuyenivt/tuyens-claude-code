@@ -28,7 +28,7 @@ tags: [websocket, react, real-time, hooks, stomp]
 
 ### Custom Hook
 
-❌ Bad - No cleanup, no reconnection, causes re-renders:
+Bad - No cleanup, no reconnection, causes re-renders:
 
 ```tsx
 function useWebSocket(url: string) {
@@ -44,10 +44,10 @@ function useWebSocket(url: string) {
 }
 ```
 
-✅ Good - Proper lifecycle management:
+Good - Proper lifecycle management:
 
 ```tsx
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback } from "react";
 
 interface WebSocketOptions {
   onMessage?: (data: unknown) => void;
@@ -57,7 +57,7 @@ interface WebSocketOptions {
   reconnectInterval?: number;
 }
 
-type ConnectionStatus = 'connecting' | 'connected' | 'disconnected' | 'error';
+type ConnectionStatus = "connecting" | "connected" | "disconnected" | "error";
 
 export function useWebSocket(url: string, options: WebSocketOptions = {}) {
   const {
@@ -72,16 +72,16 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
   const reconnectCountRef = useRef(0);
   const reconnectTimeoutRef = useRef<NodeJS.Timeout>();
 
-  const [status, setStatus] = useState<ConnectionStatus>('disconnected');
+  const [status, setStatus] = useState<ConnectionStatus>("disconnected");
 
   const connect = useCallback(() => {
     if (wsRef.current?.readyState === WebSocket.OPEN) return;
 
-    setStatus('connecting');
+    setStatus("connecting");
     const ws = new WebSocket(url);
 
     ws.onopen = () => {
-      setStatus('connected');
+      setStatus("connected");
       reconnectCountRef.current = 0;
       onConnect?.();
     };
@@ -92,11 +92,12 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
     };
 
     ws.onclose = () => {
-      setStatus('disconnected');
+      setStatus("disconnected");
       onDisconnect?.();
 
       if (reconnectCountRef.current < reconnectAttempts) {
-        const delay = reconnectInterval * Math.pow(2, reconnectCountRef.current);
+        const delay =
+          reconnectInterval * Math.pow(2, reconnectCountRef.current);
         reconnectTimeoutRef.current = setTimeout(() => {
           reconnectCountRef.current++;
           connect();
@@ -104,9 +105,16 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
       }
     };
 
-    ws.onerror = () => setStatus('error');
+    ws.onerror = () => setStatus("error");
     wsRef.current = ws;
-  }, [url, onMessage, onConnect, onDisconnect, reconnectAttempts, reconnectInterval]);
+  }, [
+    url,
+    onMessage,
+    onConnect,
+    onDisconnect,
+    reconnectAttempts,
+    reconnectInterval,
+  ]);
 
   const disconnect = useCallback(() => {
     clearTimeout(reconnectTimeoutRef.current);
@@ -132,8 +140,8 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
 ### STOMP Client Hook (for Spring Boot)
 
 ```tsx
-import { Client, IMessage } from '@stomp/stompjs';
-import SockJS from 'sockjs-client';
+import { Client, IMessage } from "@stomp/stompjs";
+import SockJS from "sockjs-client";
 
 interface StompOptions {
   subscriptions: Array<{
@@ -190,17 +198,17 @@ function ChatRoom({ roomId }: { roomId: string }) {
 
   const handleMessage = useCallback((msg: IMessage) => {
     const message = JSON.parse(msg.body) as ChatMessage;
-    setMessages(prev => [...prev, message]);
+    setMessages((prev) => [...prev, message]);
   }, []);
 
-  const { connected, publish } = useStompClient('/ws', {
+  const { connected, publish } = useStompClient("/ws", {
     subscriptions: [
       { destination: `/topic/chat.${roomId}`, callback: handleMessage },
     ],
   });
 
   const sendMessage = (content: string) => {
-    publish('/app/chat.send', { roomId, content });
+    publish("/app/chat.send", { roomId, content });
   };
 
   return (

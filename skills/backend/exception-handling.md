@@ -24,7 +24,7 @@ tags: [error-handling, rest, http, controller]
 
 ## Pattern
 
-❌ Bad - Scattered error handling:
+Bad - Scattered error handling:
 
 ```java
 @RestController
@@ -40,7 +40,7 @@ public class UserController {
 }
 ```
 
-✅ Good - Centralized exception handling:
+Good - Centralized exception handling:
 
 ```java
 @RestControllerAdvice

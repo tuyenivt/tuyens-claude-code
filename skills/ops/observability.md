@@ -25,14 +25,14 @@ tags: [logging, metrics, tracing, monitoring]
 
 ## Pattern
 
-❌ Bad - Unstructured logging, missing context:
+Bad - Unstructured logging, missing context:
 
 ```java
 logger.info("User processed: " + userId);
 logger.error("Database error: " + e.getMessage());
 ```
 
-✅ Good - Structured with context:
+Good - Structured with context:
 
 ```java
 logger.info("User processed", Map.of(

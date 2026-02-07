@@ -26,7 +26,7 @@ tags: [jpa, hibernate, performance, queries]
 
 ## Pattern
 
-❌ Bad - Causes N+1 queries:
+Bad - Causes N+1 queries:
 
 ```java
 List<User> users = userRepository.findAll(); // 1 query
@@ -35,7 +35,7 @@ for (User u : users) {
 }
 ```
 
-✅ Good - Fetch join prevents N+1:
+Good - Fetch join prevents N+1:
 
 ```java
 @Query("SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.orders")

@@ -52,7 +52,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 ### Controller
 
-❌ Bad - No authentication, blocking operations:
+Bad - No authentication, blocking operations:
 
 ```java
 @MessageMapping("/chat")
@@ -64,7 +64,7 @@ public void handleMessage(ChatMessage message) {
 }
 ```
 
-✅ Good - Authenticated, non-blocking:
+Good - Authenticated, non-blocking:
 
 ```java
 @Controller
