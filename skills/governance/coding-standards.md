@@ -25,6 +25,7 @@ tags: [code-quality, standards, structure, readability]
 - Avoid god classes with multiple responsibilities
 - No magic numbers, use named constants
 - Use enums for fixed value sets
+- **No emojis**: Never use emojis in code, comments, documentation, commit messages, or any generated content
 
 ### Java Style
 
@@ -91,3 +92,4 @@ Map<String, List<Order>> map = mapper.readValue(json, new TypeReference<>() {});
 - God classes or methods
 - `var` with null, generic type inference, or unclear return types
 - Manual logger declaration when Lombok `@Slf4j` is available
+- Emojis in any form (code, comments, docs, commit messages)
