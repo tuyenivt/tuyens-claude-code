@@ -55,6 +55,26 @@ class ControllerTest {
 }
 ```
 
+**Note:** In Spring Boot 4, `@MockBean` is deprecated. Use `@MockitoBean` from `org.springframework.boot.test.mock.mockito.MockitoBean` instead:
+
+```java
+@SpringBootTest
+class ServiceIntegrationTest {
+    @MockitoBean  // Use this, not @MockBean
+    ExternalService externalService;
+
+    @Autowired
+    OrderService orderService;
+
+    @Test
+    void should_process_order() {
+        when(externalService.validate()).thenReturn(true);
+        var result = orderService.process(new Order());
+        assertThat(result.isSuccess()).isTrue();
+    }
+}
+```
+
 **Integration Test with Testcontainers:**
 
 ```java
