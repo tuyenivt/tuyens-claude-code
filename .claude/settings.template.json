@@ -266,6 +266,8 @@
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": false,
+  "promptSuggestionEnabled": false,
   "autoUpdatesChannel": "latest",
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "model": "sonnet"
 }
