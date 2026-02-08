@@ -55,7 +55,7 @@ class ControllerTest {
 }
 ```
 
-**Note:** In Spring Boot 4, `@MockBean` is deprecated. Use `@MockitoBean` from `org.springframework.boot.test.mock.mockito.MockitoBean` instead:
+**Note:** In Spring Boot 4, `@MockBean` is deprecated. Use `@MockitoBean` from `org.springframework.test.context.bean.override.mockito.MockitoBean` instead:
 
 ```java
 @SpringBootTest
