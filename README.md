@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 8 agents, 20 skills.
+Claude Code plugin for Java 21+ / Spring Boot 4 and React development. 9 commands, 10 agents, 21 skills.
 
 ## Installation
 
@@ -80,20 +80,22 @@ Props: orders, onSelect
 
 ## Agents
 
-| Agent                  | Focus                     |
-| ---------------------- | ------------------------- |
-| `spring-architect`     | Spring Boot, JPA, APIs    |
-| `react-architect`      | React, accessibility      |
-| `security-engineer`    | OWASP, auth               |
-| `performance-engineer` | Optimization (multi-lang) |
-| `test-engineer`        | Testing strategy          |
-| `refactoring-expert`   | Code cleanup              |
-| `technical-writer`     | Documentation             |
-| `tech-lead`            | Code review (multi-lang)  |
+| Agent                  | Focus                              |
+| ---------------------- | ---------------------------------- |
+| `spring-architect`     | Spring Boot, JPA, APIs             |
+| `spring-performance`   | Spring Boot performance and tuning |
+| `react-architect`      | React, accessibility               |
+| `react-performance`    | React rendering optimization       |
+| `security-engineer`    | OWASP, auth                        |
+| `performance-engineer` | Optimization (multi-lang)          |
+| `test-engineer`        | Testing strategy                   |
+| `refactoring-expert`   | Code cleanup                       |
+| `technical-writer`     | Documentation                      |
+| `tech-lead`            | Code review (multi-lang)           |
 
 ## Skills (Reusable Patterns)
 
-20 skills organized by category provide focused, reusable patterns that agents and commands reference.
+21 skills organized by category provide focused, reusable patterns that agents and commands reference.
 
 ### Backend (7)
 
@@ -124,12 +126,13 @@ Props: orders, onSelect
 | `db-indexing`          | Database indexing strategy      |
 | `payload-optimization` | API response optimization       |
 
-### Ops (2)
+### Ops (3)
 
-| Skill           | Purpose                         |
-| --------------- | ------------------------------- |
-| `observability` | Logging, metrics, tracing       |
-| `resiliency`    | Timeout, retry, circuit breaker |
+| Skill                  | Purpose                                  |
+| ---------------------- | ---------------------------------------- |
+| `observability`        | Logging, metrics, tracing                |
+| `resiliency`           | Timeout, retry, circuit breaker          |
+| `safe-file-operations` | Cross-platform shell and file operations |
 
 ### Integration (2)
 
