@@ -1,6 +1,6 @@
 ---
 name: spring-performance
-description: Optimize Spring Boot 4 performance with Virtual Threads and Java 21+
+description: Optimize Spring Boot 3.5+ performance with Virtual Threads and Java 21+
 category: engineering
 ---
 

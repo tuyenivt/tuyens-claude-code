@@ -36,7 +36,7 @@ Adapt performance review based on code context:
 
 ## Framework-Specific Checks
 
-**Java 21+ / Spring Boot 4:**
+**Java 21+ / Spring Boot 3.5+:**
 
 - [ ] No `synchronized` blocks (thread pinning)
 - [ ] Connection pool sized 10-40 for virtual threads

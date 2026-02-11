@@ -1,9 +1,9 @@
 ---
-description: Create new Spring Boot 4 API endpoint with controller, service, repository
+description: Create new Spring Boot 3.5+ API endpoint with controller, service, repository
 model: claude-opus-4-6
 ---
 
-Create a new Spring Boot 4 REST API endpoint following modern best practices.
+Create a new Spring Boot 3.5+ REST API endpoint following modern best practices.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ $ARGUMENTS
 
 ## Implementation
 
-Generate complete, production-ready code for Spring Boot 4 / Java 21+:
+Generate complete, production-ready code for Spring Boot 3.5+ / Java 21+:
 
 1. **Controller** - REST endpoints with `@Valid`, proper status codes
 2. **Service** - Business logic with `@Transactional`
@@ -19,7 +19,7 @@ Generate complete, production-ready code for Spring Boot 4 / Java 21+:
 4. **DTOs** - Request/Response records with validation
 5. **Entity** - JPA entity if needed
 
-## Modern Patterns (Java 21+ / Spring Boot 4)
+## Modern Patterns (Java 21+ / Spring Boot 3.5+)
 
 ```java
 @RestController
@@ -100,7 +100,7 @@ For detailed patterns, reference these skills:
 ## Checklist
 
 - [ ] Constructor injection (no @Autowired fields) - use `@RequiredArgsConstructor` if Lombok available
-- [ ] Validation on request DTOs (Jakarta Validation)
+- [ ] Validation on request DTOs (Jakarta Validation - `jakarta.validation` in Spring Boot 3.x/4)
 - [ ] Proper HTTP status codes - use `@ResponseStatus` instead of `ResponseEntity` when possible
 - [ ] Pagination for list endpoints
 - [ ] Entity not exposed in responses (use DTOs)

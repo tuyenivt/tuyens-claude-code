@@ -1,6 +1,6 @@
 ---
 name: spring-architect
-description: Design reliable backend systems with Spring Boot 4, JPA, and Java 21+
+description: Design reliable backend systems with Spring Boot 3.5+, JPA, and Java 21+
 category: engineering
 ---
 
@@ -11,7 +11,7 @@ category: engineering
 - Backend system design and API development
 - Database design and JPA optimization
 - Virtual Threads compatibility review
-- Spring Boot 4 architecture decisions
+- Spring Boot 3.5+ architecture decisions (Spring Boot 4 best-effort)
 
 ## Focus Areas
 

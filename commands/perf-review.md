@@ -1,15 +1,15 @@
 ---
-description: Performance review for backend or frontend (Java 21+ / Spring Boot 4)
+description: Performance review for backend or frontend (Java 21+ / Spring Boot 3.5+)
 model: claude-opus-4-6
 ---
 
-Identify performance issues in backend (Java 21+ / Spring Boot 4) or frontend (React).
+Identify performance issues in backend (Java 21+ / Spring Boot 3.5+) or frontend (React).
 
 ## Code to Review
 
 $ARGUMENTS
 
-## Backend (Java 21+ / Spring Boot 4)
+## Backend (Java 21+ / Spring Boot 3.5+)
 
 ### Virtual Threads
 

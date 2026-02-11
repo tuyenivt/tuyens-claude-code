@@ -55,12 +55,12 @@ class ControllerTest {
 }
 ```
 
-**Note:** In Spring Boot 4, `@MockBean` is deprecated. Use `@MockitoBean` from `org.springframework.test.context.bean.override.mockito.MockitoBean` instead:
+**Note:** `@MockBean` is deprecated since Spring Boot 3.4.0 and marked for removal. Prefer `@MockitoBean` from `org.springframework.test.context.bean.override.mockito.MockitoBean` (available from Spring Boot 3.2+, standard in 3.5+ and Spring Boot 4):
 
 ```java
 @SpringBootTest
 class ServiceIntegrationTest {
-    @MockitoBean  // Use this, not @MockBean
+    @MockitoBean  // Preferred: Spring Boot 3.2+, 3.5, and Spring Boot 4
     ExternalService externalService;
 
     @Autowired
