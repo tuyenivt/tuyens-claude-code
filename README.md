@@ -12,6 +12,19 @@ Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 9 comm
 /plugin install tuyens-claude-code
 ```
 
+## Optional: Share Skills Between Claude Code and Codex
+
+Claude Code and Codex use the same `agentskills.io` format. You can create a symbolic link so Codex reuses the skills managed by Claude Code.
+This is useful because Codex does not automatically update skills, while Claude Code does.
+
+```bash
+# Unix (Linux/macOS)
+ln -s "$HOME/.claude/plugins/marketplaces/tuyens-claude-code/skills" "$HOME/.codex/skills/tuyens-claude-code-skills"
+
+# Windows
+mklink /J "%USERPROFILE%\.codex\skills\tuyens-claude-code-skills" "%USERPROFILE%\.claude\plugins\marketplaces\tuyens-claude-code\skills"
+```
+
 ## Requirements
 
 - Claude Code >= 2.0.0
