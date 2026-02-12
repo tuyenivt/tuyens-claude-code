@@ -4,6 +4,7 @@ description: Performance optimization with useMemo and useCallback
 metadata:
   category: frontend
   tags: [react, performance, hooks, optimization]
+user-invocable: false
 ---
 
 # React Memoization

@@ -4,6 +4,7 @@ description: React WebSocket connection and state management patterns
 metadata:
   category: frontend
   tags: [websocket, react, real-time, hooks, stomp]
+user-invocable: false
 ---
 
 # React WebSocket

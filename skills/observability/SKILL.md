@@ -4,6 +4,7 @@ description: Structured logging, metrics, and distributed tracing
 metadata:
   category: ops
   tags: [logging, metrics, tracing, monitoring]
+user-invocable: false
 ---
 
 # Observability

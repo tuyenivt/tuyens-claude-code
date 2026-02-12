@@ -4,6 +4,7 @@ description: Idempotency key pattern for safe retries
 metadata:
   category: integration
   tags: [idempotency, retries, integration, safety]
+user-invocable: false
 ---
 
 # Idempotency

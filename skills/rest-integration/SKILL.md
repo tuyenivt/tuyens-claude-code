@@ -4,6 +4,7 @@ description: REST client patterns and resilient integration
 metadata:
   category: integration
   tags: [rest, integration, resilience, clients]
+user-invocable: false
 ---
 
 # REST Integration

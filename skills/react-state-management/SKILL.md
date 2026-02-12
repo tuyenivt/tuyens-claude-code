@@ -4,6 +4,7 @@ description: State scope and ownership patterns
 metadata:
   category: frontend
   tags: [react, state, context, hooks]
+user-invocable: false
 ---
 
 # React State Management

@@ -4,6 +4,7 @@ description: Cross-platform shell operations - always use Unix/bash commands, ne
 metadata:
   category: ops
   tags: [file-operations, git, cross-platform, bash, safety, shell]
+user-invocable: false
 ---
 
 # Safe File & Shell Operations

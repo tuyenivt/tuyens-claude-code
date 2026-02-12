@@ -4,6 +4,7 @@ description: Centralized exception handling with proper HTTP mapping
 metadata:
   category: backend
   tags: [error-handling, rest, http, controller]
+user-invocable: false
 ---
 
 # Exception Handling

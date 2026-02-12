@@ -43,22 +43,22 @@ Composite skills (`task-*`) orchestrate multiple atomic skills into task-oriente
 
 ### Framework-Specific
 
-| Skill                   | Purpose                     | Agent              |
-| ----------------------- | --------------------------- | ------------------ |
-| `task-spring-new`       | Create Spring Boot endpoint | `spring-architect` |
-| `task-react-component`  | Create React component      | `react-architect`  |
-| `task-react-page`       | Create React page           | `react-architect`  |
+| Skill                  | Purpose                     | Agent              |
+| ---------------------- | --------------------------- | ------------------ |
+| `task-spring-new`      | Create Spring Boot endpoint | `spring-architect` |
+| `task-react-component` | Create React component      | `react-architect`  |
+| `task-react-page`      | Create React page           | `react-architect`  |
 
 ### Framework-Aware (Auto-detect)
 
-| Skill                 | Purpose                     | Agent                  |
-| --------------------- | --------------------------- | ---------------------- |
-| `task-code-review`    | Code review (any framework) | `tech-lead`            |
-| `task-code-secure`    | Security review             | `security-engineer`    |
-| `task-code-test`      | Test strategy               | `test-engineer`        |
-| `task-code-refactor`  | Refactoring plan            | `refactoring-expert`   |
-| `task-perf-review`    | Performance review          | `performance-engineer` |
-| `task-docs-generate`  | Generate documentation      | `technical-writer`     |
+| Skill                | Purpose                     | Agent                  |
+| -------------------- | --------------------------- | ---------------------- |
+| `task-code-review`   | Code review (any framework) | `tech-lead`            |
+| `task-code-secure`   | Security review             | `security-engineer`    |
+| `task-code-test`     | Test strategy               | `test-engineer`        |
+| `task-code-refactor` | Refactoring plan            | `refactoring-expert`   |
+| `task-perf-review`   | Performance review          | `performance-engineer` |
+| `task-docs-generate` | Generate documentation      | `technical-writer`     |
 
 ## Usage Examples
 
@@ -110,7 +110,7 @@ Props: orders, onSelect
 
 ## Atomic Skills (Reusable Patterns)
 
-21 atomic skills organized by category provide focused, reusable patterns. These are referenced by composite skills and agents -- they are not intended for independent use.
+21 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by composite skills and agents.
 
 ### Backend (7)
 

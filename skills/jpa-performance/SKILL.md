@@ -4,6 +4,7 @@ description: JPA query optimization and N+1 prevention
 metadata:
   category: backend
   tags: [jpa, hibernate, performance, queries]
+user-invocable: false
 ---
 
 # JPA Performance

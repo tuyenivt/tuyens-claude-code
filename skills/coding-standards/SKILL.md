@@ -4,6 +4,7 @@ description: Code style, structure, and maintainability guidelines
 metadata:
   category: governance
   tags: [code-quality, standards, structure, readability]
+user-invocable: false
 ---
 
 # Coding Standards

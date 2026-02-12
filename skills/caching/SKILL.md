@@ -4,6 +4,7 @@ description: Cache strategy and invalidation patterns
 metadata:
   category: performance
   tags: [caching, redis, ttl, invalidation]
+user-invocable: false
 ---
 
 # Caching

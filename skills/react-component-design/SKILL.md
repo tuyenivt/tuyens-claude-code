@@ -4,6 +4,7 @@ description: Component composition and single responsibility principle
 metadata:
   category: frontend
   tags: [react, components, design, composition]
+user-invocable: false
 ---
 
 # React Component Design

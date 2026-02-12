@@ -4,6 +4,7 @@ description: API response size and serialization efficiency
 metadata:
   category: performance
   tags: [payload, api, serialization, compression]
+user-invocable: false
 ---
 
 # Payload Optimization

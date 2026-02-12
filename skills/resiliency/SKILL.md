@@ -4,6 +4,7 @@ description: Timeout, retry, circuit breaker, and fallback patterns
 metadata:
   category: ops
   tags: [resilience, timeouts, retries, circuit-breaker]
+user-invocable: false
 ---
 
 # Resiliency

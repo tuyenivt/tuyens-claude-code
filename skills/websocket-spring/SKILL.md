@@ -4,6 +4,7 @@ description: Spring WebSocket and STOMP messaging patterns
 metadata:
   category: backend
   tags: [websocket, stomp, messaging, real-time, spring]
+user-invocable: false
 ---
 
 # Spring WebSocket

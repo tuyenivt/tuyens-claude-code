@@ -4,6 +4,7 @@ description: REST API design principles and HTTP best practices
 metadata:
   category: backend
   tags: [rest, api-design, http, spring]
+user-invocable: false
 ---
 
 # Spring REST API

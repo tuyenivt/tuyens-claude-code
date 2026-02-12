@@ -4,6 +4,7 @@ description: Virtual Thread-safe locking with ReentrantLock
 metadata:
   category: backend
   tags: [concurrency, virtual-threads, java-21, performance]
+user-invocable: false
 ---
 
 # Virtual Thread-Safe Locking

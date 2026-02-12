@@ -4,6 +4,7 @@ description: Database index strategy and query optimization
 metadata:
   category: performance
   tags: [database, indexing, queries, optimization]
+user-invocable: false
 ---
 
 # Database Indexing

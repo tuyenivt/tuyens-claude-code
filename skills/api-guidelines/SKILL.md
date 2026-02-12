@@ -4,6 +4,7 @@ description: API consistency, compatibility, and documentation standards
 metadata:
   category: governance
   tags: [api, governance, standards, documentation]
+user-invocable: false
 ---
 
 # API Guidelines

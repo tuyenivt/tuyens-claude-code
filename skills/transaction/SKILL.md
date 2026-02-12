@@ -4,6 +4,7 @@ description: Transaction scope and propagation management
 metadata:
   category: backend
   tags: [transactions, database, spring, consistency]
+user-invocable: false
 ---
 
 # Transaction Management

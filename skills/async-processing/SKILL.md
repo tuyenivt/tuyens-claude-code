@@ -4,6 +4,7 @@ description: Non-blocking side effects and event handling patterns
 metadata:
   category: backend
   tags: [async, threading, events, idempotency]
+user-invocable: false
 ---
 
 # Async Processing
