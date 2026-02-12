@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 53 skills (13 workflow + 40 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 55 skills (14 workflow + 41 atomic).
 
 ## Installation
 
@@ -63,6 +63,7 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 | `task-docs-generate`        | Generate documentation                                                     | `technical-writer`     |
 | `task-root-cause`           | Incident root cause analysis                                               | `reliability-engineer` |
 | `task-postmortem`           | Post-incident postmortem and prevention                                    | `reliability-engineer` |
+| `task-release-plan`         | Production release planning with rollout safety                            | `reliability-engineer` |
 
 ## Usage Examples
 
@@ -127,6 +128,23 @@ Scope options -- asks interactively if not specified:
 [paste incident summary and root cause analysis output]
 ```
 
+**Production release planning:**
+
+```
+/task-release-plan
+Feature: New order payment flow with Stripe integration
+DB migration: adds payment_intent_id column to orders table
+Traffic expectation: 500 RPS steady state
+```
+
+Scope options -- asks interactively if not specified:
+
+```
+/task-release-plan +review   # Core + code review
+/task-release-plan +perf     # Core + performance review
+/task-release-plan full      # Core + review + performance
+```
+
 **Security review (works with any framework):**
 
 ```
@@ -152,7 +170,7 @@ Scope options -- asks interactively if not specified:
 
 ## Atomic Skills (Reusable Patterns)
 
-40 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+41 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend (7)
 
@@ -193,19 +211,20 @@ Scope options -- asks interactively if not specified:
 | `db-indexing`          | Database indexing strategy                                |
 | `payload-optimization` | API response optimization                                 |
 
-### Ops (9)
+### Ops (10)
 
-| Skill                          | Purpose                                                 |
-| ------------------------------ | ------------------------------------------------------- |
-| `observability`                | Logging, metrics, tracing                               |
-| `resiliency`                   | Timeout, retry, circuit breaker                         |
-| `release-safety`               | Rollout, rollback, and deployment risk patterns         |
-| `dependency-impact-analysis`   | Deployment ordering and dependency change impact        |
-| `safe-file-operations`         | Cross-platform shell and file operations                |
-| `failure-classification`       | Classify failures by type, mechanism, and system layer  |
-| `failure-propagation-analysis` | Trace cascading failure paths across system boundaries  |
-| `root-cause-hypothesis`        | Generate ranked hypotheses with confidence and evidence |
-| `incident-prevention`          | Systemic prevention strategies tied to failure classes  |
+| Skill                             | Purpose                                                 |
+| --------------------------------- | ------------------------------------------------------- |
+| `observability`                   | Logging, metrics, tracing                               |
+| `resiliency`                      | Timeout, retry, circuit breaker                         |
+| `release-safety`                  | Rollout, rollback, and deployment risk patterns         |
+| `dependency-impact-analysis`      | Deployment ordering and dependency change impact        |
+| `safe-file-operations`            | Cross-platform shell and file operations                |
+| `failure-classification`          | Classify failures by type, mechanism, and system layer  |
+| `failure-propagation-analysis`    | Trace cascading failure paths across system boundaries  |
+| `root-cause-hypothesis`           | Generate ranked hypotheses with confidence and evidence |
+| `incident-prevention`             | Systemic prevention strategies tied to failure classes  |
+| `backward-compatibility-analysis` | API, event, and data contract compatibility assessment  |
 
 ### Integration (2)
 
