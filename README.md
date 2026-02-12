@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 36 skills (10 composite + 26 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 41 skills (11 composite + 30 atomic).
 
 ## Installation
 
@@ -60,6 +60,7 @@ Composite skills (`task-*`) orchestrate multiple atomic skills into task-oriente
 | `task-code-refactor`        | Refactoring plan                        | `refactoring-expert`   |
 | `task-perf-review`          | Performance review                      | `performance-engineer` |
 | `task-docs-generate`        | Generate documentation                  | `technical-writer`     |
+| `task-root-cause`           | Incident root cause analysis            | `performance-engineer` |
 
 ## Usage Examples
 
@@ -92,6 +93,13 @@ Props: orders, onSelect
 ```
 /task-code-review-advanced
 [paste code or file path]
+```
+
+**Incident root cause analysis:**
+
+```
+/task-root-cause
+[paste stack trace, logs, or error message]
 ```
 
 **Security review (works with any framework):**
@@ -149,13 +157,17 @@ Props: orders, onSelect
 | `db-indexing`          | Database indexing strategy      |
 | `payload-optimization` | API response optimization       |
 
-### Ops (3)
+### Ops (7)
 
-| Skill                  | Purpose                                  |
-| ---------------------- | ---------------------------------------- |
-| `observability`        | Logging, metrics, tracing                |
-| `resiliency`           | Timeout, retry, circuit breaker          |
-| `safe-file-operations` | Cross-platform shell and file operations |
+| Skill                          | Purpose                                                 |
+| ------------------------------ | ------------------------------------------------------- |
+| `observability`                | Logging, metrics, tracing                               |
+| `resiliency`                   | Timeout, retry, circuit breaker                         |
+| `safe-file-operations`         | Cross-platform shell and file operations                |
+| `failure-classification`       | Classify failures by type, mechanism, and system layer  |
+| `failure-propagation-analysis` | Trace cascading failure paths across system boundaries  |
+| `root-cause-hypothesis`        | Generate ranked hypotheses with confidence and evidence |
+| `incident-prevention`          | Systemic prevention strategies tied to failure classes  |
 
 ### Integration (2)
 
