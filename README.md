@@ -51,17 +51,17 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 
 ### Framework-Aware (Auto-detect)
 
-| Skill                       | Purpose                                 | Agent                  |
-| --------------------------- | --------------------------------------- | ---------------------- |
-| `task-code-review`          | Code review (any framework)             | `tech-lead`            |
-| `task-code-review-advanced` | Staff-level review with risk assessment | `tech-lead`            |
-| `task-code-secure`          | Security review                         | `security-engineer`    |
-| `task-code-test`            | Test strategy                           | `test-engineer`        |
-| `task-code-refactor`        | Refactoring plan                        | `refactoring-expert`   |
-| `task-perf-review`          | Performance review                      | `performance-engineer` |
-| `task-docs-generate`        | Generate documentation                  | `technical-writer`     |
-| `task-root-cause`           | Incident root cause analysis            | `reliability-engineer` |
-| `task-postmortem`           | Post-incident postmortem and prevention | `reliability-engineer` |
+| Skill                       | Purpose                                                                    | Agent                  |
+| --------------------------- | -------------------------------------------------------------------------- | ---------------------- |
+| `task-code-review`          | Code review (any framework)                                                | `tech-lead`            |
+| `task-code-review-advanced` | Staff-level review with risk assessment (scope: core/+perf/+security/full) | `tech-lead`            |
+| `task-code-secure`          | Security review                                                            | `security-engineer`    |
+| `task-code-test`            | Test strategy                                                              | `test-engineer`        |
+| `task-code-refactor`        | Refactoring plan                                                           | `refactoring-expert`   |
+| `task-perf-review`          | Performance review                                                         | `performance-engineer` |
+| `task-docs-generate`        | Generate documentation                                                     | `technical-writer`     |
+| `task-root-cause`           | Incident root cause analysis                                               | `reliability-engineer` |
+| `task-postmortem`           | Post-incident postmortem and prevention                                    | `reliability-engineer` |
 
 ## Usage Examples
 
@@ -94,6 +94,14 @@ Props: orders, onSelect
 ```
 /task-code-review-advanced
 [paste code or file path]
+```
+
+Scope options -- asks interactively if not specified:
+
+```
+/task-code-review-advanced +perf      # Core + performance review
+/task-code-review-advanced +security  # Core + security review
+/task-code-review-advanced full       # Core + performance + security
 ```
 
 **Incident root cause analysis:**

@@ -18,7 +18,7 @@ Staff-level code review that prioritizes system risk over style:
 - **Maintainability control** -- catch over-abstraction, verbosity inflation, and premature generalization
 - **High-signal findings only** -- no nitpicking, no trivial formatting comments
 
-This skill focuses on the 80/20: high-impact issues that affect system integrity. Delegate deep performance analysis to skill: `task-perf-review`.
+This skill focuses on the 80/20: high-impact issues that affect system integrity.
 
 ## When to Use
 
@@ -27,6 +27,21 @@ This skill focuses on the 80/20: high-impact issues that affect system integrity
 - Post-AI-generation quality gate
 - Architecture drift detection
 - Pre-merge risk assessment
+
+## Scope
+
+Before starting the review, ask the user which scope they need:
+
+| Scope      | What runs                                                                      |
+| ---------- | ------------------------------------------------------------------------------ |
+| Core       | Phases A-E only (risk, correctness, architecture, AI quality, maintainability) |
+| + Perf     | Core + delegate to skill: `task-perf-review`                                   |
+| + Security | Core + delegate to skill: `task-code-secure`                                   |
+| Full       | Core + Performance + Security                                                  |
+
+Default: **Core** (if the user doesn't specify, run Core only).
+
+If the user invokes with an explicit scope argument (e.g., `/task-code-review-advanced +perf`), skip the question and use that scope directly.
 
 ## Inputs
 
@@ -45,8 +60,8 @@ This skill focuses on the 80/20: high-impact issues that affect system integrity
 - Never block on personal preference
 - If risk is low, state so explicitly and keep the review short
 - Optimize for daily repeated use -- be concise
-- Delegate deep performance analysis to skill: `task-perf-review`
-- Delegate deep security analysis to skill: `task-code-secure`
+- Only delegate to skill: `task-perf-review` or skill: `task-code-secure` when the user-selected scope includes them
+- Default to Core scope -- do not run performance or security sub-workflows unless explicitly requested
 
 ## Review Model
 
@@ -196,8 +211,9 @@ Use skill: `observability` for logging/tracing gaps in critical paths only.
 - Nitpicking style when no project standard exists
 - Blocking on personal preference
 - Reviewing without understanding module context
-- Duplicating deep performance analysis (use skill: `task-perf-review`)
-- Duplicating deep security analysis (use skill: `task-code-secure`)
+- Running performance or security sub-workflows when user requested Core scope only
+- Duplicating deep performance analysis inline (delegate to skill: `task-perf-review` when in scope)
+- Duplicating deep security analysis inline (delegate to skill: `task-code-secure` when in scope)
 - Commenting on every file -- focus on systemic issues
 
 ## Key Skills Reference
@@ -225,10 +241,10 @@ Use skill: `observability` for logging/tracing gaps in critical paths only.
 - Use skill: `react-state-management` for state patterns
 - Use skill: `react-memoization` for optimization
 
-**Delegated Reviews:**
+**Delegated Reviews (scope-dependent):**
 
-- Use skill: `task-perf-review` for deep performance analysis
-- Use skill: `task-code-secure` for deep security analysis
+- Use skill: `task-perf-review` for deep performance analysis (when scope includes +Perf or Full)
+- Use skill: `task-code-secure` for deep security analysis (when scope includes +Security or Full)
 
 ### Sub-Skills Defined for This Workflow
 
