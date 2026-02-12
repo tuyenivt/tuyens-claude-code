@@ -12,7 +12,7 @@ user-invocable: false
 ## When to Use
 
 - After root cause analysis is complete and containment is in place
-- During incident retrospective to propose systemic improvements
+- During postmortem to propose systemic improvements
 - When identifying patterns across multiple related incidents
 
 ## Rules

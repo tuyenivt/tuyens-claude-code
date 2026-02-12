@@ -26,7 +26,7 @@ This skill assumes partial code comprehension. Code volume from AI-generated con
 - On-call triage and escalation support
 - Post-incident root cause analysis
 - Cascading failure diagnosis
-- Incident retrospective preparation
+- Incident postmortem preparation
 
 ## Inputs
 

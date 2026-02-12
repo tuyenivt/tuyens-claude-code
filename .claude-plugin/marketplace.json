@@ -9,8 +9,8 @@
     {
       "name": "tuyens-claude-code",
       "source": "./",
-      "description": "41 skills and 10 agents for Java Spring and React development",
-      "version": "3.2.0",
+      "description": "45 skills and 11 agents for Java Spring and React development",
+      "version": "3.3.0",
       "author": {
         "name": "Tuyen",
         "url": "https://github.com/tuyenivt"

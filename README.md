@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 41 skills (11 workflow + 30 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 45 skills (12 workflow + 33 atomic).
 
 ## Installation
 
@@ -60,7 +60,8 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 | `task-code-refactor`        | Refactoring plan                        | `refactoring-expert`   |
 | `task-perf-review`          | Performance review                      | `performance-engineer` |
 | `task-docs-generate`        | Generate documentation                  | `technical-writer`     |
-| `task-root-cause`           | Incident root cause analysis            | `performance-engineer` |
+| `task-root-cause`           | Incident root cause analysis            | `reliability-engineer` |
+| `task-postmortem`           | Post-incident postmortem and prevention | `reliability-engineer` |
 
 ## Usage Examples
 
@@ -102,6 +103,13 @@ Props: orders, onSelect
 [paste stack trace, logs, or error message]
 ```
 
+**Post-incident postmortem:**
+
+```
+/task-postmortem
+[paste incident summary and root cause analysis output]
+```
+
 **Security review (works with any framework):**
 
 ```
@@ -123,10 +131,11 @@ Props: orders, onSelect
 | `refactoring-expert`   | Code cleanup                       |
 | `technical-writer`     | Documentation                      |
 | `tech-lead`            | Code review (multi-lang)           |
+| `reliability-engineer` | Incident analysis and prevention   |
 
 ## Atomic Skills (Reusable Patterns)
 
-26 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+33 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend (7)
 
@@ -159,6 +168,8 @@ Props: orders, onSelect
 
 ### Ops (7)
 
+Note: 4 of these are sub-skills defined by `task-root-cause`.
+
 | Skill                          | Purpose                                                 |
 | ------------------------------ | ------------------------------------------------------- |
 | `observability`                | Logging, metrics, tracing                               |
@@ -176,17 +187,20 @@ Props: orders, onSelect
 | `idempotency`      | Idempotency patterns |
 | `rest-integration` | REST client patterns |
 
-### Governance (7)
+### Governance (10)
 
-| Skill                    | Purpose                                               |
-| ------------------------ | ----------------------------------------------------- |
-| `api-guidelines`         | API consistency standards                             |
-| `coding-standards`       | Code style and structure                              |
-| `pr-risk-analysis`       | Lightweight heuristic PR risk classification          |
-| `blast-radius-analysis`  | Failure propagation and change impact scope           |
-| `architecture-guardrail` | Layer violation and boundary erosion detection        |
-| `ai-verbosity-control`   | AI-generated over-engineering and verbosity detection |
-| `complexity-compression` | Simplification opportunity identification             |
+| Skill                    | Purpose                                                 |
+| ------------------------ | ------------------------------------------------------- |
+| `api-guidelines`         | API consistency standards                               |
+| `coding-standards`       | Code style and structure                                |
+| `pr-risk-analysis`       | Lightweight heuristic PR risk classification            |
+| `blast-radius-analysis`  | Failure propagation and change impact scope             |
+| `architecture-guardrail` | Layer violation and boundary erosion detection          |
+| `ai-verbosity-control`   | AI-generated over-engineering and verbosity detection   |
+| `complexity-compression` | Simplification opportunity identification               |
+| `review-gap-analysis`    | Analyze why review processes missed a failure           |
+| `guardrail-evolution`    | Evolve guardrails based on incident learnings           |
+| `engineering-governance` | Engineering process and governance improvement patterns |
 
 **Benefits:**
 
