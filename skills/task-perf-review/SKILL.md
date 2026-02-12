@@ -4,7 +4,7 @@ description: Performance review for backend (Java 21+ / Spring Boot 3.5+) or fro
 metadata:
   category: review
   tags: [performance, optimization, profiling, database]
-  type: composite
+  type: workflow
 ---
 
 # Performance Review

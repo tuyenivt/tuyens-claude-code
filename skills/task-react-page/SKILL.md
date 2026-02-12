@@ -4,7 +4,7 @@ description: Create new React page with routing and data fetching
 metadata:
   category: frontend
   tags: [react, typescript, page, routing, data-fetching]
-  type: composite
+  type: workflow
 ---
 
 # React Page

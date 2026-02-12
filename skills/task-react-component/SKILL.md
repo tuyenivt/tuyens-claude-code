@@ -4,7 +4,7 @@ description: Create new React component with TypeScript following best practices
 metadata:
   category: frontend
   tags: [react, typescript, component, accessibility]
-  type: composite
+  type: workflow
 ---
 
 # React Component

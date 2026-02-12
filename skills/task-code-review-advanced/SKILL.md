@@ -4,7 +4,7 @@ description: Staff-level system-aware code review with risk assessment
 metadata:
   category: review
   tags: [code-review, pull-request, risk-assessment, architecture, ai-quality]
-  type: composite
+  type: workflow
 ---
 
 # Code Review -- Staff Edition

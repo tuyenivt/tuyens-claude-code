@@ -4,7 +4,7 @@ description: Code review for pull requests (framework-aware)
 metadata:
   category: review
   tags: [code-review, pull-request, quality]
-  type: composite
+  type: workflow
 ---
 
 # Code Review

@@ -4,7 +4,7 @@ description: Staff-level incident root cause analysis with containment and preve
 metadata:
   category: ops
   tags: [incident, root-cause, on-call, reliability, containment]
-  type: composite
+  type: workflow
 ---
 
 # Root Cause Analysis -- Staff Edition

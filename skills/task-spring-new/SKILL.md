@@ -4,7 +4,7 @@ description: Create new Spring Boot 3.5+ API endpoint with controller, service, 
 metadata:
   category: backend
   tags: [spring-boot, java, rest-api, jpa]
-  type: composite
+  type: workflow
 ---
 
 # Spring New Endpoint

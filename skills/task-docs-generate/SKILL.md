@@ -4,7 +4,7 @@ description: Generate clear, maintainable documentation (README, API docs, ADRs)
 metadata:
   category: review
   tags: [documentation, readme, api-docs, adr]
-  type: composite
+  type: workflow
 ---
 
 # Documentation Generator

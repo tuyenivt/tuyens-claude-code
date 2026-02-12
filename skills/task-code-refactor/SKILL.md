@@ -4,7 +4,7 @@ description: Safe, incremental refactoring plan with risk assessment
 metadata:
   category: review
   tags: [refactoring, code-quality, technical-debt]
-  type: composite
+  type: workflow
 ---
 
 # Code Refactor

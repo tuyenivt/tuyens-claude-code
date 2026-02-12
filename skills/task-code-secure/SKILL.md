@@ -4,7 +4,7 @@ description: Security review covering OWASP Top 10, auth, and common vulnerabili
 metadata:
   category: review
   tags: [security, owasp, vulnerabilities, auth]
-  type: composite
+  type: workflow
 ---
 
 # Code Secure

@@ -4,7 +4,7 @@ description: Test strategy, scaffolds, and quality review for any framework
 metadata:
   category: review
   tags: [testing, test-strategy, unit-test, integration-test]
-  type: composite
+  type: workflow
 ---
 
 # Code Test

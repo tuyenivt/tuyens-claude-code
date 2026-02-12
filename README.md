@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 41 skills (11 composite + 30 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 41 skills (11 workflow + 30 atomic).
 
 ## Installation
 
@@ -37,9 +37,9 @@ mklink /J "%USERPROFILE%\.codex\skills\tuyens-claude-code-skills" "%USERPROFILE%
 - **Java 21+ Patterns**: Records for DTOs, pattern matching, sealed classes
 - **Spring Boot 3.5+**: Jakarta EE 10 (EE 11 for Spring Boot 4), optimized connection pools (10-40)
 
-## Composite Skills (Task Workflows)
+## Workflow Skills
 
-Composite skills (`task-*`) orchestrate multiple atomic skills into task-oriented workflows. They are invoked as slash commands.
+Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented workflows. They are invoked as slash commands.
 
 ### Framework-Specific
 
@@ -126,7 +126,7 @@ Props: orders, onSelect
 
 ## Atomic Skills (Reusable Patterns)
 
-26 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by composite skills and agents.
+26 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend (7)
 
@@ -193,7 +193,7 @@ Props: orders, onSelect
 - Single source of truth for patterns
 - Reduced duplicated content through skill composition
 - Easy maintenance (update once, affects all)
-- Clear separation: composite skills orchestrate workflows, atomic skills provide implementation patterns
+- Clear separation: workflow skills orchestrate multi-step tasks, atomic skills provide implementation patterns
 
 ## License
 
