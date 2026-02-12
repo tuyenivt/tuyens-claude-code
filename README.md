@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 30 skills (9 composite + 21 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 36 skills (10 composite + 26 atomic).
 
 ## Installation
 
@@ -51,14 +51,15 @@ Composite skills (`task-*`) orchestrate multiple atomic skills into task-oriente
 
 ### Framework-Aware (Auto-detect)
 
-| Skill                | Purpose                     | Agent                  |
-| -------------------- | --------------------------- | ---------------------- |
-| `task-code-review`   | Code review (any framework) | `tech-lead`            |
-| `task-code-secure`   | Security review             | `security-engineer`    |
-| `task-code-test`     | Test strategy               | `test-engineer`        |
-| `task-code-refactor` | Refactoring plan            | `refactoring-expert`   |
-| `task-perf-review`   | Performance review          | `performance-engineer` |
-| `task-docs-generate` | Generate documentation      | `technical-writer`     |
+| Skill                       | Purpose                                 | Agent                  |
+| --------------------------- | --------------------------------------- | ---------------------- |
+| `task-code-review`          | Code review (any framework)             | `tech-lead`            |
+| `task-code-review-advanced` | Staff-level review with risk assessment | `tech-lead`            |
+| `task-code-secure`          | Security review                         | `security-engineer`    |
+| `task-code-test`            | Test strategy                           | `test-engineer`        |
+| `task-code-refactor`        | Refactoring plan                        | `refactoring-expert`   |
+| `task-perf-review`          | Performance review                      | `performance-engineer` |
+| `task-docs-generate`        | Generate documentation                  | `technical-writer`     |
 
 ## Usage Examples
 
@@ -79,10 +80,17 @@ Name: OrderList
 Props: orders, onSelect
 ```
 
-**Review code (auto-detects framework):**
+**Review code (basic, auto-detects framework):**
 
 ```
 /task-code-review
+[paste code or file path]
+```
+
+**Staff-level review (risk assessment, architecture guardrails, quality):**
+
+```
+/task-code-review-advanced
 [paste code or file path]
 ```
 
@@ -110,7 +118,7 @@ Props: orders, onSelect
 
 ## Atomic Skills (Reusable Patterns)
 
-21 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by composite skills and agents.
+26 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by composite skills and agents.
 
 ### Backend (7)
 
@@ -156,17 +164,22 @@ Props: orders, onSelect
 | `idempotency`      | Idempotency patterns |
 | `rest-integration` | REST client patterns |
 
-### Governance (2)
+### Governance (7)
 
-| Skill              | Purpose                   |
-| ------------------ | ------------------------- |
-| `api-guidelines`   | API consistency standards |
-| `coding-standards` | Code style and structure  |
+| Skill                    | Purpose                                               |
+| ------------------------ | ----------------------------------------------------- |
+| `api-guidelines`         | API consistency standards                             |
+| `coding-standards`       | Code style and structure                              |
+| `pr-risk-analysis`       | Lightweight heuristic PR risk classification          |
+| `blast-radius-analysis`  | Failure propagation and change impact scope           |
+| `architecture-guardrail` | Layer violation and boundary erosion detection        |
+| `ai-verbosity-control`   | AI-generated over-engineering and verbosity detection |
+| `complexity-compression` | Simplification opportunity identification             |
 
 **Benefits:**
 
 - Single source of truth for patterns
-- 86% reduction in duplicated content (~3,700 tokens saved)
+- Reduced duplicated content through skill composition
 - Easy maintenance (update once, affects all)
 - Clear separation: composite skills orchestrate workflows, atomic skills provide implementation patterns
 
