@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 55 skills (14 workflow + 41 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 57 skills (15 workflow + 42 atomic).
 
 ## Installation
 
@@ -64,6 +64,7 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 | `task-root-cause`           | Incident root cause analysis                                               | `reliability-engineer` |
 | `task-postmortem`           | Post-incident postmortem and prevention                                    | `reliability-engineer` |
 | `task-release-plan`         | Production release planning with rollout safety                            | `reliability-engineer` |
+| `task-risk-analysis`        | Proactive engineering risk assessment for proposed changes                 | `reliability-engineer` |
 
 ## Usage Examples
 
@@ -145,6 +146,15 @@ Scope options -- asks interactively if not specified:
 /task-release-plan full      # Core + review + performance
 ```
 
+**Proactive risk assessment (before implementation or merge):**
+
+```
+/task-risk-analysis
+Change: Introduce async order payment flow with Stripe webhook
+DB migration: adds payment_intent_id column to orders table
+Integration: new Stripe webhook endpoint
+```
+
 **Security review (works with any framework):**
 
 ```
@@ -170,7 +180,7 @@ Scope options -- asks interactively if not specified:
 
 ## Atomic Skills (Reusable Patterns)
 
-41 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+42 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend (7)
 
@@ -233,20 +243,21 @@ Scope options -- asks interactively if not specified:
 | `idempotency`      | Idempotency patterns |
 | `rest-integration` | REST client patterns |
 
-### Governance (10)
+### Governance (11)
 
-| Skill                    | Purpose                                                 |
-| ------------------------ | ------------------------------------------------------- |
-| `api-guidelines`         | API consistency standards                               |
-| `coding-standards`       | Code style and structure                                |
-| `pr-risk-analysis`       | Lightweight heuristic PR risk classification            |
-| `blast-radius-analysis`  | Failure propagation and change impact scope             |
-| `architecture-guardrail` | Layer violation and boundary erosion detection          |
-| `ai-verbosity-control`   | AI-generated over-engineering and verbosity detection   |
-| `complexity-compression` | Simplification opportunity identification               |
-| `review-gap-analysis`    | Analyze why review processes missed a failure           |
-| `guardrail-evolution`    | Evolve guardrails based on incident learnings           |
-| `engineering-governance` | Engineering process and governance improvement patterns |
+| Skill                        | Purpose                                                 |
+| ---------------------------- | ------------------------------------------------------- |
+| `api-guidelines`             | API consistency standards                               |
+| `coding-standards`           | Code style and structure                                |
+| `pr-risk-analysis`           | Lightweight heuristic PR risk classification            |
+| `blast-radius-analysis`      | Failure propagation and change impact scope             |
+| `architecture-guardrail`     | Layer violation and boundary erosion detection          |
+| `ai-verbosity-control`       | AI-generated over-engineering and verbosity detection   |
+| `complexity-compression`     | Simplification opportunity identification               |
+| `review-gap-analysis`        | Analyze why review processes missed a failure           |
+| `guardrail-evolution`        | Evolve guardrails based on incident learnings           |
+| `change-risk-classification` | Pre-implementation risk domain classification           |
+| `engineering-governance`     | Engineering process and governance improvement patterns |
 
 **Benefits:**
 
