@@ -21,10 +21,9 @@ user-invocable: false
 - Avoid EAGER fetching without explicit need
 - Use fetch join selectively for specific queries
 - Prefer projection over entity for read-only queries
-- Use pagination for large result sets
 - Detect and eliminate N+1 queries
 - Keep entities small, avoid heavy logic inside entities
-- Ensure indexes for search and join columns
+- Use skill: `db-indexing` for index strategy on search and join columns
 
 ## Pattern
 
@@ -48,4 +47,3 @@ List<User> findAllWithOrders();
 
 - EAGER fetching on @OneToMany relationships
 - SELECT \* without specific column projection
-- Unbounded query results without pagination

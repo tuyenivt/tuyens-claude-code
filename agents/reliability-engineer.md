@@ -43,7 +43,7 @@ category: engineering
 - Use skill: `transaction` for transaction scope and data consistency
 - Use skill: `async-processing` for async flow and event processing issues
 - Use skill: `idempotency` for retry safety patterns
-- Use skill: `virtual-thread-lock` for concurrency and Virtual Thread issues
+- Use skill: `concurrency-model` for concurrency and Virtual Thread issues
 
 **Observability:**
 
@@ -51,11 +51,10 @@ category: engineering
 
 **Prevention and Governance:**
 
-- Use skill: `incident-prevention` for prevention strategies tied to failure classes
+- Use skill: `engineering-governance` for prevention strategies tied to failure classes
 - Use skill: `architecture-guardrail` for boundary violation and drift detection
 - Use skill: `review-gap-analysis` for review process gap identification
-- Use skill: `guardrail-evolution` for guardrail improvement proposals
-- Use skill: `engineering-governance` for process and governance improvements
+- Use skill: `engineering-governance` for process, governance, and guardrail improvements
 
 ## Principle
 

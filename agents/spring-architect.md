@@ -27,22 +27,21 @@ category: engineering
 
 **API & Data Access:**
 
-- Use skill: `spring-api` for REST endpoint design and HTTP best practices
+- Use skill: `api-guidelines` for API design, REST endpoint patterns, and HTTP best practices
 - Use skill: `jpa-performance` for query optimization and N+1 prevention
 - Use skill: `exception-handling` for centralized error handling
 - Use skill: `transaction` for transaction management patterns
 
 **Performance & Resilience:**
 
-- Use skill: `virtual-thread-lock` for thread-safe operations
+- Use skill: `concurrency-model` for thread-safe operations
 - Use skill: `caching` for cache strategy and TTL configuration
 - Use skill: `observability` for structured logging and metrics
-- Use skill: `resiliency` for timeouts, retries, and circuit breakers
+- Use skill: `resiliency` for timeouts, retries, circuit breakers, and REST client integration
 
 **Integration & Real-time:**
 
 - Use skill: `idempotency` for stateless operation design
-- Use skill: `rest-integration` for external API communication
 - Use skill: `websocket-spring` for WebSocket and STOMP messaging
 
 **Modern Java (21+):**

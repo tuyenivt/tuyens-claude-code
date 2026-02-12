@@ -107,8 +107,7 @@ Focus on long-term structural integrity.
 
 ### D. AI-Generated Code Quality Control
 
-Use skill: `ai-verbosity-control` to detect verbosity and over-engineering.
-Use skill: `complexity-compression` to identify simplification opportunities.
+Use skill: `complexity-review` to detect verbosity, over-engineering, and identify simplification opportunities.
 
 Key signals:
 
@@ -234,8 +233,8 @@ Use skill: `observability` for logging/tracing gaps in critical paths only.
 
 **Framework-Specific (as needed):**
 
-- Use skill: `spring-api` for REST API design
-- Use skill: `virtual-thread-lock` for thread-safety
+- Use skill: `api-guidelines` for API design and REST endpoint patterns
+- Use skill: `concurrency-model` for thread-safety
 - Use skill: `jpa-performance` for data access
 - Use skill: `react-component-design` for component patterns
 - Use skill: `react-state-management` for state patterns
@@ -248,10 +247,9 @@ Use skill: `observability` for logging/tracing gaps in critical paths only.
 
 ### Sub-Skills Defined for This Workflow
 
-| Skill                    | Purpose                                               |
-| ------------------------ | ----------------------------------------------------- |
-| `pr-risk-analysis`       | Lightweight heuristic PR risk classification          |
-| `blast-radius-analysis`  | Failure propagation and change impact scope           |
-| `architecture-guardrail` | Layer violation and boundary erosion detection        |
-| `ai-verbosity-control`   | AI-generated over-engineering and verbosity detection |
-| `complexity-compression` | Simplification opportunity identification             |
+| Skill                    | Purpose                                        |
+| ------------------------ | ---------------------------------------------- |
+| `pr-risk-analysis`       | Lightweight heuristic PR risk classification   |
+| `blast-radius-analysis`  | Failure propagation and change impact scope    |
+| `architecture-guardrail` | Layer violation and boundary erosion detection |
+| `complexity-review`      | Complexity detection and simplification        |

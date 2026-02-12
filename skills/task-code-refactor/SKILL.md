@@ -56,7 +56,7 @@ metadata:
 Apply these skills when performing refactorings:
 
 - Use skill: `coding-standards` for style and structure guidelines
-- Use skill: `virtual-thread-lock` for thread-safety during refactoring
+- Use skill: `concurrency-model` for thread-safety during refactoring
 - Use skill: `jpa-performance` for data access optimizations
 - Use skill: `exception-handling` for error handling improvements
 

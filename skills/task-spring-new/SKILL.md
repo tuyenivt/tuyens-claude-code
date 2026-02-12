@@ -71,7 +71,7 @@ public class ResourceService {
         return toResponse(entity);
     }
 
-    // For thread-safety, use skill: virtual-thread-lock
+    // For thread-safety, use skill: concurrency-model
 }
 
 // Java 21+ Records for DTOs
@@ -91,8 +91,8 @@ public record ResourceResponse(
 
 For detailed patterns, reference these skills:
 
-- Use skill: `spring-api` for REST API design principles
-- Use skill: `virtual-thread-lock` for Virtual Thread-safe locking patterns
+- Use skill: `api-guidelines` for API design and REST endpoint patterns
+- Use skill: `concurrency-model` for Virtual Thread-safe locking patterns
 - Use skill: `jpa-performance` for optimal data access patterns
 - Use skill: `exception-handling` for centralized error handling
 - Use skill: `transaction` for transaction management

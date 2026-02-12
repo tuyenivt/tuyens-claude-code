@@ -188,7 +188,7 @@ For each gap:
 **Every release must answer: "How do we undo this in 10 minutes?"**
 
 Use skill: `release-safety` for rollback patterns.
-Use skill: `incident-prevention` for prevention strategies.
+Use skill: `engineering-governance` for prevention strategies.
 Use skill: `failure-propagation-analysis` to understand rollback propagation impact.
 
 Define:
@@ -367,7 +367,7 @@ Soak time:
 - Use skill: `dependency-impact-analysis` for deployment ordering and dependency impact
 - Use skill: `resiliency` for circuit breaker and timeout patterns
 - Use skill: `observability` for logging, metrics, and tracing readiness
-- Use skill: `incident-prevention` for prevention strategies
+- Use skill: `engineering-governance` for prevention strategies
 
 **Delegated Workflows (optional scope):**
 

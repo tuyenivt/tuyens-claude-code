@@ -70,7 +70,7 @@ For security patterns, reference these skills:
 
 - Use skill: `exception-handling` for secure error responses (no stack traces)
 - Use skill: `observability` for logging without sensitive data
-- Use skill: `rest-integration` for secure external API communication
+- Use skill: `resiliency` for secure and resilient external API communication
 - Use skill: `idempotency` for safe retry patterns
 
 ## Rules

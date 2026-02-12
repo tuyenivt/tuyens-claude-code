@@ -3,7 +3,7 @@ name: task-postmortem
 description: Staff-level postmortem for systemic learning and prevention
 metadata:
   category: ops
-  tags: [incident, postmortem, prevention, governance, reliability]
+  tags: [incident, postmortem, retrospective, prevention, governance, reliability]
   type: workflow
 ---
 
@@ -91,7 +91,7 @@ Identify the primary failure category:
 
 Apply domain-specific skills based on classification:
 
-- Concurrency: use skill: `virtual-thread-lock`
+- Concurrency: use skill: `concurrency-model`
 - Transaction boundary: use skill: `transaction`
 - Async/event: use skill: `async-processing`
 - External dependency: use skill: `resiliency`
@@ -117,7 +117,7 @@ Evaluate:
 
 Use skill: `blast-radius-analysis` to assess propagation scope.
 Use skill: `architecture-guardrail` to identify boundary violations exposed by the incident.
-Use skill: `ai-verbosity-control` to assess whether AI-generated complexity contributed.
+Use skill: `complexity-review` to assess whether AI-generated complexity contributed.
 
 ### 4. Guardrail and Review Gap Analysis
 
@@ -132,7 +132,7 @@ Use skill: `review-gap-analysis` to evaluate:
 - Was monitoring insufficient to detect early?
 - Was cognitive load too high for effective review?
 
-Use skill: `guardrail-evolution` to propose specific guardrail improvements.
+Use skill: `engineering-governance` to propose specific guardrail improvements.
 
 ### 5. Observability and Detection Improvements
 
@@ -177,7 +177,7 @@ Evaluate:
 ### 7. Governance and Process Improvements
 
 Use skill: `engineering-governance` to recommend process-level changes.
-Use skill: `incident-prevention` for prevention strategies tied to failure classes.
+Use skill: `engineering-governance` for prevention strategies tied to failure classes.
 
 Evaluate:
 
@@ -307,7 +307,7 @@ Contributing Factors:
 - Use skill: `exception-handling` for error handling and propagation patterns
 - Use skill: `transaction` for transaction scope and data consistency
 - Use skill: `jpa-performance` for query performance and N+1 detection
-- Use skill: `virtual-thread-lock` for concurrency and Virtual Thread issues
+- Use skill: `concurrency-model` for concurrency and Virtual Thread issues
 - Use skill: `async-processing` for async flow and event processing issues
 
 **Observability and Architecture:**
@@ -318,8 +318,8 @@ Contributing Factors:
 
 **Quality and Governance:**
 
-- Use skill: `ai-verbosity-control` for AI-generated complexity assessment
-- Use skill: `incident-prevention` for prevention strategies tied to failure classes
+- Use skill: `complexity-review` for AI-generated complexity assessment
+- Use skill: `engineering-governance` for prevention strategies tied to failure classes
 - Use skill: `coding-standards` for coding standards updates
 
 **Related Workflow:**
@@ -328,8 +328,7 @@ Contributing Factors:
 
 ### Sub-Skills Defined for This Workflow
 
-| Skill                    | Purpose                                                         |
-| ------------------------ | --------------------------------------------------------------- |
-| `review-gap-analysis`    | Analyze why existing review processes did not catch the failure |
-| `guardrail-evolution`    | Propose specific guardrail improvements from incident data      |
-| `engineering-governance` | Engineering process and governance improvement patterns         |
+| Skill                    | Purpose                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------- |
+| `review-gap-analysis`    | Analyze why existing review processes did not catch the failure                  |
+| `engineering-governance` | Engineering process, governance, guardrail improvements, and incident prevention |

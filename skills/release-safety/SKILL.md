@@ -38,20 +38,9 @@ user-invocable: false
 
 ### Database Migration Safety
 
-Deploy order for additive changes:
-
-1. Deploy new code that handles both old and new schema
-2. Run migration (add column, add table)
-3. Deploy code that uses new schema
-4. Remove old schema support in next release
-
-Deploy order for destructive changes:
-
-1. Deploy code that stops using old column
-2. Verify no reads/writes to old column in production
-3. Run migration to drop column
-
 **Rule**: Code must work with both old and new schema during rolling deployment.
+
+Use skill: `backward-compatibility-analysis` for detailed expand-contract migration plans, deploy ordering for additive vs destructive schema changes, and consumer compatibility assessment.
 
 ### Feature Flag Design
 

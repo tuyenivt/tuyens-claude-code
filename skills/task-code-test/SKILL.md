@@ -195,7 +195,7 @@ it("increments counter", () => {
 For detailed testing patterns, reference these skills:
 
 - Use skill: `coding-standards` for test naming and structure
-- Use skill: `spring-api` for API test patterns
+- Use skill: `api-guidelines` for API test patterns
 - Use skill: `react-component-design` for component test strategies
 
 ## Principles

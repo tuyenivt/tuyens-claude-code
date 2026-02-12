@@ -72,8 +72,8 @@ When providing detailed feedback, reference these skills:
 
 **Backend:**
 
-- Use skill: `spring-api` for REST API design
-- Use skill: `virtual-thread-lock` for thread-safety
+- Use skill: `api-guidelines` for API design and REST endpoint patterns
+- Use skill: `concurrency-model` for thread-safety
 - Use skill: `jpa-performance` for data access
 - Use skill: `exception-handling` for error handling
 - Use skill: `transaction` for transaction management

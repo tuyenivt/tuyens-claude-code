@@ -21,7 +21,7 @@ user-invocable: false
 - Map the dependency graph before assessing impact
 - Changes to shared contracts require consumer impact assessment
 - Deployment order must respect the dependency direction
-- Breaking changes require a compatibility migration plan (expand-contract)
+- Breaking changes require a compatibility migration plan -- use skill: `backward-compatibility-analysis` for expand-contract mechanics
 - Do not assume consumers will update immediately
 
 ## Pattern
@@ -37,20 +37,20 @@ For each changed component, identify:
 
 ### Impact Classification
 
-| Change Type           | Consumer Impact     | Deployment Constraint              |
-| --------------------- | ------------------- | ---------------------------------- |
-| Additive (new field)  | None if optional    | Deploy provider first              |
-| Modification (rename) | Breaking            | Expand-contract migration required |
-| Removal (drop field)  | Breaking            | Verify no consumers, then remove   |
-| Behavioral (logic)    | Depends on contract | Canary with consumer monitoring    |
-| Performance (latency) | Cascading risk      | Load test with consumer traffic    |
+| Change Type           | Consumer Impact     | Deployment Constraint                        |
+| --------------------- | ------------------- | -------------------------------------------- |
+| Additive (new field)  | None if optional    | Deploy provider first                        |
+| Modification (rename) | Breaking            | Use skill: `backward-compatibility-analysis` |
+| Removal (drop field)  | Breaking            | Verify no consumers, then remove             |
+| Behavioral (logic)    | Depends on contract | Canary with consumer monitoring              |
+| Performance (latency) | Cascading risk      | Load test with consumer traffic              |
 
 ### Deployment Ordering
 
 - **Provider before consumer** for additive changes
 - **Consumer before provider** for removal changes
 - **Simultaneous** only when feature-flagged on both sides
-- **Expand-contract** for breaking changes: add new -> migrate consumers -> remove old
+- **Expand-contract** for breaking changes -- see skill: `backward-compatibility-analysis` for detailed migration plan
 
 ### Good: Specific impact with deployment order
 
@@ -73,6 +73,6 @@ Changed the Order API. Should be fine for everyone.
 
 - Deploying provider changes without mapping consumers
 - Assuming all consumers handle new fields gracefully
-- Breaking changes without an expand-contract migration plan
+- Breaking changes without a migration plan (see skill: `backward-compatibility-analysis`)
 - Deploying consumer before provider for additive changes
 - Ignoring transitive dependency impact

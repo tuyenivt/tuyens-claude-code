@@ -54,8 +54,8 @@ When reviewing code, reference relevant skills for detailed patterns:
 
 **Backend (Java/Spring):**
 
-- Use skill: `spring-api` for REST API design
-- Use skill: `virtual-thread-lock` for concurrency patterns
+- Use skill: `api-guidelines` for API design and REST endpoint patterns
+- Use skill: `concurrency-model` for concurrency patterns
 - Use skill: `coding-standards` for team conventions
 
 **Frontend (React):**

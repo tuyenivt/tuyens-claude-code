@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 57 skills (15 workflow + 42 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 51 skills (15 workflow + 36 atomic).
 
 ## Installation
 
@@ -180,21 +180,19 @@ Integration: new Stripe webhook endpoint
 
 ## Atomic Skills (Reusable Patterns)
 
-42 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+36 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
-### Backend (7)
+### Backend
 
-| Skill                 | Purpose                             |
-| --------------------- | ----------------------------------- |
-| `async-processing`    | Async processing with Spring @Async |
-| `exception-handling`  | Centralized exception handling      |
-| `jpa-performance`     | JPA optimization and N+1 prevention |
-| `spring-api`          | REST API best practices             |
-| `transaction`         | Transaction management              |
-| `virtual-thread-lock` | Virtual Thread-safe locking         |
-| `websocket-spring`    | WebSocket and STOMP messaging       |
+| Skill                | Purpose                             |
+| -------------------- | ----------------------------------- |
+| `async-processing`   | Async processing with Spring @Async |
+| `exception-handling` | Centralized exception handling      |
+| `jpa-performance`    | JPA optimization and N+1 prevention |
+| `transaction`        | Transaction management              |
+| `websocket-spring`   | WebSocket and STOMP messaging       |
 
-### Frontend (4)
+### Frontend
 
 | Skill                    | Purpose                          |
 | ------------------------ | -------------------------------- |
@@ -203,16 +201,16 @@ Integration: new Stripe webhook endpoint
 | `react-state-management` | State scope and ownership        |
 | `websocket-react`        | WebSocket hooks and STOMP client |
 
-### Architecture (4)
+### Architecture
 
-| Skill                       | Purpose                                                       |
-| --------------------------- | ------------------------------------------------------------- |
-| `system-boundary-design`    | Formal boundary modeling for module/service decomposition     |
-| `data-consistency-modeling` | Consistency strategy selection across data boundaries         |
-| `tradeoff-analysis`         | Structured architectural decision and trade-off documentation |
-| `concurrency-model`         | Concurrency risk assessment and Virtual Thread compatibility  |
+| Skill                       | Purpose                                                                       |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| `system-boundary-design`    | Formal boundary modeling for module/service decomposition                     |
+| `data-consistency-modeling` | Consistency strategy selection across data boundaries                         |
+| `tradeoff-analysis`         | Structured architectural decision and trade-off documentation                 |
+| `concurrency-model`         | Concurrency risk assessment, Virtual Thread-safe locking, context propagation |
 
-### Performance (4)
+### Performance
 
 | Skill                  | Purpose                                                   |
 | ---------------------- | --------------------------------------------------------- |
@@ -221,43 +219,39 @@ Integration: new Stripe webhook endpoint
 | `db-indexing`          | Database indexing strategy                                |
 | `payload-optimization` | API response optimization                                 |
 
-### Ops (10)
+### Ops
 
-| Skill                             | Purpose                                                 |
-| --------------------------------- | ------------------------------------------------------- |
-| `observability`                   | Logging, metrics, tracing                               |
-| `resiliency`                      | Timeout, retry, circuit breaker                         |
-| `release-safety`                  | Rollout, rollback, and deployment risk patterns         |
-| `dependency-impact-analysis`      | Deployment ordering and dependency change impact        |
-| `safe-file-operations`            | Cross-platform shell and file operations                |
-| `failure-classification`          | Classify failures by type, mechanism, and system layer  |
-| `failure-propagation-analysis`    | Trace cascading failure paths across system boundaries  |
-| `root-cause-hypothesis`           | Generate ranked hypotheses with confidence and evidence |
-| `incident-prevention`             | Systemic prevention strategies tied to failure classes  |
-| `backward-compatibility-analysis` | API, event, and data contract compatibility assessment  |
+| Skill                             | Purpose                                                      |
+| --------------------------------- | ------------------------------------------------------------ |
+| `observability`                   | Logging, metrics, tracing                                    |
+| `resiliency`                      | Timeout, retry, circuit breaker, and REST client integration |
+| `release-safety`                  | Rollout, rollback, and deployment risk patterns              |
+| `dependency-impact-analysis`      | Deployment ordering and dependency change impact             |
+| `safe-file-operations`            | Cross-platform shell and file operations                     |
+| `failure-classification`          | Classify failures by type, mechanism, and system layer       |
+| `failure-propagation-analysis`    | Trace cascading failure paths across system boundaries       |
+| `root-cause-hypothesis`           | Generate ranked hypotheses with confidence and evidence      |
+| `backward-compatibility-analysis` | API, event, and data contract compatibility assessment       |
 
-### Integration (2)
+### Integration
 
-| Skill              | Purpose              |
-| ------------------ | -------------------- |
-| `idempotency`      | Idempotency patterns |
-| `rest-integration` | REST client patterns |
+| Skill         | Purpose              |
+| ------------- | -------------------- |
+| `idempotency` | Idempotency patterns |
 
-### Governance (11)
+### Governance
 
-| Skill                        | Purpose                                                 |
-| ---------------------------- | ------------------------------------------------------- |
-| `api-guidelines`             | API consistency standards                               |
-| `coding-standards`           | Code style and structure                                |
-| `pr-risk-analysis`           | Lightweight heuristic PR risk classification            |
-| `blast-radius-analysis`      | Failure propagation and change impact scope             |
-| `architecture-guardrail`     | Layer violation and boundary erosion detection          |
-| `ai-verbosity-control`       | AI-generated over-engineering and verbosity detection   |
-| `complexity-compression`     | Simplification opportunity identification               |
-| `review-gap-analysis`        | Analyze why review processes missed a failure           |
-| `guardrail-evolution`        | Evolve guardrails based on incident learnings           |
-| `change-risk-classification` | Pre-implementation risk domain classification           |
-| `engineering-governance`     | Engineering process and governance improvement patterns |
+| Skill                        | Purpose                                                                       |
+| ---------------------------- | ----------------------------------------------------------------------------- |
+| `api-guidelines`             | API consistency, documentation, and REST endpoint design                      |
+| `coding-standards`           | Code style and structure                                                      |
+| `pr-risk-analysis`           | Lightweight heuristic PR risk classification                                  |
+| `blast-radius-analysis`      | Failure propagation and change impact scope                                   |
+| `architecture-guardrail`     | Layer violation and boundary erosion detection                                |
+| `complexity-review`          | Detect unnecessary complexity and provide simpler alternatives                |
+| `review-gap-analysis`        | Analyze why review processes missed a failure                                 |
+| `change-risk-classification` | Pre-implementation risk domain classification                                 |
+| `engineering-governance`     | Engineering process, governance, guardrail evolution, and incident prevention |
 
 **Benefits:**
 

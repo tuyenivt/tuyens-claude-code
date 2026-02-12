@@ -29,7 +29,7 @@ category: quality
 
 **API Security:**
 
-- Use skill: `rest-integration` for secure external API communication
+- Use skill: `resiliency` for secure and resilient external API communication
 - Use skill: `idempotency` for safe retry patterns
 
 ## Key Actions

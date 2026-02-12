@@ -1,9 +1,9 @@
 ---
 name: resiliency
-description: Timeout, retry, circuit breaker, and fallback patterns
+description: Timeout, retry, circuit breaker, fallback patterns, and resilient REST client integration
 metadata:
   category: ops
-  tags: [resilience, timeouts, retries, circuit-breaker]
+  tags: [resilience, timeouts, retries, circuit-breaker, rest, integration, clients]
 user-invocable: false
 ---
 
@@ -14,6 +14,9 @@ user-invocable: false
 - Building applications that handle failures gracefully
 - Protecting against cascading failures
 - Managing external service dependencies
+- Integrating with external REST APIs
+- Calling remote services from backend
+- Building resilient inter-service communication
 
 ## Rules
 
@@ -24,6 +27,10 @@ user-invocable: false
 - Fail fast when service is unhealthy
 - Implement graceful degradation with fallback responses
 - Isolate resource usage with bulkhead pattern
+- Use typed client (WebClient/RestClient)
+- Map remote errors explicitly -- never propagate raw HTTP errors
+- Minimize payload size to avoid chatty calls
+- Retry only on safe operations (GET, PUT, DELETE)
 
 ## Pattern
 
@@ -52,9 +59,44 @@ public String fallback(Exception e) {
 }
 ```
 
+### REST Client Integration
+
+Bad - No timeout, raw error propagation:
+
+```java
+RestTemplate template = new RestTemplate();
+User user = template.getForObject(
+    "http://user-service/users/{id}",
+    User.class, id
+); // No timeout, throws raw exception
+```
+
+Good - Typed client, timeout, error mapping:
+
+```java
+@Service
+public class UserServiceClient {
+    public Optional<UserDTO> getUser(Long id) {
+        return userWebClient.get()
+            .uri("/users/{id}", id)
+            .retrieve()
+            .bodyToMono(UserDTO.class)
+            .timeout(Duration.ofSeconds(5))
+            .onErrorMap(this::mapError)
+            .blockOptional();
+    }
+
+    private RuntimeException mapError(Throwable e) {
+        return new UserServiceException("Failed to fetch user", e);
+    }
+}
+```
+
 ## Avoid
 
 - Missing timeouts on external calls
 - Retry on permanent failures (4xx)
 - No circuit breakers for critical dependencies
 - Unbounded retry attempts
+- Raw HTTP exception propagation
+- Chatty, oversized payloads

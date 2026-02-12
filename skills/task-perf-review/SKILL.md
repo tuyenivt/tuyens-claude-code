@@ -97,7 +97,7 @@ For detailed performance patterns, reference these skills:
 
 **Backend Performance:**
 
-- Use skill: `virtual-thread-lock` for thread-safe locking
+- Use skill: `concurrency-model` for thread-safe locking
 - Use skill: `jpa-performance` for data access optimization
 - Use skill: `caching` for cache strategy patterns
 - Use skill: `db-indexing` for index strategy

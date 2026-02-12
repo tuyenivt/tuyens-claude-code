@@ -58,7 +58,7 @@ Adapt performance review based on code context:
 
 **Backend Performance:**
 
-- Use skill: `virtual-thread-lock` for Virtual Thread-safe concurrency patterns
+- Use skill: `concurrency-model` for Virtual Thread-safe concurrency patterns
 - Use skill: `jpa-performance` for query optimization and N+1 prevention
 - Use skill: `caching` for cache strategy, TTL tuning, and invalidation
 - Use skill: `db-indexing` for index design and query optimization

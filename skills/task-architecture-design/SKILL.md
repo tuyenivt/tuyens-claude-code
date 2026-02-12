@@ -103,8 +103,7 @@ Use skill: `transaction` for transaction boundary design.
 Use skill: `async-processing` for async communication patterns.
 Use skill: `idempotency` for retry safety at integration points.
 Use skill: `caching` for caching strategy and invalidation.
-Use skill: `rest-integration` for synchronous integration patterns.
-Use skill: `resiliency` for fault tolerance at component boundaries.
+Use skill: `resiliency` for fault tolerance and REST client integration patterns.
 
 Define:
 
@@ -239,7 +238,7 @@ For each significant decision:
 Define constraints to enforce during implementation.
 
 Use skill: `architecture-guardrail` for boundary enforcement rules.
-Use skill: `guardrail-evolution` for evolving existing guardrails.
+Use skill: `engineering-governance` for evolving existing guardrails.
 
 Define:
 
@@ -452,8 +451,7 @@ Feature Flags:
 - Use skill: `async-processing` for async communication patterns
 - Use skill: `idempotency` for retry safety at integration points
 - Use skill: `caching` for caching strategy and invalidation
-- Use skill: `rest-integration` for synchronous integration patterns
-- Use skill: `resiliency` for fault tolerance patterns
+- Use skill: `resiliency` for fault tolerance and REST client integration patterns
 
 **Failure Analysis:**
 
@@ -468,7 +466,7 @@ Feature Flags:
 
 **Governance:**
 
-- Use skill: `guardrail-evolution` for evolving existing guardrails
+- Use skill: `engineering-governance` for evolving existing guardrails
 
 **Related Workflows:**
 

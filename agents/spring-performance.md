@@ -35,7 +35,7 @@ category: engineering
 
 **Concurrency & Threading:**
 
-- Use skill: `virtual-thread-lock` for Virtual Thread-safe locking patterns
+- Use skill: `concurrency-model` for Virtual Thread-safe locking patterns
 - Use skill: `async-processing` for non-blocking I/O operations
 
 **Data Access:**

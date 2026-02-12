@@ -104,8 +104,7 @@ Positive and negative results.
 
 For documentation patterns related to specific domains:
 
-- Use skill: `spring-api` for REST API documentation patterns
-- Use skill: `api-guidelines` for API consistency and documentation standards
+- Use skill: `api-guidelines` for API design, REST endpoint patterns, and documentation standards
 - Use skill: `coding-standards` for code comment guidelines
 
 ## Principles

@@ -61,7 +61,7 @@ Use skill: `failure-classification` to categorize the failure by type, mechanism
 
 Apply domain-specific skills based on classification:
 
-- Concurrency issue: use skill: `virtual-thread-lock` for Virtual Thread pinning and lock patterns
+- Concurrency issue: use skill: `concurrency-model` for Virtual Thread pinning and lock patterns
 - Transaction boundary error: use skill: `transaction` for scope and propagation issues
 - DB performance degradation or N+1: use skill: `jpa-performance` for query patterns
 - External dependency failure: use skill: `resiliency` for timeout, retry, and circuit breaker gaps
@@ -133,7 +133,7 @@ Common gaps to check:
 
 ### 6. Systemic Prevention
 
-Use skill: `incident-prevention` for structured prevention recommendations.
+Use skill: `engineering-governance` for structured prevention recommendations.
 Use skill: `architecture-guardrail` to identify boundary weaknesses exposed by the incident.
 
 For each recommendation:
@@ -231,7 +231,7 @@ Verification Steps:
 - Use skill: `exception-handling` for error handling and propagation patterns
 - Use skill: `transaction` for transaction scope and data consistency
 - Use skill: `jpa-performance` for query performance and N+1 detection
-- Use skill: `virtual-thread-lock` for concurrency and Virtual Thread issues
+- Use skill: `concurrency-model` for concurrency and Virtual Thread issues
 - Use skill: `async-processing` for async flow and event processing issues
 - Use skill: `observability` for logging, metrics, and tracing gaps
 
@@ -247,4 +247,4 @@ Verification Steps:
 | `failure-classification`       | Classify failures by type, mechanism, and system layer  |
 | `failure-propagation-analysis` | Trace cascading failure paths across system boundaries  |
 | `root-cause-hypothesis`        | Generate ranked hypotheses with confidence and evidence |
-| `incident-prevention`          | Systemic prevention strategies tied to failure classes  |
+| `engineering-governance`       | Systemic prevention and governance strategies           |

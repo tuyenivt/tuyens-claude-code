@@ -3,8 +3,7 @@ name: task-risk-analysis
 description: Staff-level proactive engineering risk assessment for proposed changes
 metadata:
   category: ops
-  tags:
-    [risk-analysis, blast-radius, safety, architecture, deployment, prevention]
+  tags: [risk-analysis, blast-radius, safety, architecture, deployment, prevention]
   type: workflow
 ---
 
@@ -83,7 +82,7 @@ Use skill: `change-risk-classification` for pre-implementation risk domain class
 Use skill: `pr-risk-analysis` for code signal-based risk assessment (when PR diff is available).
 Use skill: `failure-classification` to identify which failure types the change is most susceptible to.
 Use skill: `architecture-guardrail` to detect boundary erosion risk.
-Use skill: `ai-verbosity-control` to detect AI-generated complexity amplification.
+Use skill: `complexity-review` to detect AI-generated complexity amplification.
 
 Evaluate risk domains:
 
@@ -194,9 +193,8 @@ For each gap:
 
 **Recommend specific mitigations proportional to the identified risks.**
 
-Use skill: `engineering-governance` for process and governance recommendations.
-Use skill: `incident-prevention` for systemic prevention strategies.
-Use skill: `guardrail-evolution` for evolving existing guardrails.
+Use skill: `engineering-governance` for process, governance, and guardrail recommendations.
+Use skill: `engineering-governance` for systemic prevention strategies.
 Use skill: `architecture-guardrail` for boundary enforcement recommendations.
 
 Recommend across five categories:
@@ -321,10 +319,9 @@ Blast Radius: Narrow | Moderate | Wide | Critical
 **Governance and Prevention:**
 
 - Use skill: `architecture-guardrail` for boundary erosion detection and enforcement
-- Use skill: `ai-verbosity-control` for AI-generated complexity detection
-- Use skill: `engineering-governance` for process and governance recommendations
-- Use skill: `incident-prevention` for systemic prevention strategies
-- Use skill: `guardrail-evolution` for evolving existing guardrails
+- Use skill: `complexity-review` for AI-generated complexity detection
+- Use skill: `engineering-governance` for process, governance, and guardrail recommendations
+- Use skill: `engineering-governance` for systemic prevention strategies
 
 **Related Workflows:**
 
