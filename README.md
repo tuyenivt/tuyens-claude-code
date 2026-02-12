@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 45 skills (12 workflow + 33 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 53 skills (13 workflow + 40 atomic).
 
 ## Installation
 
@@ -53,6 +53,7 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 
 | Skill                       | Purpose                                                                    | Agent                  |
 | --------------------------- | -------------------------------------------------------------------------- | ---------------------- |
+| `task-architecture-design`  | Staff-level architecture design proposal                                   | `spring-architect`     |
 | `task-code-review`          | Code review (any framework)                                                | `tech-lead`            |
 | `task-code-review-advanced` | Staff-level review with risk assessment (scope: core/+perf/+security/full) | `tech-lead`            |
 | `task-code-secure`          | Security review                                                            | `security-engineer`    |
@@ -80,6 +81,14 @@ Operations: CRUD with pagination
 /task-react-component
 Name: OrderList
 Props: orders, onSelect
+```
+
+**Architecture design proposal:**
+
+```
+/task-architecture-design
+Feature: Order processing with payment integration
+Constraints: eventual consistency acceptable, 500 RPS steady state
 ```
 
 **Review code (basic, auto-detects framework):**
@@ -143,7 +152,7 @@ Scope options -- asks interactively if not specified:
 
 ## Atomic Skills (Reusable Patterns)
 
-33 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+40 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend (7)
 
@@ -166,22 +175,32 @@ Scope options -- asks interactively if not specified:
 | `react-state-management` | State scope and ownership        |
 | `websocket-react`        | WebSocket hooks and STOMP client |
 
-### Performance (3)
+### Architecture (4)
 
-| Skill                  | Purpose                         |
-| ---------------------- | ------------------------------- |
-| `caching`              | Cache strategy and invalidation |
-| `db-indexing`          | Database indexing strategy      |
-| `payload-optimization` | API response optimization       |
+| Skill                       | Purpose                                                       |
+| --------------------------- | ------------------------------------------------------------- |
+| `system-boundary-design`    | Formal boundary modeling for module/service decomposition     |
+| `data-consistency-modeling` | Consistency strategy selection across data boundaries         |
+| `tradeoff-analysis`         | Structured architectural decision and trade-off documentation |
+| `concurrency-model`         | Concurrency risk assessment and Virtual Thread compatibility  |
 
-### Ops (7)
+### Performance (4)
 
-Note: 4 of these are sub-skills defined by `task-root-cause`.
+| Skill                  | Purpose                                                   |
+| ---------------------- | --------------------------------------------------------- |
+| `caching`              | Cache strategy and invalidation                           |
+| `capacity-modeling`    | Throughput estimation, scaling, and bottleneck prediction |
+| `db-indexing`          | Database indexing strategy                                |
+| `payload-optimization` | API response optimization                                 |
+
+### Ops (9)
 
 | Skill                          | Purpose                                                 |
 | ------------------------------ | ------------------------------------------------------- |
 | `observability`                | Logging, metrics, tracing                               |
 | `resiliency`                   | Timeout, retry, circuit breaker                         |
+| `release-safety`               | Rollout, rollback, and deployment risk patterns         |
+| `dependency-impact-analysis`   | Deployment ordering and dependency change impact        |
 | `safe-file-operations`         | Cross-platform shell and file operations                |
 | `failure-classification`       | Classify failures by type, mechanism, and system layer  |
 | `failure-propagation-analysis` | Trace cascading failure paths across system boundaries  |
