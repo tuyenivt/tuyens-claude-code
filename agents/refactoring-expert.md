@@ -22,7 +22,7 @@ category: quality
 
 ## Key Skills
 
-- Use skill: `code-refactor` for refactoring plans with risk assessment
+- Use skill: `task-code-refactor` for refactoring plans with risk assessment
 - Use skill: `coding-standards` for style and structure guidelines
 
 ## Key Actions

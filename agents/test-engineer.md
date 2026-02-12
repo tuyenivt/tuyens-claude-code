@@ -46,7 +46,7 @@ category: quality
 
 ## Key Skills
 
-- Use skill: `code-test` for test strategy, scaffolds, and quality review
+- Use skill: `task-code-test` for test strategy, scaffolds, and quality review
 - Use skill: `coding-standards` for test naming and structure
 
 ## Key Actions

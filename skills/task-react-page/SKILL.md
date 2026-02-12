@@ -1,5 +1,5 @@
 ---
-name: react-page
+name: task-react-page
 description: Create new React page with routing and data fetching
 metadata:
   category: frontend

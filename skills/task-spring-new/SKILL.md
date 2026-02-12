@@ -1,5 +1,5 @@
 ---
-name: spring-new
+name: task-spring-new
 description: Create new Spring Boot 3.5+ API endpoint with controller, service, repository
 metadata:
   category: backend

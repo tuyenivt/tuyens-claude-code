@@ -1,5 +1,5 @@
 ---
-name: react-component
+name: task-react-component
 description: Create new React component with TypeScript following best practices
 metadata:
   category: frontend

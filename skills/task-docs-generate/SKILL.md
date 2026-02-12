@@ -1,5 +1,5 @@
 ---
-name: docs-generate
+name: task-docs-generate
 description: Generate clear, maintainable documentation (README, API docs, ADRs)
 metadata:
   category: review

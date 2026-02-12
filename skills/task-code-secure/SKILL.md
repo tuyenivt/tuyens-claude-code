@@ -1,5 +1,5 @@
 ---
-name: code-secure
+name: task-code-secure
 description: Security review covering OWASP Top 10, auth, and common vulnerabilities
 metadata:
   category: review

@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: task-code-review
 description: Code review for pull requests (framework-aware)
 metadata:
   category: review

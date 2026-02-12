@@ -1,5 +1,5 @@
 ---
-name: code-test
+name: task-code-test
 description: Test strategy, scaffolds, and quality review for any framework
 metadata:
   category: review

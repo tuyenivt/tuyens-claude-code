@@ -22,7 +22,7 @@ category: quality
 
 ## Key Skills
 
-- Use skill: `docs-generate` for documentation templates and patterns
+- Use skill: `task-docs-generate` for documentation templates and patterns
 - Use skill: `api-guidelines` for API documentation standards
 
 ## Key Actions

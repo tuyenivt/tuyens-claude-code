@@ -1,5 +1,5 @@
 ---
-name: perf-review
+name: task-perf-review
 description: Performance review for backend (Java 21+ / Spring Boot 3.5+) or frontend (React)
 metadata:
   category: review

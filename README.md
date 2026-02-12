@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 9 commands, 10 agents, 21 skills.
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 10 agents, 30 skills (9 composite + 21 atomic).
 
 ## Installation
 
@@ -33,37 +33,39 @@ mklink /J "%USERPROFILE%\.codex\skills\tuyens-claude-code-skills" "%USERPROFILE%
 
 ## Key Features
 
-- **Virtual Threads**: All commands enforce Virtual Thread compatibility (no `synchronized`)
+- **Virtual Threads**: All skills enforce Virtual Thread compatibility (no `synchronized`)
 - **Java 21+ Patterns**: Records for DTOs, pattern matching, sealed classes
 - **Spring Boot 3.5+**: Jakarta EE 10 (EE 11 for Spring Boot 4), optimized connection pools (10-40)
 
-## Commands
+## Composite Skills (Task Workflows)
 
-### Framework-Specific Commands
+Composite skills (`task-*`) orchestrate multiple atomic skills into task-oriented workflows. They are invoked as slash commands.
 
-| Command            | Purpose                     | Agent              |
-| ------------------ | --------------------------- | ------------------ |
-| `/spring-new`      | Create Spring Boot endpoint | `spring-architect` |
-| `/react-component` | Create React component      | `react-architect`  |
-| `/react-page`      | Create React page           | `react-architect`  |
+### Framework-Specific
 
-### Framework-Aware Commands (Auto-detect)
+| Skill                   | Purpose                     | Agent              |
+| ----------------------- | --------------------------- | ------------------ |
+| `task-spring-new`       | Create Spring Boot endpoint | `spring-architect` |
+| `task-react-component`  | Create React component      | `react-architect`  |
+| `task-react-page`       | Create React page           | `react-architect`  |
 
-| Command          | Purpose                     | Agent                  |
-| ---------------- | --------------------------- | ---------------------- |
-| `/code-review`   | Code review (any framework) | `tech-lead`            |
-| `/code-secure`   | Security review             | `security-engineer`    |
-| `/code-test`     | Test strategy               | `test-engineer`        |
-| `/code-refactor` | Refactoring plan            | `refactoring-expert`   |
-| `/perf-review`   | Performance review          | `performance-engineer` |
-| `/docs-generate` | Generate documentation      | `technical-writer`     |
+### Framework-Aware (Auto-detect)
+
+| Skill                 | Purpose                     | Agent                  |
+| --------------------- | --------------------------- | ---------------------- |
+| `task-code-review`    | Code review (any framework) | `tech-lead`            |
+| `task-code-secure`    | Security review             | `security-engineer`    |
+| `task-code-test`      | Test strategy               | `test-engineer`        |
+| `task-code-refactor`  | Refactoring plan            | `refactoring-expert`   |
+| `task-perf-review`    | Performance review          | `performance-engineer` |
+| `task-docs-generate`  | Generate documentation      | `technical-writer`     |
 
 ## Usage Examples
 
 **Create Spring Boot endpoint:**
 
 ```
-/spring-new
+/task-spring-new
 Resource: Order
 Package: com.example.order
 Operations: CRUD with pagination
@@ -72,7 +74,7 @@ Operations: CRUD with pagination
 **Create React component:**
 
 ```
-/react-component
+/task-react-component
 Name: OrderList
 Props: orders, onSelect
 ```
@@ -80,14 +82,14 @@ Props: orders, onSelect
 **Review code (auto-detects framework):**
 
 ```
-/code-review
+/task-code-review
 [paste code or file path]
 ```
 
 **Security review (works with any framework):**
 
 ```
-/code-secure
+/task-code-secure
 [paste code or file path]
 ```
 
@@ -106,9 +108,9 @@ Props: orders, onSelect
 | `technical-writer`     | Documentation                      |
 | `tech-lead`            | Code review (multi-lang)           |
 
-## Skills (Reusable Patterns)
+## Atomic Skills (Reusable Patterns)
 
-21 skills organized by category provide focused, reusable patterns that agents and commands reference.
+21 atomic skills organized by category provide focused, reusable patterns. These are referenced by composite skills and agents -- they are not intended for independent use.
 
 ### Backend (7)
 
@@ -166,7 +168,7 @@ Props: orders, onSelect
 - Single source of truth for patterns
 - 86% reduction in duplicated content (~3,700 tokens saved)
 - Easy maintenance (update once, affects all)
-- Clear separation: agents/commands provide guidance, skills provide implementation patterns
+- Clear separation: composite skills orchestrate workflows, atomic skills provide implementation patterns
 
 ## License
 

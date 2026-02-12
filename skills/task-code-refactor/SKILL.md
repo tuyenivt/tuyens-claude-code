@@ -1,5 +1,5 @@
 ---
-name: code-refactor
+name: task-code-refactor
 description: Safe, incremental refactoring plan with risk assessment
 metadata:
   category: review
