@@ -1,13 +1,19 @@
 ---
-description: Create new React component with TypeScript
-model: claude-opus-4-6
+name: react-component
+description: Create new React component with TypeScript following best practices
+metadata:
+  category: frontend
+  tags: [react, typescript, component, accessibility]
+  type: composite
 ---
 
-Create a new React component with TypeScript following best practices.
+# React Component
 
-## Requirements
+## When to Use
 
-$ARGUMENTS
+- Creating new React components with TypeScript
+- Scaffolding component files with types, styles, and tests
+- Applying component best practices
 
 ## Implementation
 
@@ -48,11 +54,26 @@ For detailed patterns, reference these skills:
 - Use skill: `react-state-management` for managing component state
 - Use skill: `react-memoization` for optimization (only when beneficial)
 
-## Checklist
+## Rules
 
 - TypeScript strict mode compatible
 - Props interface exported
-- Memoization where beneficial
-- Accessible (ARIA, semantic HTML)
-- Loading and error states
-- TODO for customization
+- Accessible (ARIA attributes, semantic HTML)
+- Handle loading and error states
+- Memoize only when beneficial (not by default)
+
+## Checklist
+
+- [ ] TypeScript strict mode compatible
+- [ ] Props interface exported
+- [ ] Memoization where beneficial
+- [ ] Accessible (ARIA, semantic HTML)
+- [ ] Loading and error states
+- [ ] TODO for customization
+
+## Avoid
+
+- Inline styles (use CSS modules or Tailwind)
+- Over-memoization without profiling
+- Missing accessibility attributes
+- Props interfaces not exported

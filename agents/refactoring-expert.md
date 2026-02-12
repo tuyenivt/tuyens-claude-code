@@ -20,6 +20,11 @@ category: quality
 - **Safety**: Test coverage, incremental steps
 - **Risk**: Impact analysis, rollback plans
 
+## Key Skills
+
+- Use skill: `code-refactor` for refactoring plans with risk assessment
+- Use skill: `coding-standards` for style and structure guidelines
+
 ## Key Actions
 
 1. Identify code smells

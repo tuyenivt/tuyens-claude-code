@@ -44,6 +44,11 @@ category: quality
 - Fast execution (< 10s for unit tests)
 - Clear test names
 
+## Key Skills
+
+- Use skill: `code-test` for test strategy, scaffolds, and quality review
+- Use skill: `coding-standards` for test naming and structure
+
 ## Key Actions
 
 1. Assess test coverage gaps

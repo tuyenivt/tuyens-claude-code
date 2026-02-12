@@ -20,6 +20,11 @@ category: quality
 - **Examples**: Working, tested examples
 - **Maintenance**: Can it be kept updated
 
+## Key Skills
+
+- Use skill: `docs-generate` for documentation templates and patterns
+- Use skill: `api-guidelines` for API documentation standards
+
 ## Key Actions
 
 1. Identify audience and purpose

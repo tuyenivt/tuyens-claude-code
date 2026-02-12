@@ -1,13 +1,21 @@
 ---
-description: Test strategy and scaffolds for any framework
-model: claude-sonnet-4-5
+name: code-test
+description: Test strategy, scaffolds, and quality review for any framework
+metadata:
+  category: review
+  tags: [testing, test-strategy, unit-test, integration-test]
+  type: composite
 ---
 
-Evaluate and generate test strategy for your codebase (framework-aware).
+# Code Test
 
-## Context
+## When to Use
 
-$ARGUMENTS
+- Test coverage evaluation
+- Testing strategy design
+- Test quality review
+- Test pyramid balance assessment
+- Generating test scaffolds
 
 ## Testing Pyramid
 
@@ -182,6 +190,29 @@ it("increments counter", () => {
 - [ ] Accessibility assertions
 - [ ] No implementation details tested
 
+## Key Skills Reference
+
+For detailed testing patterns, reference these skills:
+
+- Use skill: `coding-standards` for test naming and structure
+- Use skill: `spring-api` for API test patterns
+- Use skill: `react-component-design` for component test strategies
+
+## Principles
+
+- Test behavior, not implementation
+- Fast feedback is essential
+- Tests are specifications
+- Pyramid over ice cream cone
+
+## Rules
+
+- Every test must have a clear purpose
+- Use Arrange-Act-Assert consistently
+- No test interdependencies
+- Do not aim for 100% coverage as a goal -- focus on business value
+- Consider maintenance cost of each test
+
 ## Output
 
 ```markdown
@@ -198,3 +229,10 @@ it("increments counter", () => {
 
 [Test cases to add]
 ```
+
+## Avoid
+
+- Testing implementation details instead of behavior
+- Flaky tests that depend on timing or external state
+- Over-mocking (test nothing meaningful)
+- Ignoring test maintenance cost

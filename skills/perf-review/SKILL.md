@@ -1,13 +1,21 @@
 ---
-description: Performance review for backend or frontend (Java 21+ / Spring Boot 3.5+)
-model: claude-opus-4-6
+name: perf-review
+description: Performance review for backend (Java 21+ / Spring Boot 3.5+) or frontend (React)
+metadata:
+  category: review
+  tags: [performance, optimization, profiling, database]
+  type: composite
 ---
 
-Identify performance issues in backend (Java 21+ / Spring Boot 3.5+) or frontend (React).
+# Performance Review
 
-## Code to Review
+## When to Use
 
-$ARGUMENTS
+- Performance issue identification
+- Backend optimization (Java 21+ / Spring Boot 3.5+)
+- Frontend optimization (React)
+- Database query optimization
+- Caching strategy review
 
 ## Backend (Java 21+ / Spring Boot 3.5+)
 
@@ -53,7 +61,7 @@ $ARGUMENTS
 - [ ] `@Timed` on critical methods
 - [ ] Health indicators for dependencies
 
-### Memory & I/O
+### Memory and I/O
 
 - [ ] Large objects in loops
 - [ ] String concat in loops (use StringBuilder)
@@ -89,15 +97,29 @@ For detailed performance patterns, reference these skills:
 
 **Backend Performance:**
 
-- `virtual-thread-lock`, `jpa-performance`, `caching`, `db-indexing`, `async-processing`, `observability`
+- Use skill: `virtual-thread-lock` for thread-safe locking
+- Use skill: `jpa-performance` for data access optimization
+- Use skill: `caching` for cache strategy patterns
+- Use skill: `db-indexing` for index strategy
+- Use skill: `async-processing` for non-blocking patterns
+- Use skill: `observability` for metrics and monitoring
 
 **Frontend Performance:**
 
-- `react-memoization`, `react-component-design`, `payload-optimization`
+- Use skill: `react-memoization` for render optimization
+- Use skill: `react-component-design` for component structure
+- Use skill: `payload-optimization` for response size optimization
 
 ## Principle
 
 > Measure first. No optimization without profiling.
+
+## Rules
+
+- Always profile before optimizing
+- Focus on the critical path
+- Measure improvement after each change
+- Consider trade-offs (complexity vs performance)
 
 ## Output
 
@@ -134,3 +156,10 @@ For detailed performance patterns, reference these skills:
 
 [Prioritized with trade-offs]
 ```
+
+## Avoid
+
+- Optimizing without profiling data
+- Premature optimization of non-critical paths
+- Adding complexity for marginal gains
+- Caching without an invalidation strategy

@@ -1,13 +1,19 @@
 ---
+name: spring-new
 description: Create new Spring Boot 3.5+ API endpoint with controller, service, repository
-model: claude-opus-4-6
+metadata:
+  category: backend
+  tags: [spring-boot, java, rest-api, jpa]
+  type: composite
 ---
 
-Create a new Spring Boot 3.5+ REST API endpoint following modern best practices.
+# Spring New Endpoint
 
-## Requirements
+## When to Use
 
-$ARGUMENTS
+- Creating new Spring Boot 3.5+ REST API endpoints
+- Scaffolding controller, service, repository, and DTOs
+- Applying modern Java 21+ and Spring Boot patterns
 
 ## Implementation
 
@@ -19,7 +25,7 @@ Generate complete, production-ready code for Spring Boot 3.5+ / Java 21+:
 4. **DTOs** - Request/Response records with validation
 5. **Entity** - JPA entity if needed
 
-## Modern Patterns (Java 21+ / Spring Boot 3.5+)
+## Pattern (Java 21+ / Spring Boot 3.5+)
 
 ```java
 @RestController
@@ -97,6 +103,16 @@ For detailed patterns, reference these skills:
 - Connection pool: 10-40 connections (not 100+)
 - Virtual threads excel at I/O-bound operations
 
+## Rules
+
+- Constructor injection only (use `@RequiredArgsConstructor` if Lombok available)
+- Records for all DTOs (Java 21+)
+- `@Transactional(readOnly = true)` by default on service classes
+- Never expose JPA entities in API responses
+- No `synchronized` blocks (Virtual Thread compatible)
+- Use `var` for local variables when type is obvious
+- Use `@ResponseStatus` instead of `ResponseEntity` when possible
+
 ## Checklist
 
 - [ ] Constructor injection (no @Autowired fields) - use `@RequiredArgsConstructor` if Lombok available
@@ -108,3 +124,11 @@ For detailed patterns, reference these skills:
 - [ ] Records for immutable DTOs
 - [ ] Use `var` for local variables when type is obvious
 - [ ] Use `@Slf4j` for logging if Lombok available
+
+## Avoid
+
+- `@Autowired` field injection
+- Exposing JPA entities in API responses
+- `synchronized` blocks (breaks Virtual Threads)
+- `ResponseEntity` when a single status code suffices
+- `@MockBean` (deprecated since Spring Boot 3.4.0, use `@MockitoBean`)

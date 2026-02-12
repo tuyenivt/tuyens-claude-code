@@ -1,13 +1,19 @@
 ---
+name: code-review
 description: Code review for pull requests (framework-aware)
-model: claude-sonnet-4-5
+metadata:
+  category: review
+  tags: [code-review, pull-request, quality]
+  type: composite
 ---
 
-Code review for pull requests and code changes. Adapts to framework context.
+# Code Review
 
-## Code to Review
+## When to Use
 
-$ARGUMENTS
+- Pull request reviews
+- Code change reviews
+- Pre-merge quality checks
 
 ## Review Checklist
 
@@ -66,15 +72,24 @@ When providing detailed feedback, reference these skills:
 
 **Backend:**
 
-- `spring-api`, `virtual-thread-lock`, `jpa-performance`, `exception-handling`, `transaction`
+- Use skill: `spring-api` for REST API design
+- Use skill: `virtual-thread-lock` for thread-safety
+- Use skill: `jpa-performance` for data access
+- Use skill: `exception-handling` for error handling
+- Use skill: `transaction` for transaction management
 
 **Frontend:**
 
-- `react-component-design`, `react-state-management`, `react-memoization`
+- Use skill: `react-component-design` for component patterns
+- Use skill: `react-state-management` for state patterns
+- Use skill: `react-memoization` for optimization
 
 **Cross-cutting:**
 
-- `coding-standards`, `api-guidelines`, `observability`, `resiliency`
+- Use skill: `coding-standards` for style guidelines
+- Use skill: `api-guidelines` for API consistency
+- Use skill: `observability` for logging and metrics
+- Use skill: `resiliency` for fault tolerance
 
 ## Feedback Labels
 
@@ -85,6 +100,13 @@ When providing detailed feedback, reference these skills:
 | [Question]   | Need clarity  | Clarify  |
 | [Nitpick]    | Minor         | No       |
 | [Praise]     | Done well     | -        |
+
+## Rules
+
+- Review the whole change, not just individual files
+- Check for consistency with existing codebase patterns
+- Provide actionable feedback with examples
+- Acknowledge good work alongside issues
 
 ## Output
 
@@ -112,3 +134,9 @@ When providing detailed feedback, reference these skills:
 
 [Summary]
 ```
+
+## Avoid
+
+- Nitpicking style when no standard exists
+- Blocking on personal preference
+- Reviewing without understanding context

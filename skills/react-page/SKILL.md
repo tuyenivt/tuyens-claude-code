@@ -1,13 +1,19 @@
 ---
+name: react-page
 description: Create new React page with routing and data fetching
-model: claude-opus-4-6
+metadata:
+  category: frontend
+  tags: [react, typescript, page, routing, data-fetching]
+  type: composite
 ---
 
-Create a new React page with routing, data fetching, and layout.
+# React Page
 
-## Requirements
+## When to Use
 
-$ARGUMENTS
+- Creating new React pages with routing
+- Pages with data fetching and loading states
+- Next.js or React Router page scaffolding
 
 ## Implementation
 
@@ -58,10 +64,25 @@ For detailed patterns, reference these skills:
 - Use skill: `react-state-management` for data fetching and state organization
 - Use skill: `payload-optimization` for code splitting and lazy loading
 
+## Rules
+
+- Always handle loading, error, and empty states
+- Use skeletons over spinners when layout is predictable
+- Include SEO metadata
+- Ensure responsive layout
+- Support keyboard navigation
+
 ## Checklist
 
-- Loading states with skeletons
-- Error handling with recovery
-- SEO metadata
-- Responsive layout
-- Keyboard navigation
+- [ ] Loading states with skeletons
+- [ ] Error handling with recovery
+- [ ] SEO metadata
+- [ ] Responsive layout
+- [ ] Keyboard navigation
+
+## Avoid
+
+- Pages without loading states
+- Unhandled error scenarios
+- Missing SEO metadata
+- Non-responsive layouts

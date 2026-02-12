@@ -1,13 +1,20 @@
 ---
-description: Security review - OWASP Top 10, auth, vulnerabilities
-model: claude-opus-4-6
+name: code-secure
+description: Security review covering OWASP Top 10, auth, and common vulnerabilities
+metadata:
+  category: review
+  tags: [security, owasp, vulnerabilities, auth]
+  type: composite
 ---
 
-Security review covering OWASP Top 10 and common vulnerabilities for any framework.
+# Code Secure
 
-## Code to Review
+## When to Use
 
-$ARGUMENTS
+- Security reviews of code changes
+- Pre-deployment security checks
+- Vulnerability assessment
+- Authentication and authorization review
 
 ## Security Checklist (Framework-Aware)
 
@@ -66,6 +73,13 @@ For security patterns, reference these skills:
 - Use skill: `rest-integration` for secure external API communication
 - Use skill: `idempotency` for safe retry patterns
 
+## Rules
+
+- Always validate at system boundaries (user input, external APIs)
+- Never trust client-side data
+- Log security events without sensitive data
+- Follow principle of least privilege
+
 ## Output
 
 ```markdown
@@ -85,3 +99,10 @@ For security patterns, reference these skills:
 
 [Prioritized security improvements]
 ```
+
+## Avoid
+
+- Ignoring framework-specific security features
+- Storing secrets in code or environment variables
+- Disabling security features for convenience
+- Logging sensitive data (passwords, tokens, PII)
