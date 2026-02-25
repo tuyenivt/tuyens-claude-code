@@ -53,20 +53,20 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 
 | Skill                       | Purpose                                                                    | Agent                  |
 | --------------------------- | -------------------------------------------------------------------------- | ---------------------- |
-| `task-api-design`           |                                                                            |
+| `task-api-design`           | Design or review REST API contracts before implementation                  | `spring-architect`     |
 | `task-architecture-design`  | Staff-level architecture design proposal                                   | `spring-architect`     |
 | `task-code-review`          | Code review (any framework)                                                | `tech-lead`            |
 | `task-code-review-advanced` | Staff-level review with risk assessment (scope: core/+perf/+security/full) | `tech-lead`            |
 | `task-code-secure`          | Security review                                                            | `security-engineer`    |
 | `task-code-test`            | Test strategy                                                              | `test-engineer`        |
 | `task-code-refactor`        | Refactoring plan                                                           | `refactoring-expert`   |
-| `task-debug`                |                                                                            |
+| `task-debug`                | Developer debugging workflow from error to minimal fix                     | `spring-architect`     |
 | `task-perf-review`          | Performance review                                                         | `performance-engineer` |
 | `task-docs-generate`        | Generate documentation                                                     | `technical-writer`     |
-| `task-implement-feature`    |                                                                            |
+| `task-implement-feature`    | End-to-end Spring Boot feature implementation workflow                     | `spring-architect`     |
 | `task-root-cause`           | Incident root cause analysis                                               | `reliability-engineer` |
 | `task-postmortem`           | Post-incident postmortem and prevention                                    | `reliability-engineer` |
-| `task-pr-prepare`           |                                                                            |
+| `task-pr-prepare`           | Prepare PR commits, description, and pre-submit validation                 | `tech-lead`            |
 | `task-release-plan`         | Production release planning with rollout safety                            | `reliability-engineer` |
 | `task-risk-analysis`        | Proactive engineering risk assessment for proposed changes                 | `reliability-engineer` |
 
@@ -95,6 +95,38 @@ Props: orders, onSelect
 /task-architecture-design
 Feature: Order processing with payment integration
 Constraints: eventual consistency acceptable, 500 RPS steady state
+```
+
+**Design API contract before implementation:**
+
+```
+/task-api-design
+Resource: Payment
+Operations: create payment intent, confirm payment, list payments
+Consumers: mobile app and internal admin panel
+Constraints: backward-compatible with existing /api/v1/orders
+```
+
+**Implement a full Spring Boot feature:**
+
+```
+/task-implement-feature
+Feature: Payment
+Package: com.example.payment
+Operations: Create, Confirm, GetById, List with pagination
+Relationships: Payment belongs to Order (ManyToOne)
+Rules: amount > 0, status transitions PENDING -> CONFIRMED/FAILED
+Visibility: internal
+```
+
+**Debug a developer error quickly:**
+
+```
+/task-debug
+Error: org.springframework.dao.DataIntegrityViolationException
+Context: POST /api/v1/orders returns 500
+Stack trace: [paste stack trace]
+Expected: 201 CREATED
 ```
 
 **Review code (basic, auto-detects framework):**
@@ -159,6 +191,15 @@ DB migration: adds payment_intent_id column to orders table
 Integration: new Stripe webhook endpoint
 ```
 
+**Prepare pull request before review:**
+
+```
+/task-pr-prepare
+Scope: payment module + order controller
+Context: add payment intent flow and migration
+Ticket: PROJ-1234
+```
+
 **Security review (works with any framework):**
 
 ```
@@ -184,21 +225,21 @@ Integration: new Stripe webhook endpoint
 
 ## Atomic Skills (Reusable Patterns)
 
-36 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
+40 atomic skills organized by category provide focused, reusable patterns. These are hidden from the slash menu (`user-invocable: false`) and referenced only by workflow skills and agents.
 
 ### Backend
 
-| Skill                       | Purpose                                         |
-| --------------------------- | ----------------------------------------------- |
-| `async-processing`          | Async processing with Spring @Async             |
-| `db-migration-safety`       | Safe DDL patterns for zero-downtime deployments |
-| `gradle-build-optimization` |                                                 |
-| `exception-handling`        | Centralized exception handling                  |
-| `jpa-performance`           | JPA optimization and N+1 prevention             |
-| `test-spring-integration`   |                                                 |
-| `transaction`               | Transaction management                          |
-| `spring-security-patterns`  |                                                 |
-| `websocket-spring`          | WebSocket and STOMP messaging                   |
+| Skill                       | Purpose                                                    |
+| --------------------------- | ---------------------------------------------------------- |
+| `async-processing`          | Async processing with Spring @Async                        |
+| `db-migration-safety`       | Safe DDL patterns for zero-downtime deployments            |
+| `gradle-build-optimization` | Gradle build optimization for Spring Boot projects         |
+| `exception-handling`        | Centralized exception handling                             |
+| `jpa-performance`           | JPA optimization and N+1 prevention                        |
+| `test-spring-integration`   | Spring test slices and Testcontainers integration patterns |
+| `transaction`               | Transaction management                                     |
+| `spring-security-patterns`  | Spring Security 6.x configuration and hardening patterns   |
+| `websocket-spring`          | WebSocket and STOMP messaging                              |
 
 ### Frontend
 
