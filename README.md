@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 55 skills (15 workflow + 40 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 59 skills (19 workflow + 40 atomic).
 
 ## Installation
 
@@ -53,16 +53,20 @@ Workflow skills (`task-*`) orchestrate multiple atomic skills into task-oriented
 
 | Skill                       | Purpose                                                                    | Agent                  |
 | --------------------------- | -------------------------------------------------------------------------- | ---------------------- |
+| `task-api-design`           |                                                                            |
 | `task-architecture-design`  | Staff-level architecture design proposal                                   | `spring-architect`     |
 | `task-code-review`          | Code review (any framework)                                                | `tech-lead`            |
 | `task-code-review-advanced` | Staff-level review with risk assessment (scope: core/+perf/+security/full) | `tech-lead`            |
 | `task-code-secure`          | Security review                                                            | `security-engineer`    |
 | `task-code-test`            | Test strategy                                                              | `test-engineer`        |
 | `task-code-refactor`        | Refactoring plan                                                           | `refactoring-expert`   |
+| `task-debug`                |                                                                            |
 | `task-perf-review`          | Performance review                                                         | `performance-engineer` |
 | `task-docs-generate`        | Generate documentation                                                     | `technical-writer`     |
+| `task-implement-feature`    |                                                                            |
 | `task-root-cause`           | Incident root cause analysis                                               | `reliability-engineer` |
 | `task-postmortem`           | Post-incident postmortem and prevention                                    | `reliability-engineer` |
+| `task-pr-prepare`           |                                                                            |
 | `task-release-plan`         | Production release planning with rollout safety                            | `reliability-engineer` |
 | `task-risk-analysis`        | Proactive engineering risk assessment for proposed changes                 | `reliability-engineer` |
 
