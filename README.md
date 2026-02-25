@@ -1,6 +1,6 @@
 # Tuyen's Claude Code
 
-Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 51 skills (15 workflow + 36 atomic).
+Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 55 skills (15 workflow + 40 atomic).
 
 ## Installation
 
@@ -184,13 +184,17 @@ Integration: new Stripe webhook endpoint
 
 ### Backend
 
-| Skill                | Purpose                             |
-| -------------------- | ----------------------------------- |
-| `async-processing`   | Async processing with Spring @Async |
-| `exception-handling` | Centralized exception handling      |
-| `jpa-performance`    | JPA optimization and N+1 prevention |
-| `transaction`        | Transaction management              |
-| `websocket-spring`   | WebSocket and STOMP messaging       |
+| Skill                       | Purpose                                         |
+| --------------------------- | ----------------------------------------------- |
+| `async-processing`          | Async processing with Spring @Async             |
+| `db-migration-safety`       | Safe DDL patterns for zero-downtime deployments |
+| `gradle-build-optimization` |                                                 |
+| `exception-handling`        | Centralized exception handling                  |
+| `jpa-performance`           | JPA optimization and N+1 prevention             |
+| `test-spring-integration`   |                                                 |
+| `transaction`               | Transaction management                          |
+| `spring-security-patterns`  |                                                 |
+| `websocket-spring`          | WebSocket and STOMP messaging                   |
 
 ### Frontend
 
