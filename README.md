@@ -1,5 +1,18 @@
 # Tuyen's Claude Code
 
+> **This repository is archived.** It has been replaced by [tuyens-agent-skills](https://github.com/tuyenivt/tuyens-agent-skills).
+
+## Migration
+
+Install the new plugin for Java / Spring Boot projects:
+
+```bash
+claude plugin install core@tuyens-agent-skills --scope project
+claude plugin install java@tuyens-agent-skills --scope project
+```
+
+## Overview
+
 Claude Code plugin for Java 21+ / Spring Boot 3.5+ and React development. 11 agents, 59 skills (19 workflow + 40 atomic).
 
 ## Installation
